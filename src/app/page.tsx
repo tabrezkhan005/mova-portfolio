@@ -957,60 +957,98 @@ export default function MovaTechHomepage() {
             </div>
           </div>
 
-          {/* Premium Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-            {[
-              {
-                icon: <Clock className="w-6 h-6" />,
-                title: "Total Time",
-                value: "~10 minutes",
-                description: "Complete process",
-                gradient: "from-teal-500 to-emerald-500",
-                bgGradient: "from-teal-50 to-emerald-50"
-              },
-              {
-                icon: <Shield className="w-6 h-6" />,
-                title: "Security",
-                value: "Bank-level",
-                description: "Protection guaranteed",
-                gradient: "from-emerald-500 to-green-500",
-                bgGradient: "from-emerald-50 to-green-50"
-              },
-              {
-                icon: <CheckCircle className="w-6 h-6" />,
-                title: "Success Rate",
-                value: "99.9%",
-                description: "Booking completion",
-                gradient: "from-blue-500 to-indigo-500",
-                bgGradient: "from-blue-50 to-indigo-50"
-              },
-              {
-                icon: <Star className="w-6 h-6" />,
-                title: "Rating",
-                value: "4.9/5",
-                description: "Customer satisfaction",
-                gradient: "from-purple-500 to-pink-500",
-                bgGradient: "from-purple-50 to-pink-50"
-              }
-            ].map((feature, index) => (
-              <div key={index} className={`bg-gradient-to-br ${feature.bgGradient} rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-500 text-center group cursor-pointer hover:scale-105`}>
-                <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${feature.gradient} text-white rounded-xl mb-6 shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                  {feature.icon}
+          {/* Enhanced Visual Elements */}
+          <div className="mb-24">
+            {/* Luxury Trust Badges */}
+            <div className="flex items-center justify-center gap-16 mb-16">
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2"
+                <div>
+                  <div className="text-sm font-bold text-gray-900">ISO Certified</div>
+                  <div className="text-xs text-gray-500">Quality Assured</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900">Fully Insured</div>
+                  <div className="text-xs text-gray-500">Complete Protection</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900">Premium Service</div>
+                  <div className="text-xs text-gray-500">5-Star Experience</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Enhanced Process Benefits */}
+            <div className="bg-gradient-to-br from-white via-gray-50/50 to-white rounded-3xl p-12 shadow-xl border border-gray-100/50 backdrop-blur-sm">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-light text-gray-900 mb-4"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  {feature.title}
-                </h4>
-                <div className="text-3xl font-black text-gray-900 mb-2"
-                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  {feature.value}
-                </div>
-                <p className="text-sm text-gray-600 font-medium"
+                  Why Choose Our <span className="font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Premium Process</span>?
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto"
                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  {feature.description}
+                  Experience the difference of our streamlined, secure, and customer-focused approach
                 </p>
               </div>
-            ))}
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Lightning Fast
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Complete your booking in under 10 minutes with our streamlined process
+                  </p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Ultra Secure
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Bank-level encryption and security for all your transactions
+                  </p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Instant Confirmation
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Get immediate booking confirmation and digital keys
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Premium Call to Action */}

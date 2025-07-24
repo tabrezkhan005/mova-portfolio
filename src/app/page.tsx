@@ -412,218 +412,126 @@ export default function MovaTechHomepage() {
         </div>
       </section>
 
-            {/* Ultra-Modern Polished Stats Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-50/50 via-white to-blue-50/30 overflow-hidden">
-        {/* Modern Background Elements */}
+      {/* Ultra-Modern Features Section */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Subtle Background Elements */}
         <div className="absolute inset-0">
-          {/* Sophisticated gradient mesh */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-violet-100/20 via-transparent to-emerald-100/20"></div>
-
-          {/* Geometric accent lines */}
-          <div className="absolute top-10 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300/30 to-transparent"></div>
-          <div className="absolute bottom-10 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent"></div>
-
-          {/* Modern floating elements */}
-          <div className="absolute top-16 right-20 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-16 left-20 w-40 h-40 bg-gradient-to-br from-teal-400/10 to-emerald-400/10 rounded-full blur-xl"></div>
+          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-teal-400/8 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-emerald-400/6 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Contemporary Header Design */}
-          <div className="text-center mb-16">
+          {/* Modern Minimal Header */}
+          <div className="text-center mb-20">
             <div className="inline-flex items-center mb-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-slate-400/50"></div>
-              <div className="mx-4 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200/50 shadow-sm">
-                <span className="text-sm font-semibold text-slate-600 tracking-wide">SUCCESS METRICS</span>
-              </div>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-slate-400/50"></div>
+              <div className="w-1 h-8 bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full mr-4"></div>
+              <span className="text-gray-600 font-medium text-sm uppercase tracking-[0.15em]"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                Why Choose MOVA
+              </span>
             </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-6 leading-tight">
-              Numbers That <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">Define Excellence</span>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-6 leading-tight"
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Premium <span className="font-semibold text-teal-600">Experience</span>
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-              Experience the trust, quality, and satisfaction that sets MOVA apart in premium transportation
+            
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
+               style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Discover what sets MOVA apart in luxury car rentals
             </p>
           </div>
 
-          {/* Revolutionary Stats Layout */}
-          <div className="relative">
-            {/* Primary Stats Row */}
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              {/* Featured Stat 1 - Large Card */}
-              <div className="group relative">
-                <div className="bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/50 shadow-xl shadow-slate-900/5 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative p-8">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
-                        <Users className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-right">
-                        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                          {stats[0].number}
-                        </div>
-                        <div className="text-sm text-slate-500 font-medium mt-1">MILESTONE REACHED</div>
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{stats[0].label}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">Building trust through exceptional service and premium vehicle experiences worldwide</p>
-                    <div className="mt-4 h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full w-3/4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full group-hover:w-full transition-all duration-1000"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Featured Stat 2 - Large Card */}
-              <div className="group relative">
-                <div className="bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/50 shadow-xl shadow-slate-900/5 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative p-8">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="p-3 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg">
-                        <Car className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-right">
-                        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                          {stats[1].number}
-                        </div>
-                        <div className="text-sm text-slate-500 font-medium mt-1">PREMIUM FLEET</div>
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{stats[1].label}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">Curated collection of luxury and economy vehicles maintained to the highest standards</p>
-                    <div className="mt-4 h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full w-4/5 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full group-hover:w-full transition-all duration-1000"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Secondary Stats Row - Compact Modern Cards */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Compact Stat 3 */}
-              <div className="group bg-white/80 backdrop-blur-xl rounded-xl border border-slate-200/50 shadow-lg shadow-slate-900/5 p-6 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="p-2.5 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                        {stats[2].number}
-                      </div>
-                      <div className="text-sm font-semibold text-slate-900">{stats[2].label}</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="w-16 h-16 relative">
-                      <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#e2e8f0"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="url(#gradient3)"
-                          strokeWidth="2"
-                          strokeDasharray="75, 100"
-                          className="group-hover:stroke-dasharray-[85,100] transition-all duration-1000"
-                        />
-                        <defs>
-                          <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#8b5cf6" />
-                            <stop offset="100%" stopColor="#7c3aed" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-slate-600">75%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Compact Stat 4 */}
-              <div className="group bg-white/80 backdrop-blur-xl rounded-xl border border-slate-200/50 shadow-lg shadow-slate-900/5 p-6 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="p-2.5 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                        {stats[3].number}
-                      </div>
-                      <div className="text-sm font-semibold text-slate-900">{stats[3].label}</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="w-16 h-16 relative">
-                      <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#e2e8f0"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="url(#gradient4)"
-                          strokeWidth="2"
-                          strokeDasharray="100, 100"
-                          className="group-hover:stroke-dasharray-[100,100] transition-all duration-1000"
-                        />
-                        <defs>
-                          <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#f97316" />
-                            <stop offset="100%" stopColor="#dc2626" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-slate-600">100%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modern Decorative Elements */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4 tracking-wide"
-                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-              Why Choose Us
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight"
-                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>Why Choose MovaTech?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
-               style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>Experience the difference with our premium car rental services designed for your comfort and convenience</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Ultra-Modern Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
-              <div key={index} className={`card-hover text-center p-10 rounded-3xl bg-gradient-to-br ${feature.gradient} shadow-xl border border-white/50`}>
-                <div className="mb-8 flex justify-center animate-float">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight"
-                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed font-medium"
-                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>{feature.description}</p>
+              <div key={index} className="group relative">
+                {/* Main Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-teal-200/50 relative overflow-hidden">
+                  
+                  {/* Subtle Accent Line */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/20 via-emerald-500/20 to-transparent"></div>
+                  
+                  {/* Modern Icon Container */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 border border-gray-200/50">
+                      <div className="w-8 h-8 text-gray-700 group-hover:text-teal-600 transition-colors duration-300">
+                        {feature.icon}
+                      </div>
+                    </div>
+                    
+                    {/* Floating Number Badge */}
+                    <div className="absolute -top-2 -right-2 w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      {index + 1}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed text-sm"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {feature.description}
+                  </p>
+
+                  {/* Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Modern Stats Section */}
+          <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-12 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-4"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Trusted by <span className="font-semibold text-teal-400">Thousands</span>
+                </h3>
+                <p className="text-gray-400 text-sm"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Join our community of satisfied customers
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { number: "10K+", label: "Happy Customers" },
+                  { number: "500+", label: "Premium Vehicles" },
+                  { number: "50+", label: "Cities Covered" },
+                  { number: "24/7", label: "Support Available" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-teal-400 mb-2"
+                         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-400 text-xs uppercase tracking-wider"
+                         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action */}
+              <div className="text-center mt-12">
+                <button className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  <span>Start Your Journey</span>
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

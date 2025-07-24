@@ -433,99 +433,103 @@ export default function MovaTechHomepage() {
       </section>
 
       {/* Car Types Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4">
-              Our Fleet
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Choose Your Perfect Ride</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Select from our diverse range of premium vehicles, each offering unique features and exceptional value</p>
-          </div>
+<section className="py-24 bg-gradient-to-br from-gray-50 to-teal-50">
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <div className="text-center mb-20">
+     <span className="inline-block px-6 py-2 bg-gradient-to-r from-teal-100 to-emerald-100 rounded-full text-teal-700 text-sm font-semibold mb-4">
+       Our Fleet
+     </span>
+     <h2 className="text-5xl font-bold text-gray-900 mb-6">Premium Car Rentals</h2>
+     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Discover our collection of well-maintained vehicles for your perfect journey</p>
+   </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {carTypes.map((car, index) => (
-              <div key={index} className={`card-hover bg-white rounded-3xl shadow-2xl overflow-hidden border-2 ${car.popular ? 'border-emerald-500 relative' : 'border-transparent'}`}>
-                {car.popular && (
-                  <div className="absolute top-6 right-6 bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold z-10">
-                    Most Popular
-                  </div>
-                )}
+   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+     {[
+       {
+         company: "Mahindra",
+         name: "Bolero Neo",
+         model: "N10 (O) 7 STR",
+         price: "₹2,500",
+         location: "Guntur, AP",
+         image: "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=400&h=300&fit=crop",
+         popular: false
+       },
+       {
+         company: "Tata Motors",
+         name: "Nexon",
+         model: "XZ+ (O) AT",
+         price: "₹1,800",
+         location: "Guntur, AP",
+         image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop",
+         popular: true
+       },
+       {
+         company: "Maruti Suzuki",
+         name: "Swift Dzire",
+         model: "ZXI+ AGS",
+         price: "₹1,200",
+         location: "Guntur, AP",
+         image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&h=300&fit=crop",
+         popular: false
+       }
+     ].map((car, index) => (
+       <div key={index} className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border ${car.popular ? 'border-teal-200 ring-2 ring-teal-500/20' : 'border-gray-100'} hover:border-teal-300`}>
+         {car.popular && (
+           <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+             Popular
+           </div>
+         )}
 
-                <div className="relative">
-                  <div className="h-56 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${car.image})` }}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute top-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {car.savings}
-                    </div>
-                  </div>
-                </div>
+         <div className="relative overflow-hidden">
+           <div className="h-48 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style={{ backgroundImage: `url(${car.image})` }}>
+             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+           </div>
+         </div>
 
-                <div className="p-8">
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-3xl font-bold text-gray-900">{car.name}</h3>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold text-gradient">{car.price}</div>
-                      <div className="text-sm text-gray-500 line-through">{car.originalPrice}</div>
-                    </div>
-                  </div>
+         <div className="p-6">
+           <div className="mb-4">
+             <div className="flex items-center justify-between mb-2">
+               <span className="text-sm font-medium text-teal-600 bg-teal-50 px-2 py-1 rounded-md">
+                 {car.company}
+               </span>
+               <div className="flex items-center text-gray-500 text-sm">
+                 <MapPin className="w-4 h-4 mr-1" />
+                 {car.location}
+               </div>
+             </div>
 
-                  <ul className="space-y-3 mb-8">
-                    {car.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <CheckCircle className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" />
-                        <span className="font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+             <h3 className="text-xl font-bold text-gray-900 mb-1">{car.name}</h3>
+             <p className="text-sm text-gray-600 mb-3">{car.model}</p>
 
-                  <button className={`w-full py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center ${
-                    car.popular
-                      ? 'bg-gradient-to-r from-emerald-500 to-blue-500 text-white hover:shadow-2xl transform hover:scale-105'
-                      : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-xl'
-                  }`}>
-                    <ArrowRight className="w-5 h-5 mr-2" />
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+             <div className="flex items-center justify-between">
+               <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                 {car.price}<span className="text-sm text-gray-500 font-normal">/day</span>
+               </div>
+             </div>
+           </div>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4">
-              Customer Reviews
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Don&apos;t just take our word for it - hear from our satisfied customers</p>
-          </div>
+           <button className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center group-hover:shadow-lg ${
+             car.popular
+               ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white hover:from-teal-600 hover:to-emerald-600'
+               : 'bg-gray-900 text-white hover:bg-teal-600'
+           }`}>
+             View Details
+             <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+           </button>
+         </div>
+       </div>
+     ))}
+   </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-hover bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mr-4" />
-                  <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 leading-relaxed italic">&ldquo;{testimonial.text}&rdquo;</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+   <div className="text-center mt-16">
+     <button className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center mx-auto">
+       View All Vehicles
+       <ArrowRight className="w-5 h-5 ml-2" />
+     </button>
+   </div>
+ </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 relative overflow-hidden">

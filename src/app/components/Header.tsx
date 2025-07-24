@@ -65,11 +65,12 @@ export default function Header() {
             <nav className="hidden md:flex items-center space-x-10">
               <Link
                 href="/about"
-                className={`font-semibold text-lg tracking-wide transition-all duration-300 relative group ${
+                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
                   isScrolled
                     ? 'text-gray-800 hover:text-blue-600'
                     : 'text-white hover:text-blue-200'
                 }`}
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 About Us
                 {/* Professional underline animation */}
@@ -81,11 +82,12 @@ export default function Header() {
               </Link>
               <Link
                 href="/fleet"
-                className={`font-semibold text-lg tracking-wide transition-all duration-300 relative group ${
+                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
                   isScrolled
                     ? 'text-gray-800 hover:text-blue-600'
                     : 'text-white hover:text-blue-200'
                 }`}
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Our Fleet
                 {/* Professional underline animation */}
@@ -97,11 +99,12 @@ export default function Header() {
               </Link>
               <Link
                 href="/drivensave"
-                className={`font-semibold text-lg tracking-wide transition-all duration-300 relative group ${
+                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
                   isScrolled
                     ? 'text-gray-800 hover:text-blue-600'
                     : 'text-white hover:text-blue-200'
                 }`}
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Drive & Save
                 {/* Professional underline animation */}
@@ -113,11 +116,12 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className={`font-semibold text-lg tracking-wide transition-all duration-300 relative group ${
+                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
                   isScrolled
                     ? 'text-gray-800 hover:text-blue-600'
                     : 'text-white hover:text-blue-200'
                 }`}
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Contact
                 {/* Professional underline animation */}
@@ -175,44 +179,48 @@ export default function Header() {
                 {/* Mobile Navigation Links */}
                 <Link
                   href="/about"
-                  className={`block px-4 py-3 font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
+                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
                     isScrolled
                       ? 'text-gray-800 hover:text-blue-600'
                       : 'text-white hover:text-blue-200'
                   }`}
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   href="/fleet"
-                  className={`block px-4 py-3 font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
+                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
                     isScrolled
                       ? 'text-gray-800 hover:text-blue-600'
                       : 'text-white hover:text-blue-200'
                   }`}
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Our Fleet
                 </Link>
                 <Link
                   href="/drivensave"
-                  className={`block px-4 py-3 font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
+                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
                     isScrolled
                       ? 'text-gray-800 hover:text-blue-600'
                       : 'text-white hover:text-blue-200'
                   }`}
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Drive & Save
                 </Link>
                 <Link
                   href="/contact"
-                  className={`block px-4 py-3 font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
+                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-white/30 backdrop-blur-sm border border-transparent hover:border-white/30 ${
                     isScrolled
                       ? 'text-gray-800 hover:text-blue-600'
                       : 'text-white hover:text-blue-200'
                   }`}
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact

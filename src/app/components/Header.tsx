@@ -13,18 +13,18 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   // State management for mobile menu toggle and scroll detection
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
   const [isPassedHero, setIsPassedHero] = useState(false);
 
   // Handle scroll event for dynamic header styling
   useEffect(() => {
     const handleScroll = () => {
-      // Both glass effect and text color changes happen when header touches stats section
+      // Glass effect starts at 50px for visual feedback
+      setIsScrolled(window.scrollY > 50);
+
+      // Text color changes only after passing hero section (100vh)
       const heroSectionHeight = window.innerHeight;
-      const statsThreshold = heroSectionHeight - 80; // When header touches stats section
-      
-      setIsScrolled(window.scrollY > statsThreshold);
-      setIsPassedHero(window.scrollY > statsThreshold);
+      setIsPassedHero(window.scrollY > heroSectionHeight - 150);
     };
 
     window.addEventListener('scroll', handleScroll);

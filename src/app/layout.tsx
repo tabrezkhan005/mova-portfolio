@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${radioCanadaBig.variable} antialiased min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50`}>
-        {/* Professional Header with Glass Morphism Design */}
+        {/* Professional Glass Header Component */}
         <Header />
 
         {/* Main Content Area with proper spacing for fixed header */}

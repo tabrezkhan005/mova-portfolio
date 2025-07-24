@@ -671,15 +671,10 @@ export default function MovaTechHomepage() {
          image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&h=300&fit=crop",
          popular: false
        }
-     ].map((car, index) => (
-       <div key={index} className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border ${car.popular ? 'border-teal-200 ring-2 ring-teal-500/20' : 'border-gray-100'} hover:border-teal-300`}>
-         {car.popular && (
-           <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
-             Popular
-           </div>
-         )}
+            ].map((car, index) => (
+         <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-teal-300">
 
-         <div className="relative overflow-hidden">
+           <div className="relative overflow-hidden">
            <div className="h-48 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style={{ backgroundImage: `url(${car.image})` }}>
              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
            </div>
@@ -710,11 +705,7 @@ export default function MovaTechHomepage() {
              </div>
            </div>
 
-           <button className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center group-hover:shadow-lg ${
-             car.popular
-               ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white hover:from-teal-600 hover:to-emerald-600'
-               : 'bg-gray-900 text-white hover:bg-teal-600'
-           }`}
+           <button className="w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center group-hover:shadow-lg bg-gray-900 text-white hover:bg-teal-600"
                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>
              View Details
              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

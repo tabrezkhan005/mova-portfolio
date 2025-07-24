@@ -6,6 +6,7 @@ import { Car, Shield, Users, Star, ChevronLeft, ChevronRight, MapPin, Calendar, 
 
 export default function MovaTechHomepage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const heroSlides = [
     {
@@ -110,22 +111,49 @@ export default function MovaTechHomepage() {
     { number: "24/7", label: "Customer Support" }
   ];
 
+  const nextSlide = () => {
+    const nextIndex = (currentSlide + 1) % heroSlides.length;
+    console.log('Next slide:', nextIndex);
+    setIsTransitioning(true);
+    setCurrentSlide(nextIndex);
+    setTimeout(() => setIsTransitioning(false), 700);
+  };
+
+  const prevSlide = () => {
+    const prevIndex = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+    console.log('Previous slide:', prevIndex);
+    setIsTransitioning(true);
+    setCurrentSlide(prevIndex);
+    setTimeout(() => setIsTransitioning(false), 700);
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 6000);
 
+    // Keyboard navigation
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (event.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+
     return () => {
       clearInterval(timer);
+      window.removeEventListener('keydown', handleKeyPress);
     };
   }, [heroSlides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  const goToSlide = (index: number) => {
+    console.log('Go to slide:', index);
+    setIsTransitioning(true);
+    setCurrentSlide(index);
+    setTimeout(() => setIsTransitioning(false), 700);
   };
 
   return (
@@ -199,114 +227,169 @@ export default function MovaTechHomepage() {
 
 
 
-      {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Background Slides */}
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ${
-              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-            }`}
-          >
+      {/* Hero Section - Fresh Modern Design */}
+      <section className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '100vh' }}>
+        {/* Clean Background with Subtle Overlays */}
+        <div className="absolute inset-0">
+          {/* Background Slides */}
+          {heroSlides.map((slide, index) => (
             <div
-              className="h-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              key={`slide-${index}`}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              }`}
+              style={{
+                zIndex: index === currentSlide ? 1 : 0
+              }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
-            </div>
-          </div>
-        ))}
-
-        {/* Hero Content */}
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="max-w-6xl mx-auto px-4 text-center">
-            <div className="mb-6">
-              <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 backdrop-blur-md rounded-full text-emerald-300 text-sm font-semibold border border-emerald-500/30 animate-fade-in-up">
-                ✨ Premium Car Rental Experience
-              </span>
-            </div>
-
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 animate-fade-in-up leading-tight">
-              {heroSlides[currentSlide].title}
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 animate-slide-in-right max-w-3xl mx-auto leading-relaxed">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-
-            {/* Quick Booking Form */}
-            <div className="glass-effect rounded-3xl p-8 max-w-5xl mx-auto mb-8 animate-fade-in-up">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="flex items-center space-x-4 bg-white/10 rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="p-3 bg-emerald-500/20 rounded-xl">
-                    <MapPin className="text-emerald-300 w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <label className="block text-white text-sm font-medium mb-1">Pick-up Location</label>
-                    <input type="text" placeholder="Enter location" className="bg-transparent text-white placeholder-gray-300 border-none outline-none w-full text-lg" />
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 bg-white/10 rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="p-3 bg-blue-500/20 rounded-xl">
-                    <Calendar className="text-blue-300 w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <label className="block text-white text-sm font-medium mb-1">Pick-up Date</label>
-                    <input type="date" className="bg-transparent text-white border-none outline-none w-full text-lg" />
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 bg-white/10 rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="p-3 bg-purple-500/20 rounded-xl">
-                    <Clock className="text-purple-300 w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <label className="block text-white text-sm font-medium mb-1">Return Date</label>
-                    <input type="date" className="bg-transparent text-white border-none outline-none w-full text-lg" />
-                  </div>
-                </div>
-
-                <button className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-8 py-4 rounded-2xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 mr-2" />
-                  Search Cars
-                </button>
+              <div
+                className="h-full bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              >
+                {/* Clean Dark Overlay */}
+                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               </div>
             </div>
+          ))}
 
-            <button className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 flex items-center mx-auto">
-              <Play className="w-5 h-5 mr-3" />
-              {heroSlides[currentSlide].cta}
-            </button>
+          {/* Minimal Accent Elements */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+                {/* Modern Hero Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center">
+
+              {/* Modern Headline */}
+              <div className="mb-8">
+                                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight tracking-tight uppercase animate-fade-in-up">
+                   <span className="block">{heroSlides[currentSlide].title.split(' ')[0]}</span>
+                   <span className="block text-teal-400">{heroSlides[currentSlide].title.split(' ').slice(1).join(' ')}</span>
+                 </h1>
+              </div>
+
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+                {heroSlides[currentSlide].subtitle}
+              </p>
+
+                                           {/* Modern Search Bar */}
+              <div className="max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+                    {/* Location Input */}
+                    <div className="relative">
+                      <label className="block text-white text-sm font-medium mb-2">Pick-up Location</label>
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          placeholder="Enter location"
+                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Start Date */}
+                    <div className="relative">
+                      <label className="block text-white text-sm font-medium mb-2">Start Date</label>
+                      <div className="relative">
+                        <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <input
+                          type="date"
+                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                        />
+                      </div>
+                    </div>
+
+                    {/* End Date */}
+                    <div className="relative">
+                      <label className="block text-white text-sm font-medium mb-2">End Date</label>
+                      <div className="relative">
+                        <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <input
+                          type="date"
+                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Search Button */}
+                    <div className="relative">
+                      <label className="block text-transparent text-sm font-medium mb-2">Search</label>
+                      <button className="w-full bg-teal-500 hover:bg-teal-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center">
+                        <ArrowRight className="w-5 h-5 mr-2" />
+                        Search Cars
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+                          {/* Call to Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+                <button className="bg-teal-500 hover:bg-teal-400 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center shadow-lg hover:shadow-xl">
+                  <Car className="w-6 h-6 mr-3" />
+                  {heroSlides[currentSlide].cta}
+                </button>
+
+                <button className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center hover:bg-white/10">
+                  <Play className="w-6 h-6 mr-3" />
+                  Watch Video
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        {/* Enhanced Carousel Controls */}
+        {/* Enhanced Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 top-1/2 transform -translate-y-1/2 glass-effect text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 group"
+          disabled={isTransitioning}
+          className={`absolute left-6 top-1/2 transform -translate-y-1/2 text-white p-5 rounded-full transition-all duration-200 border-2 shadow-2xl group backdrop-blur-md ${
+            isTransitioning
+              ? 'bg-teal-400/40 border-teal-300 cursor-not-allowed scale-95'
+              : 'bg-teal-500/20 hover:bg-teal-500/40 active:bg-teal-500/60 border-teal-400/50 hover:border-teal-400 hover:shadow-teal-500/30 active:scale-90'
+          }`}
+          aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+          <ChevronLeft className={`w-7 h-7 transition-transform duration-200 ${
+            isTransitioning ? 'animate-pulse' : 'group-hover:scale-125 group-active:scale-75'
+          }`} />
         </button>
+
         <button
           onClick={nextSlide}
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 glass-effect text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 group"
+          disabled={isTransitioning}
+          className={`absolute right-6 top-1/2 transform -translate-y-1/2 text-white p-5 rounded-full transition-all duration-200 border-2 shadow-2xl group backdrop-blur-md ${
+            isTransitioning
+              ? 'bg-teal-400/40 border-teal-300 cursor-not-allowed scale-95'
+              : 'bg-teal-500/20 hover:bg-teal-500/40 active:bg-teal-500/60 border-teal-400/50 hover:border-teal-400 hover:shadow-teal-500/30 active:scale-90'
+          }`}
+          aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+          <ChevronRight className={`w-7 h-7 transition-transform duration-200 ${
+            isTransitioning ? 'animate-pulse' : 'group-hover:scale-125 group-active:scale-75'
+          }`} />
         </button>
 
         {/* Enhanced Slide Indicators */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 bg-black/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10">
           {heroSlides.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`transition-all duration-300 rounded-full ${
+              onClick={() => goToSlide(index)}
+              className={`rounded-full transition-all duration-300 hover:scale-110 active:scale-95 ${
                 index === currentSlide
-                  ? 'w-12 h-3 bg-gradient-to-r from-emerald-500 to-blue-500'
-                  : 'w-3 h-3 bg-white/50 hover:bg-white/70'
+                  ? 'bg-teal-400 w-8 h-3 shadow-lg shadow-teal-400/50'
+                  : 'bg-white/40 hover:bg-white/60 w-3 h-3'
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>

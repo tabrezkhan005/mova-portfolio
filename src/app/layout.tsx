@@ -43,7 +43,7 @@ export default function RootLayout({
         <Header />
 
         {/* Main Content Area with proper spacing for fixed header */}
-        <main className="pt-20">
+        <main>
           {children}
         </main>
 

@@ -819,7 +819,7 @@ export default function MovaTechHomepage() {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Ultra-Modern Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-0">
             <div className="inline-flex items-center mb-6">
               <div className="w-2 h-10 bg-gradient-to-b from-teal-500 via-emerald-500 to-blue-500 rounded-full mr-4 animate-pulse"></div>
               <span className="text-gray-700 font-semibold text-sm uppercase tracking-[0.15em] bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
@@ -857,40 +857,40 @@ export default function MovaTechHomepage() {
           </div>
 
           {/* Professional Process Flow */}
-          <div className="relative mb-16" style={{ marginTop: '1px' }}>
+          <div className="relative mb-16" style={{ marginTop: '10px' }}>
             {/* Modern Professional Container */}
-            <div className="bg-gradient-to-br from-white via-gray-50/50 to-slate-50/60 rounded-[2.5rem] p-12 md:p-16 shadow-2xl border border-gray-200/60 relative overflow-hidden backdrop-blur-sm">
+            <div className="bg-gradient-to-br from-white via-gray-50/50 to-slate-50/60 rounded-[2.5rem] p-4 md:p-6 pb-20 shadow-2xl border border-gray-200/60 relative overflow-hidden backdrop-blur-sm">
               
               {/* Refined Background Pattern */}
               <div className="absolute inset-0 opacity-6">
-                <div className="absolute top-8 left-8 w-40 h-40 bg-gradient-to-br from-teal-400/8 to-emerald-400/6 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-8 right-8 w-48 h-48 bg-gradient-to-br from-blue-400/6 to-indigo-400/4 rounded-full blur-3xl"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-gradient-to-br from-emerald-400/4 to-green-400/3 rounded-full blur-2xl"></div>
+                <div className="absolute top-4 left-4 w-32 h-32 bg-gradient-to-br from-teal-400/8 to-emerald-400/6 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-4 right-4 w-40 h-40 bg-gradient-to-br from-blue-400/6 to-indigo-400/4 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-emerald-400/4 to-green-400/3 rounded-full blur-2xl"></div>
               </div>
               
               {/* Professional Network Visualization */}
-              <div className="absolute inset-0 opacity-15">
-                <svg className="w-full h-full" viewBox="0 0 1000 500" fill="none">
+              <div className="absolute inset-x-0 top-4 bottom-16 opacity-15">
+                <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
                   {/* Main Process Flow Line */}
-                  <path d="M50 250 Q250 240 500 250 Q750 260 950 250" stroke="url(#process-gradient)" strokeWidth="8" fill="none" opacity="0.6"/>
+                  <path d="M50 200 Q250 190 500 200 Q750 210 950 200" stroke="url(#process-gradient)" strokeWidth="8" fill="none" opacity="0.6"/>
                   
                   {/* Secondary Connection Lines */}
-                  <path d="M100 200 Q300 190 600 200 Q800 190 900 200" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
-                  <path d="M100 300 Q300 310 600 300 Q800 310 900 300" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
+                  <path d="M100 160 Q300 150 600 160 Q800 150 900 160" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
+                  <path d="M100 240 Q300 250 600 240 Q800 250 900 240" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
                   
                   {/* Process Nodes */}
-                  <circle cx="160" cy="250" r="6" fill="url(#node-gradient-1)" opacity="0.8"/>
-                  <circle cx="340" cy="250" r="6" fill="url(#node-gradient-2)" opacity="0.8"/>
-                  <circle cx="500" cy="250" r="6" fill="url(#node-gradient-3)" opacity="0.8"/>
-                  <circle cx="660" cy="250" r="6" fill="url(#node-gradient-4)" opacity="0.8"/>
-                  <circle cx="840" cy="250" r="6" fill="url(#node-gradient-5)" opacity="0.8"/>
+                  <circle cx="160" cy="200" r="6" fill="url(#node-gradient-1)" opacity="0.8"/>
+                  <circle cx="340" cy="200" r="6" fill="url(#node-gradient-2)" opacity="0.8"/>
+                  <circle cx="500" cy="200" r="6" fill="url(#node-gradient-3)" opacity="0.8"/>
+                  <circle cx="660" cy="200" r="6" fill="url(#node-gradient-4)" opacity="0.8"/>
+                  <circle cx="840" cy="200" r="6" fill="url(#node-gradient-5)" opacity="0.8"/>
                   
                   {/* Connection Points */}
-                  <rect x="155" y="247" width="6" height="6" fill="#10B981" opacity="0.6" rx="1"/>
-                  <rect x="335" y="247" width="6" height="6" fill="#3B82F6" opacity="0.6" rx="1"/>
-                  <rect x="495" y="247" width="6" height="6" fill="#8B5CF6" opacity="0.6" rx="1"/>
-                  <rect x="655" y="247" width="6" height="6" fill="#EF4444" opacity="0.6" rx="1"/>
-                  <rect x="835" y="247" width="6" height="6" fill="#F59E0B" opacity="0.6" rx="1"/>
+                  <rect x="155" y="197" width="6" height="6" fill="#10B981" opacity="0.6" rx="1"/>
+                  <rect x="335" y="197" width="6" height="6" fill="#3B82F6" opacity="0.6" rx="1"/>
+                  <rect x="495" y="197" width="6" height="6" fill="#8B5CF6" opacity="0.6" rx="1"/>
+                  <rect x="655" y="197" width="6" height="6" fill="#EF4444" opacity="0.6" rx="1"/>
+                  <rect x="835" y="197" width="6" height="6" fill="#F59E0B" opacity="0.6" rx="1"/>
                   
                   {/* Professional SVG Gradients */}
                   <defs>
@@ -930,11 +930,11 @@ export default function MovaTechHomepage() {
               </div>
               
               {/* Professional Progress Bar */}
-              <div className="absolute top-1/2 left-12 right-12 transform -translate-y-1/2">
-                <div className="relative h-10 bg-gradient-to-r from-gray-100 via-white to-gray-100 rounded-xl shadow-inner overflow-hidden border border-gray-200/50">
+              <div className="absolute top-1/2 left-8 right-8 transform -translate-y-1/2">
+                <div className="relative h-8 bg-gradient-to-r from-gray-100 via-white to-gray-100 rounded-lg shadow-inner overflow-hidden border border-gray-200/50">
                   
                   {/* Progress Track */}
-                  <div className="absolute inset-1 bg-gradient-to-r from-gray-50 to-white rounded-lg"></div>
+                  <div className="absolute inset-1 bg-gradient-to-r from-gray-50 to-white rounded-md"></div>
                   
                   {/* Animated Progress Flow */}
                   <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-400 via-emerald-400 via-blue-400 via-purple-400 to-red-400 transform -translate-y-1/2 rounded-full shadow-lg opacity-80">
@@ -942,16 +942,16 @@ export default function MovaTechHomepage() {
                   </div>
                   
                   {/* Professional Step Indicators */}
-                  <div className="absolute top-1/2 left-[12.5%] w-2.5 h-2.5 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-white"></div>
-                  <div className="absolute top-1/2 left-[30%] w-2.5 h-2.5 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-white"></div>
-                  <div className="absolute top-1/2 left-[50%] w-2.5 h-2.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-white"></div>
-                  <div className="absolute top-1/2 left-[70%] w-2.5 h-2.5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-white"></div>
-                  <div className="absolute top-1/2 left-[87.5%] w-2.5 h-2.5 bg-gradient-to-br from-red-500 to-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-white"></div>
+                  <div className="absolute top-1/2 left-[12.5%] w-2 h-2 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[30%] w-2 h-2 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[50%] w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[70%] w-2 h-2 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[87.5%] w-2 h-2 bg-gradient-to-br from-red-500 to-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
                 </div>
               </div>
               
               {/* Professional Process Steps */}
-              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8 mt-16">
+              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-6 mt-12">
                 {[
                   {
                     icon: <Car className="w-8 h-8" />,
@@ -1040,22 +1040,6 @@ export default function MovaTechHomepage() {
                     </div>
                   </div>
                 ))}
-              </div>
-              
-              {/* Professional Process Metrics */}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-6">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-200/50">
-                  <div className="w-1.5 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs text-gray-700 font-semibold">Streamlined Process</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-200/50">
-                  <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <span className="text-xs text-gray-700 font-semibold">Secure & Fast</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-200/50">
-                  <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-500 to-teal-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-                  <span className="text-xs text-gray-700 font-semibold">Premium Experience</span>
-                </div>
               </div>
             </div>
           </div>

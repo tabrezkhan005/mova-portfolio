@@ -55,7 +55,7 @@ export default function Header() {
                   alt="Mova Car Rental Logo"
                   width={140}
                   height={45}
-                  className="h-12 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
+                  className="h-19 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
                   priority
                 />
               </Link>

@@ -24,7 +24,7 @@ export default function Header() {
 
       // Text color changes only after passing hero section (100vh)
       const heroSectionHeight = window.innerHeight;
-      setIsPassedHero(window.scrollY > heroSectionHeight - 150);
+      setIsPassedHero(window.scrollY > heroSectionHeight - 60);
     };
 
     window.addEventListener('scroll', handleScroll);

@@ -262,18 +262,29 @@ export default function MovaTechHomepage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center">
 
-              {/* Modern Headline */}
-              <div className="mb-8">
-                                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight tracking-tight uppercase animate-fade-in-up">
-                   <span className="block">{heroSlides[currentSlide].title.split(' ')[0]}</span>
-                   <span className="block text-teal-400">{heroSlides[currentSlide].title.split(' ').slice(1).join(' ')}</span>
-                 </h1>
+              {/* Modern Professional Headline */}
+              <div className="mb-10">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-[0.9] tracking-[-0.02em] animate-fade-in-up">
+                  <span className="block font-extralight text-white/90 mb-2" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {heroSlides[currentSlide].title.split(' ')[0]}
+                  </span>
+                  <span className="block font-bold bg-gradient-to-r from-white via-teal-200 to-emerald-300 bg-clip-text text-transparent" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {heroSlides[currentSlide].title.split(' ').slice(1).join(' ')}
+                  </span>
+                </h1>
               </div>
 
-              {/* Subtitle */}
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
-                {heroSlides[currentSlide].subtitle}
-              </p>
+              {/* Modern Subtitle */}
+              <div className="mb-12">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-200/90 max-w-4xl mx-auto leading-relaxed tracking-wide font-light animate-slide-in-right"
+                   style={{
+                     animationDelay: '0.3s',
+                     fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+                     letterSpacing: '0.01em'
+                   }}>
+                  {heroSlides[currentSlide].subtitle}
+                </p>
+              </div>
 
                                            {/* Modern Search Bar */}
               <div className="max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
@@ -282,45 +293,49 @@ export default function MovaTechHomepage() {
 
                     {/* Location Input */}
                     <div className="relative">
-                      <label className="block text-white text-sm font-medium mb-2">Pick-up Location</label>
+                      <label className="block text-white/90 text-sm font-medium mb-3 tracking-wide" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>Pick-up Location</label>
                       <div className="relative">
-                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-300 w-5 h-5" />
                         <input
                           type="text"
                           placeholder="Enter location"
-                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                          className="w-full pl-10 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:border-teal-300 focus:bg-white/15 transition-all duration-300 font-medium"
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
                         />
                       </div>
                     </div>
 
                     {/* Start Date */}
                     <div className="relative">
-                      <label className="block text-white text-sm font-medium mb-2">Start Date</label>
+                      <label className="block text-white/90 text-sm font-medium mb-3 tracking-wide" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>Start Date</label>
                       <div className="relative">
-                        <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-300 w-5 h-5" />
                         <input
                           type="date"
-                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                          className="w-full pl-10 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl text-white focus:outline-none focus:border-teal-300 focus:bg-white/15 transition-all duration-300 font-medium"
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
                         />
                       </div>
                     </div>
 
                     {/* End Date */}
                     <div className="relative">
-                      <label className="block text-white text-sm font-medium mb-2">End Date</label>
+                      <label className="block text-white/90 text-sm font-medium mb-3 tracking-wide" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>End Date</label>
                       <div className="relative">
-                        <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
+                        <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-300 w-5 h-5" />
                         <input
                           type="date"
-                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-teal-400 transition-colors duration-200"
+                          className="w-full pl-10 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl text-white focus:outline-none focus:border-teal-300 focus:bg-white/15 transition-all duration-300 font-medium"
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
                         />
                       </div>
                     </div>
 
                     {/* Search Button */}
                     <div className="relative">
-                      <label className="block text-transparent text-sm font-medium mb-2">Search</label>
-                      <button className="w-full bg-teal-500 hover:bg-teal-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center">
+                      <label className="block text-transparent text-sm font-medium mb-3 tracking-wide">Search</label>
+                      <button className="w-full bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-teal-500/30 hover:scale-105 backdrop-blur-sm border border-white/10"
+                              style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}>
                         <ArrowRight className="w-5 h-5 mr-2" />
                         Search Cars
                       </button>
@@ -330,16 +345,18 @@ export default function MovaTechHomepage() {
                 </div>
               </div>
 
-                          {/* Call to Action Buttons */}
+              {/* Modern Call to Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
-                <button className="bg-teal-500 hover:bg-teal-400 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center shadow-lg hover:shadow-xl">
-                  <Car className="w-6 h-6 mr-3" />
-                  {heroSlides[currentSlide].cta}
+                <button className="group bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white px-10 py-5 rounded-2xl font-medium text-lg transition-all duration-300 flex items-center shadow-2xl hover:shadow-teal-500/25 hover:scale-105 backdrop-blur-sm border border-white/10"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>
+                  <Car className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-semibold tracking-wide">{heroSlides[currentSlide].cta}</span>
                 </button>
 
-                <button className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center hover:bg-white/10">
-                  <Play className="w-6 h-6 mr-3" />
-                  Watch Video
+                <button className="group border-2 border-white/20 hover:border-white/40 text-white px-10 py-5 rounded-2xl font-medium text-lg transition-all duration-300 flex items-center hover:bg-white/5 backdrop-blur-sm hover:scale-105"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>
+                  <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-semibold tracking-wide">Watch Video</span>
                 </button>
               </div>
 
@@ -395,153 +412,697 @@ export default function MovaTechHomepage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      {/* Ultra-Modern Features Section */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-teal-400/8 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-emerald-400/6 rounded-full blur-3xl"></div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Modern Minimal Header */}
           <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4">
-              Why Choose Us
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Why Choose MovaTech?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Experience the difference with our premium car rental services designed for your comfort and convenience</p>
+            <div className="inline-flex items-center mb-6">
+              <div className="w-1 h-8 bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full mr-4"></div>
+              <span className="text-gray-600 font-medium text-sm uppercase tracking-[0.15em]"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                Why Choose MOVA
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-6 leading-tight"
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Premium <span className="font-semibold text-teal-600">Experience</span>
+            </h2>
+            
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
+               style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Discover what sets MOVA apart in luxury car rentals
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Ultra-Modern Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
-              <div key={index} className={`card-hover text-center p-10 rounded-3xl bg-gradient-to-br ${feature.gradient} shadow-xl border border-white/50`}>
-                <div className="mb-8 flex justify-center animate-float">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Car Types Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4">
-              Our Fleet
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Choose Your Perfect Ride</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Select from our diverse range of premium vehicles, each offering unique features and exceptional value</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {carTypes.map((car, index) => (
-              <div key={index} className={`card-hover bg-white rounded-3xl shadow-2xl overflow-hidden border-2 ${car.popular ? 'border-emerald-500 relative' : 'border-transparent'}`}>
-                {car.popular && (
-                  <div className="absolute top-6 right-6 bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold z-10">
-                    Most Popular
-                  </div>
-                )}
-
-                <div className="relative">
-                  <div className="h-56 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${car.image})` }}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute top-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {car.savings}
+              <div key={index} className="group relative">
+                {/* Main Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-teal-200/50 relative overflow-hidden">
+                  
+                  {/* Subtle Accent Line */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/20 via-emerald-500/20 to-transparent"></div>
+                  
+                  {/* Modern Icon Container */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 border border-gray-200/50">
+                      <div className="w-8 h-8 text-gray-700 group-hover:text-teal-600 transition-colors duration-300">
+                        {feature.icon}
+                      </div>
+                    </div>
+                    
+                    {/* Floating Number Badge */}
+                    <div className="absolute -top-2 -right-2 w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      {index + 1}
                     </div>
                   </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed text-sm"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    {feature.description}
+                  </p>
+
+                  {/* Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Modern Stats Section */}
+          <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-12 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-4"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Trusted by <span className="font-semibold text-teal-400">Thousands</span>
+                </h3>
+                <p className="text-gray-400 text-sm"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Join our community of satisfied customers
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { number: "10K+", label: "Happy Customers" },
+                  { number: "500+", label: "Premium Vehicles" },
+                  { number: "50+", label: "Cities Covered" },
+                  { number: "24/7", label: "Support Available" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-teal-400 mb-2"
+                         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-400 text-xs uppercase tracking-wider"
+                         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action */}
+              <div className="text-center mt-12">
+                <button className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  <span>Start Your Journey</span>
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ultra-Modern Car Types Section */}
+<section className="py-32 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden">
+  {/* Enhanced Background Elements */}
+  <div className="absolute inset-0">
+    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-teal-400/6 to-emerald-400/4 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-emerald-400/4 to-blue-400/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+  </div>
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Premium Header */}
+    <div className="text-center mb-24">
+      <div className="inline-flex items-center mb-8">
+        <div className="w-2 h-12 bg-gradient-to-b from-teal-500 via-emerald-500 to-blue-500 rounded-full mr-6 animate-pulse"></div>
+        <span className="text-gray-700 font-semibold text-base uppercase tracking-[0.2em] bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
+              style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+          Our Premium Fleet
+        </span>
+      </div>
+      
+      <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-gray-900 mb-8 leading-[0.9] tracking-tight"
+          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+        Luxury <span className="font-bold bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 bg-clip-text text-transparent">Vehicle Collection</span>
+      </h2>
+      
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light mb-8"
+         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+        Discover our meticulously curated collection of premium vehicles, each offering unparalleled comfort and sophistication for your journey
+      </p>
+
+      {/* Fleet Stats */}
+      <div className="flex items-center justify-center gap-12 text-sm text-gray-500 mb-8">
+        <div className="flex items-center">
+          <Car className="w-4 h-4 mr-2 text-teal-500" />
+          <span>500+ Premium Vehicles</span>
+        </div>
+        <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+        <div className="flex items-center">
+          <Shield className="w-4 h-4 mr-2 text-emerald-500" />
+          <span>Fully Insured & Certified</span>
+        </div>
+        <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+        <div className="flex items-center">
+          <CheckCircle className="w-4 h-4 mr-2 text-blue-500" />
+          <span>24/7 Availability</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Premium Vehicle Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      {[
+        {
+          company: "Mahindra",
+          name: "Bolero Neo",
+          model: "N10 (O) 7 STR",
+          price: "₹2,500",
+          originalPrice: "₹3,200",
+          location: "Guntur, AP",
+          image: "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=400&h=300&fit=crop",
+          popular: false,
+          category: "SUV",
+          features: ["7 Seater", "All Terrain", "Premium Interior", "GPS Navigation"],
+          gradient: "from-teal-500 to-emerald-500",
+          bgGradient: "from-teal-50 to-emerald-50",
+          savings: "Save 22%"
+        },
+        {
+          company: "Tata Motors",
+          name: "Nexon",
+          model: "XZ+ (O) AT",
+          price: "₹1,800",
+          originalPrice: "₹2,400",
+          location: "Guntur, AP",
+          image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop",
+          popular: true,
+          category: "Compact SUV",
+          features: ["Automatic", "Premium Sound", "Climate Control", "Safety Plus"],
+          gradient: "from-emerald-500 to-green-500",
+          bgGradient: "from-emerald-50 to-green-50",
+          savings: "Save 25%"
+        },
+        {
+          company: "Maruti Suzuki",
+          name: "Swift Dzire",
+          model: "ZXI+ AGS",
+          price: "₹1,200",
+          originalPrice: "₹1,600",
+          location: "Guntur, AP",
+          image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&h=300&fit=crop",
+          popular: false,
+          category: "Sedan",
+          features: ["Fuel Efficient", "Spacious", "Modern Tech", "Comfort Seats"],
+          gradient: "from-blue-500 to-indigo-500",
+          bgGradient: "from-blue-50 to-indigo-50",
+          savings: "Save 25%"
+        }
+      ].map((car, index) => (
+        <div key={index} className="group relative">
+          {/* Premium Card Container */}
+          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/50 hover:border-white/80 relative group-hover:scale-[1.02]">
+            
+            {/* Popular Badge */}
+            {car.popular && (
+              <div className="absolute top-4 left-4 z-20">
+                <div className={`px-4 py-2 bg-gradient-to-r ${car.gradient} text-white rounded-xl text-xs font-bold shadow-lg flex items-center`}>
+                  <Star className="w-3 h-3 mr-1" />
+                  Most Popular
+                </div>
+              </div>
+            )}
+
+            {/* Savings Badge */}
+            <div className="absolute top-4 right-4 z-20">
+              <div className="px-3 py-1 bg-red-500 text-white rounded-lg text-xs font-bold shadow-lg">
+                {car.savings}
+              </div>
+            </div>
+
+            {/* Premium Image Container */}
+            <div className="relative h-64 overflow-hidden">
+              <div 
+                className="h-full bg-cover bg-center transition-all duration-700 group-hover:scale-110" 
+                style={{ backgroundImage: `url(${car.image})` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${car.bgGradient} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
+              </div>
+
+              {/* Category Badge */}
+              <div className="absolute bottom-4 left-4">
+                <div className="px-3 py-1 bg-white/90 backdrop-blur-md text-gray-800 rounded-lg text-xs font-semibold border border-white/50">
+                  {car.category}
+                </div>
+              </div>
+
+              {/* Location Badge */}
+              <div className="absolute bottom-4 right-4">
+                <div className="px-3 py-1 bg-white/90 backdrop-blur-md text-gray-600 rounded-lg text-xs font-medium flex items-center border border-white/50">
+                  <MapPin className="w-3 h-3 mr-1" />
+                  {car.location}
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Content */}
+            <div className="p-8">
+              {/* Company Badge */}
+              <div className="mb-4">
+                <span className={`inline-block px-3 py-1 bg-gradient-to-r ${car.bgGradient} text-${car.gradient.split('-')[1].split(' ')[0]}-700 rounded-lg text-sm font-semibold border border-${car.gradient.split('-')[1].split(' ')[0]}-200`}>
+                  {car.company}
+                </span>
+              </div>
+
+              {/* Vehicle Details */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight group-hover:text-gray-800 transition-colors duration-300"
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                {car.name}
+              </h3>
+              
+              <p className="text-sm text-gray-600 mb-4 font-medium"
+                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                {car.model}
+              </p>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                {car.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-center text-xs text-gray-600">
+                    <CheckCircle className="w-3 h-3 mr-2 text-emerald-500" />
+                    <span className="font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pricing Section */}
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-3xl font-black bg-gradient-to-r ${car.gradient} bg-clip-text text-transparent`}
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {car.price}
+                    </span>
+                    <span className="text-lg text-gray-500 line-through font-medium">
+                      {car.originalPrice}
+                    </span>
+                  </div>
+                  <span className="text-sm text-gray-500 font-medium">/day</span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="grid grid-cols-2 gap-3">
+                <button className={`py-3 px-4 bg-gradient-to-r ${car.gradient} text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center group-hover:scale-105`}
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  <Car className="w-4 h-4 mr-2" />
+                  Book Now
+                </button>
+                
+                <button className="py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl font-semibold text-sm hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 flex items-center justify-center"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  View Details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+
+            {/* Premium Hover Effect */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${car.bgGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Premium Call to Action */}
+    <div className="text-center">
+      <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-12 relative overflow-hidden shadow-2xl">
+        {/* Enhanced Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-teal-500 via-emerald-500 to-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div className="relative">
+          <h3 className="text-3xl md:text-4xl font-light text-white mb-4 leading-tight"
+              style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+            Explore Our <span className="font-bold bg-gradient-to-r from-teal-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent">Complete Fleet</span>
+          </h3>
+          
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+             style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+            Discover hundreds of premium vehicles across all categories, from luxury sedans to powerful SUVs
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="group relative overflow-hidden inline-flex items-center px-10 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-2xl font-bold text-lg hover:from-teal-400 hover:to-emerald-400 transition-all duration-300 shadow-2xl hover:shadow-teal-500/25 hover:scale-105"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <Car className="relative w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+              <span className="relative">View All Vehicles</span>
+              <ArrowRight className="relative w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+            
+            <button className="group inline-flex items-center px-10 py-4 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:border-white/40 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:scale-105"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+              <span>Get Quote</span>
+            </button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex items-center justify-center gap-8 mt-8 text-gray-400">
+            <div className="flex items-center">
+              <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+              <span className="text-sm font-medium">Best Price Guarantee</span>
+            </div>
+            <div className="flex items-center">
+              <Shield className="w-4 h-4 text-emerald-400 mr-2" />
+              <span className="text-sm font-medium">Free Cancellation</span>
+            </div>
+            <div className="flex items-center">
+              <Star className="w-4 h-4 text-blue-400 mr-2" />
+              <span className="text-sm font-medium">Premium Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+            {/* Ultra-Modern Journey Process Section */}
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Enhanced Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full opacity-30">
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-teal-400/8 to-emerald-400/6 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-emerald-400/6 to-blue-400/4 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/4 to-purple-400/3 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Ultra-Modern Header */}
+          <div className="text-center mb-28">
+            <div className="inline-flex items-center mb-8">
+              <div className="w-2 h-12 bg-gradient-to-b from-teal-500 via-emerald-500 to-blue-500 rounded-full mr-6 animate-pulse"></div>
+              <span className="text-gray-700 font-semibold text-base uppercase tracking-[0.2em] bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                How MOVA Works
+              </span>
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-gray-900 mb-8 leading-[0.9] tracking-tight"
+                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Your <span className="font-bold bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 bg-clip-text text-transparent">Premium</span> Journey
+            </h2>
+            
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light mb-8"
+               style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+              Experience our revolutionary 5-step process designed for seamless luxury car rentals with unmatched convenience
+            </p>
+
+            <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-2 text-teal-500" />
+                <span>Total Time: ~10 minutes</span>
+              </div>
+              <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+              <div className="flex items-center">
+                <Shield className="w-4 h-4 mr-2 text-emerald-500" />
+                <span>100% Secure Process</span>
+              </div>
+              <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+              <div className="flex items-center">
+                <CheckCircle className="w-4 h-4 mr-2 text-blue-500" />
+                <span>Instant Confirmation</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Revolutionary Process Flow */}
+          <div className="relative mb-28">
+            {/* Premium Timeline Container */}
+            <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] p-16 md:p-20 shadow-2xl border border-white/50 relative overflow-hidden">
+              
+              {/* Advanced Road Path with Animation */}
+              <div className="absolute top-1/2 left-12 right-12 h-2 transform -translate-y-1/2">
+                <div className="relative h-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-full overflow-hidden">
+                  <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-500 via-emerald-500 to-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-pulse"></div>
+                </div>
+              </div>
+              
+              {/* Enhanced Process Steps */}
+              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-10">
+                {[
+                  {
+                    icon: <Car className="w-7 h-7" />,
+                    title: "Choose Vehicle",
+                    description: "Browse our premium fleet of luxury vehicles",
+                    time: "2 min",
+                    color: "teal",
+                    gradient: "from-teal-500 to-emerald-500",
+                    bgGradient: "from-teal-50 to-emerald-50"
+                  },
+                  {
+                    icon: <MapPin className="w-7 h-7" />,
+                    title: "Select Location",
+                    description: "Pick convenient pickup and drop-off locations",
+                    time: "1 min",
+                    color: "emerald",
+                    gradient: "from-emerald-500 to-green-500",
+                    bgGradient: "from-emerald-50 to-green-50"
+                  },
+                  {
+                    icon: <Star className="w-7 h-7" />,
+                    title: "Get Pricing",
+                    description: "Receive transparent, competitive instant quotes",
+                    time: "30 sec",
+                    color: "blue",
+                    gradient: "from-blue-500 to-indigo-500",
+                    bgGradient: "from-blue-50 to-indigo-50"
+                  },
+                  {
+                    icon: <Shield className="w-7 h-7" />,
+                    title: "Verify Documents",
+                    description: "Complete secure verification process",
+                    time: "5 min",
+                    color: "purple",
+                    gradient: "from-purple-500 to-pink-500",
+                    bgGradient: "from-purple-50 to-pink-50"
+                  },
+                  {
+                    icon: <CheckCircle className="w-7 h-7" />,
+                    title: "Ready to Go",
+                    description: "Receive instant confirmation and keys",
+                    time: "Done!",
+                    color: "green",
+                    gradient: "from-green-500 to-teal-500",
+                    bgGradient: "from-green-50 to-teal-50"
+                  }
+                ].map((step, index) => (
+                  <div key={index} className="text-center group cursor-pointer">
+                    {/* Premium Step Circle */}
+                    <div className="relative mb-8 flex justify-center">
+                      <div className={`w-20 h-20 bg-gradient-to-br ${step.bgGradient} rounded-2xl flex items-center justify-center shadow-xl border-2 border-white/50 group-hover:border-white/80 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 backdrop-blur-sm`}>
+                        <div className={`text-${step.color}-600 group-hover:text-${step.color}-700 transition-all duration-300 group-hover:scale-110`}>
+                          {step.icon}
+                        </div>
+                      </div>
+                      
+                      {/* Premium Step Number */}
+                      <div className={`absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br ${step.gradient} text-white rounded-xl flex items-center justify-center text-sm font-black shadow-lg group-hover:scale-110 transition-all duration-300`}>
+                        {index + 1}
+                      </div>
+
+                      {/* Floating Animation Dots */}
+                      <div className="absolute -top-1 -left-1 w-3 h-3 bg-gradient-to-br from-white to-gray-100 rounded-full animate-bounce opacity-70" style={{ animationDelay: `${index * 0.2}s` }}></div>
+                    </div>
+
+                    {/* Enhanced Content */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
+                        style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {step.title}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed max-w-xs mx-auto"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      {step.description}
+                    </p>
+                    
+                    <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${step.gradient} text-white rounded-full text-xs font-bold shadow-md group-hover:shadow-lg transition-all duration-300`}>
+                      <Clock className="w-3 h-3 mr-1" />
+                      {step.time}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Enhanced Visual Elements */}
+          <div className="mb-24">
+            {/* Luxury Trust Badges */}
+            <div className="flex items-center justify-center gap-16 mb-16">
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900">ISO Certified</div>
+                  <div className="text-xs text-gray-500">Quality Assured</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900">Fully Insured</div>
+                  <div className="text-xs text-gray-500">Complete Protection</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center text-gray-600">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900">Premium Service</div>
+                  <div className="text-xs text-gray-500">5-Star Experience</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Enhanced Process Benefits */}
+            <div className="bg-gradient-to-br from-white via-gray-50/50 to-white rounded-3xl p-12 shadow-xl border border-gray-100/50 backdrop-blur-sm">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-light text-gray-900 mb-4"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Why Choose Our <span className="font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Premium Process</span>?
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Experience the difference of our streamlined, secure, and customer-focused approach
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Lightning Fast
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Complete your booking in under 10 minutes with our streamlined process
+                  </p>
                 </div>
 
-                <div className="p-8">
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-3xl font-bold text-gray-900">{car.name}</h3>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold text-gradient">{car.price}</div>
-                      <div className="text-sm text-gray-500 line-through">{car.originalPrice}</div>
-                    </div>
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Shield className="w-8 h-8 text-white" />
                   </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Ultra Secure
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Bank-level encryption and security for all your transactions
+                  </p>
+                </div>
 
-                  <ul className="space-y-3 mb-8">
-                    {car.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <CheckCircle className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" />
-                        <span className="font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Instant Confirmation
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"
+                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    Get immediate booking confirmation and digital keys
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  <button className={`w-full py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center ${
-                    car.popular
-                      ? 'bg-gradient-to-r from-emerald-500 to-blue-500 text-white hover:shadow-2xl transform hover:scale-105'
-                      : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-xl'
-                  }`}>
-                    <ArrowRight className="w-5 h-5 mr-2" />
-                    Book Now
+          {/* Premium Call to Action */}
+          <div className="text-center">
+            <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-16 relative overflow-hidden shadow-2xl">
+              {/* Enhanced Background Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-teal-500 via-emerald-500 to-blue-500 rounded-full blur-3xl animate-pulse"></div>
+              </div>
+              
+              <div className="relative">
+                <h3 className="text-4xl md:text-5xl font-light text-white mb-6 leading-tight"
+                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Ready to Start Your <span className="font-bold bg-gradient-to-r from-teal-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent">Premium Journey</span>?
+                </h3>
+                
+                <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                  Join thousands of satisfied customers who trust MOVA for their luxury transportation needs
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <button className="group relative overflow-hidden inline-flex items-center px-10 py-5 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-2xl font-bold text-lg hover:from-teal-400 hover:to-emerald-400 transition-all duration-300 shadow-2xl hover:shadow-teal-500/25 hover:scale-105"
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    <Car className="relative w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                    <span className="relative">Start Your Journey</span>
+                    <ArrowRight className="relative w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                  
+                  <button className="group inline-flex items-center px-10 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:border-white/40 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:scale-105"
+                          style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                    <span>24/7 Support</span>
                   </button>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 text-sm font-semibold mb-4">
-              Customer Reviews
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Don&apos;t just take our word for it - hear from our satisfied customers</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-hover bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mr-4" />
-                  <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                {/* Trust Indicators */}
+                <div className="flex items-center justify-center gap-12 mt-12 text-gray-400">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-teal-400 mr-2" />
+                    <span className="text-sm font-medium">Instant Booking</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Shield className="w-5 h-5 text-emerald-400 mr-2" />
+                    <span className="text-sm font-medium">Secure Payment</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Star className="w-5 h-5 text-blue-400 mr-2" />
+                    <span className="text-sm font-medium">Premium Service</span>
                   </div>
                 </div>
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 leading-relaxed italic">&ldquo;{testimonial.text}&rdquo;</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
-        <div className="relative max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">Ready to Hit the Road?</h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">Book your perfect car today and experience premium transportation with MovaTech&apos;s exceptional service</p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
-              <Car className="w-6 h-6 mr-3" />
-              Browse Fleet
-            </button>
-            <button className="border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center">
-              <Zap className="w-6 h-6 mr-3" />
-              Get Instant Quote
-            </button>
+            </div>
           </div>
         </div>
       </section>
@@ -551,13 +1112,15 @@ export default function MovaTechHomepage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <div className="text-3xl font-bold text-gradient flex items-center mb-6">
+              <div className="text-3xl font-bold text-gradient flex items-center mb-6"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mr-4 flex items-center justify-center">
                   <Car className="w-7 h-7 text-white" />
                 </div>
                 mova.
               </div>
-              <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+              <p className="text-gray-400 leading-relaxed mb-6 max-w-md font-light"
+                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>
                 Premium car rental services for every journey. Experience luxury, comfort, and reliability with MovaTech&apos;s exceptional fleet and customer service.
               </p>
               <div className="flex space-x-4">
@@ -577,35 +1140,51 @@ export default function MovaTechHomepage() {
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
+              <h4 className="text-xl font-bold mb-6 text-white tracking-tight"
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>Quick Links</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />Special Deals</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />Our Fleet</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />Locations</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />Careers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />Special Deals</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />Our Fleet</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />Locations</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />Careers</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-6 text-white">Support & Contact</h4>
+              <h4 className="text-xl font-bold mb-6 text-white tracking-tight"
+                  style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>Support & Contact</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><Phone className="w-4 h-4 mr-2" />+1 (555) 123-4567</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><Mail className="w-4 h-4 mr-2" />info@movatech.com</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><MapPin className="w-4 h-4 mr-2" />123 Main St, City, State</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />FAQs</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center"><ArrowRight className="w-4 h-4 mr-2" />Help Center</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><Phone className="w-4 h-4 mr-2" />+1 (555) 123-4567</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><Mail className="w-4 h-4 mr-2" />info@movatech.com</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><MapPin className="w-4 h-4 mr-2" />123 Main St, City, State</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />FAQs</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 flex items-center font-medium"
+                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}><ArrowRight className="w-4 h-4 mr-2" />Help Center</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">© 2025 MovaTech. All rights reserved. | Premium Car Rental Services</p>
+              <p className="text-gray-400 mb-4 md:mb-0 font-medium"
+                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>© 2025 MovaTech. All rights reserved. | Premium Car Rental Services</p>
               <div className="flex space-x-6">
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm">Cookie Policy</a>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm font-medium"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm font-medium"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>Terms of Service</a>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm font-medium"
+                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}>Cookie Policy</a>
               </div>
             </div>
           </div>

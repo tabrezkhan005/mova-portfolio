@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Car, Shield, Users, Star, ChevronLeft, ChevronRight, MapPin, Calendar, Clock, CheckCircle, Award, Zap, Phone, Mail, ArrowRight, Play, Sparkles } from 'lucide-react';
+import Cursor from './components/Cursor';
 
 export default function MovaTechHomepage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -158,6 +159,7 @@ export default function MovaTechHomepage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {<Cursor color="rgba(20, 184, 166, 0.3)" enableTrail={true} />}
       <style>{`
         @keyframes fadeInUp {
           from {

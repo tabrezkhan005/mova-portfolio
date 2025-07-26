@@ -13,18 +13,13 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   // State management for mobile menu toggle and scroll detection
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-  const [isPassedHero, setIsPassedHero] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll event for dynamic header styling
   useEffect(() => {
     const handleScroll = () => {
       // Glass effect starts at 50px for visual feedback
       setIsScrolled(window.scrollY > 50);
-
-      // Text color changes only after passing hero section (100vh)
-      const heroSectionHeight = window.innerHeight;
-      setIsPassedHero(window.scrollY > heroSectionHeight - 60);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -73,71 +68,39 @@ export default function Header() {
             <nav className="hidden md:flex items-center space-x-10">
               <Link
                 href="/about"
-                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600'
-                    : 'text-white hover:text-emerald-300'
-                }`}
+                className="font-medium text-lg tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 About Us
                 {/* Professional underline animation */}
-                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full ${
-                  isPassedHero
-                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600'
-                    : 'bg-gradient-to-r from-emerald-300 to-teal-300'
-                }`}></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full bg-gradient-to-r from-emerald-600 to-teal-600"></span>
               </Link>
               <Link
                 href="/fleet"
-                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600'
-                    : 'text-white hover:text-emerald-300'
-                }`}
+                className="font-medium text-lg tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Our Fleet
                 {/* Professional underline animation */}
-                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full ${
-                  isPassedHero
-                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600'
-                    : 'bg-gradient-to-r from-emerald-300 to-teal-300'
-                }`}></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full bg-gradient-to-r from-emerald-600 to-teal-600"></span>
               </Link>
               <Link
                 href="/drivensave"
-                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600'
-                    : 'text-white hover:text-emerald-300'
-                }`}
+                className="font-medium text-lg tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Drive & Save
                 {/* Professional underline animation */}
-                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full ${
-                  isPassedHero
-                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600'
-                    : 'bg-gradient-to-r from-emerald-300 to-teal-300'
-                }`}></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full bg-gradient-to-r from-emerald-600 to-teal-600"></span>
               </Link>
               <Link
                 href="/contact"
-                className={`font-medium text-lg tracking-wide transition-all duration-300 relative group ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600'
-                    : 'text-white hover:text-emerald-300'
-                }`}
+                className="font-medium text-lg tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
               >
                 Contact
                 {/* Professional underline animation */}
-                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full ${
-                  isPassedHero
-                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600'
-                    : 'bg-gradient-to-r from-emerald-300 to-teal-300'
-                }`}></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full bg-gradient-to-r from-emerald-600 to-teal-600"></span>
               </Link>
             </nav>
 
@@ -145,11 +108,7 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-4">
               {/* Login Button - Clean minimalist design matching logo */}
               <button
-                className={`px-6 py-2.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 relative group ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600 hover:bg-gray-50/50'
-                    : 'text-white hover:text-emerald-300 hover:bg-white/10'
-                } backdrop-blur-sm border border-transparent hover:border-emerald-400/30`}
+                className="px-6 py-2.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600 hover:bg-gray-50/50 backdrop-blur-sm border border-transparent hover:border-emerald-400/30"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
               >
                 Login
@@ -159,11 +118,7 @@ export default function Header() {
 
               {/* Signup Button - Premium design with logo's green accent */}
               <button
-                className={`px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 relative group overflow-hidden ${
-                  isPassedHero
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25'
-                    : 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-400 hover:to-teal-400 shadow-xl hover:shadow-emerald-400/30'
-                } hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40`}
+                className="px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 relative group overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
               >
                 {/* Shimmer effect matching logo's modern aesthetic */}
@@ -176,11 +131,7 @@ export default function Header() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`group p-3 rounded-xl focus:outline-none transition-all duration-300 ${
-                  isPassedHero
-                    ? 'text-gray-800 hover:text-emerald-600 hover:bg-gray-100/30 backdrop-blur-sm border border-gray-300/20 hover:border-gray-400/40 shadow-lg'
-                    : 'text-white hover:text-emerald-300 hover:bg-gray-800/20 backdrop-blur-sm border border-gray-400/30 hover:border-gray-300/50 shadow-lg'
-                }`}
+                className="group p-3 rounded-xl focus:outline-none transition-all duration-300 text-gray-800 hover:text-emerald-600 hover:bg-gray-100/30 backdrop-blur-sm border border-gray-300/20 hover:border-gray-400/40 shadow-lg"
                 aria-label="Toggle mobile menu"
               >
                 <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -205,11 +156,7 @@ export default function Header() {
                 {/* Mobile Navigation Links */}
                 <Link
                   href="/about"
-                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 ${
-                    isPassedHero
-                      ? 'text-gray-800 hover:text-emerald-600'
-                      : 'text-white hover:text-emerald-300'
-                  }`}
+                  className="block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 text-gray-800 hover:text-emerald-600"
                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -217,11 +164,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/fleet"
-                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 ${
-                    isPassedHero
-                      ? 'text-gray-800 hover:text-emerald-600'
-                      : 'text-white hover:text-emerald-300'
-                  }`}
+                  className="block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 text-gray-800 hover:text-emerald-600"
                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -229,11 +172,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/drivensave"
-                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 ${
-                    isPassedHero
-                      ? 'text-gray-800 hover:text-emerald-600'
-                      : 'text-white hover:text-emerald-300'
-                  }`}
+                  className="block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 text-gray-800 hover:text-emerald-600"
                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -241,11 +180,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/contact"
-                  className={`block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 ${
-                    isPassedHero
-                      ? 'text-gray-800 hover:text-emerald-600'
-                      : 'text-white hover:text-emerald-300'
-                  }`}
+                  className="block px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 hover:bg-gray-100/25 backdrop-blur-sm border border-transparent hover:border-gray-300/30 text-gray-800 hover:text-emerald-600"
                   style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.01em' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -256,11 +191,7 @@ export default function Header() {
                 <div className="flex flex-col space-y-4 pt-4 border-t border-gray-300/30">
                   {/* Mobile Login Button */}
                   <button
-                    className={`w-full px-6 py-3 rounded-xl font-medium text-base tracking-wide transition-all duration-300 relative group ${
-                      isPassedHero
-                        ? 'text-gray-800 hover:text-emerald-600 bg-white/10 hover:bg-gray-50/30'
-                        : 'text-white hover:text-emerald-300 bg-white/10 hover:bg-white/20'
-                    } backdrop-blur-sm border border-transparent hover:border-emerald-400/30`}
+                    className="w-full px-6 py-3 rounded-xl font-medium text-base tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600 bg-white/10 hover:bg-gray-50/30 backdrop-blur-sm border border-transparent hover:border-emerald-400/30"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -270,11 +201,7 @@ export default function Header() {
 
                   {/* Mobile Signup Button */}
                   <button
-                    className={`w-full px-6 py-3 rounded-xl font-semibold text-base tracking-wide transition-all duration-300 relative group overflow-hidden ${
-                      isPassedHero
-                        ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25'
-                        : 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-400 hover:to-teal-400 shadow-xl hover:shadow-emerald-400/30'
-                    } hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40`}
+                    className="w-full px-6 py-3 rounded-xl font-semibold text-base tracking-wide transition-all duration-300 relative group overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
                     onClick={() => setIsMenuOpen(false)}
                   >

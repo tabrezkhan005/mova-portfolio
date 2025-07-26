@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Radio_Canada_Big } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 /**
  * Radio Canada Big Font Configuration
@@ -46,6 +47,9 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+
+        {/* Footer Component - Added to display on all pages */}
+        <Footer />
 
         {/* Optional: Global background pattern for enhanced visual appeal */}
         <div className="fixed inset-0 -z-10 opacity-30">

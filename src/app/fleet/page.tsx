@@ -133,7 +133,7 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.1,
       duration: 0.6,
-      ease: cubicBezier(0.25, 0.1, 0.25, 1) // cubic-bezier representation of easeInOut
+      ease: cubicBezier(0.25, 0.1, 0.25, 1)
     }
   }
 };
@@ -274,7 +274,7 @@ export default function FleetPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Professional Header with smooth entrance */}
+      {/* Professional Header with green theme */}
       <motion.div 
         className="bg-white border-b border-gray-200"
         initial={{ opacity: 0, y: -20 }}
@@ -289,7 +289,7 @@ export default function FleetPage() {
             animate="visible"
           >
             <motion.div 
-              className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700 mb-6"
+              className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-6"
               variants={cardVariants}
             >
               <Car className="w-4 h-4 mr-2" />
@@ -326,13 +326,13 @@ export default function FleetPage() {
             {/* Enhanced Search Bar */}
             <div className="flex-1 max-w-md">
               <div className="relative group">
-                <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors group-focus-within:text-blue-500" />
+                <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors group-focus-within:text-emerald-500" />
                 <input
                   type="text"
                   placeholder="Search vehicles, models, or categories..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white hover:border-gray-400"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 bg-white hover:border-gray-400"
                 />
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function FleetPage() {
                 <select 
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none border border-gray-300 rounded-lg px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white hover:border-gray-400 transition-all duration-300"
+                  className="appearance-none border border-gray-300 rounded-lg px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white hover:border-gray-400 transition-all duration-300"
                 >
                   <option value="name">Sort by Name</option>
                   <option value="price-low">Price: Low to High</option>
@@ -374,7 +374,7 @@ export default function FleetPage() {
             </div>
           </div>
 
-          {/* Enhanced Category Filter */}
+          {/* Enhanced Category Filter with green theme */}
           <motion.div 
             className="mt-6"
             layout
@@ -386,8 +386,8 @@ export default function FleetPage() {
                   onClick={() => handleCategoryChange(category)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     activeCategory === category
-                      ? 'bg-gray-900 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:border-gray-400'
+                      ? 'bg-emerald-500 text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-300 hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700'
                   }`}
                   whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.98 }}
@@ -472,7 +472,7 @@ export default function FleetPage() {
           )}
         </AnimatePresence>
 
-        {/* Enhanced Fleet Grid/List */}
+        {/* Enhanced Fleet Grid/List with green theme */}
         <AnimatePresence mode="wait">
           {!isLoading && !isTransitioning && (
             <motion.div 
@@ -486,7 +486,7 @@ export default function FleetPage() {
               {filteredAndSortedFleet.map((car, idx) => (
                 <motion.div
                   key={`${car.id}-${viewMode}`}
-                  className={`group bg-white rounded-lg border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-500 overflow-hidden cursor-pointer ${
+                  className={`group bg-white rounded-lg border border-gray-200 hover:shadow-xl hover:border-emerald-200 transition-all duration-500 overflow-hidden cursor-pointer ${
                     viewMode === 'list' ? 'flex' : 'flex-col'
                   }`}
                   variants={cardVariants}
@@ -564,11 +564,11 @@ export default function FleetPage() {
                     </motion.div>
                   </div>
 
-                  {/* Enhanced Car Details */}
+                  {/* Enhanced Car Details with green theme */}
                   <div className="p-6 flex-1">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300">
                           {car.name}
                         </h3>
                         <p className="text-sm text-gray-600">{car.model}</p>
@@ -586,7 +586,7 @@ export default function FleetPage() {
                       {car.description}
                     </p>
 
-                    {/* Enhanced Specifications */}
+                    {/* Enhanced Specifications with green theme */}
                     <div className="grid grid-cols-3 gap-4 mb-4 text-sm">
                       {[
                         { icon: Users, label: `${car.seats} seats`, key: 'seats' },
@@ -595,42 +595,42 @@ export default function FleetPage() {
                       ].map(({ icon: Icon, label, key }) => (
                         <motion.div 
                           key={key}
-                          className="flex items-center gap-1 p-2 rounded-md bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300"
+                          className="flex items-center gap-1 p-2 rounded-md bg-gray-50 group-hover:bg-emerald-50 transition-colors duration-300"
                           whileHover={{ scale: 1.02 }}
                         >
-                          <Icon className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
-                          <span className="text-gray-600 group-hover:text-blue-600 transition-colors duration-300">
+                          <Icon className="w-4 h-4 text-gray-400 group-hover:text-emerald-500 transition-colors duration-300" />
+                          <span className="text-gray-600 group-hover:text-emerald-600 transition-colors duration-300">
                             {label}
                           </span>
                         </motion.div>
                       ))}
                     </div>
 
-                    {/* Enhanced Features */}
+                    {/* Enhanced Features with green theme */}
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-1">
                         {car.features.slice(0, 3).map((feature, i) => (
                           <motion.span 
                             key={i} 
-                            className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded transition-colors duration-300 group-hover:bg-blue-100 group-hover:text-blue-700"
+                            className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded transition-colors duration-300 group-hover:bg-emerald-100 group-hover:text-emerald-700"
                             whileHover={{ scale: 1.05 }}
                           >
                             {feature}
                           </motion.span>
                         ))}
                         {car.features.length > 3 && (
-                          <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded transition-colors duration-300 group-hover:bg-blue-100 group-hover:text-blue-700">
+                          <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded transition-colors duration-300 group-hover:bg-emerald-100 group-hover:text-emerald-700">
                             +{car.features.length - 3} more
                           </span>
                         )}
                       </div>
                     </div>
 
-                    {/* Enhanced Price and Actions */}
+                    {/* Enhanced Price and Actions with green theme */}
                     <div className="flex justify-between items-center">
                       <div>
                         <motion.span 
-                          className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300"
+                          className="text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300"
                           whileHover={{ scale: 1.02 }}
                         >
                           {car.price}
@@ -650,7 +650,7 @@ export default function FleetPage() {
                           Details
                         </motion.button>
                         <motion.button 
-                          className="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                          className="px-4 py-2 text-sm font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                           whileHover={{ scale: 1.02, y: -1 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={(e) => e.stopPropagation()}
@@ -666,7 +666,7 @@ export default function FleetPage() {
           )}
         </AnimatePresence>
 
-        {/* Enhanced No Results */}
+        {/* Enhanced No Results with green theme */}
         {!isLoading && !isTransitioning && filteredAndSortedFleet.length === 0 && (
           <motion.div 
             className="text-center py-16"
@@ -675,11 +675,11 @@ export default function FleetPage() {
             transition={{ duration: 0.6 }}
           >
             <motion.div 
-              className="w-16 h-16 bg-gray-100 rounded-full mx-auto flex items-center justify-center mb-4"
+              className="w-16 h-16 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-4"
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
             >
-              <Search className="w-8 h-8 text-gray-400" />
+              <Search className="w-8 h-8 text-emerald-400" />
             </motion.div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">No vehicles found</h3>
             <p className="text-gray-600 mb-6">Try adjusting your search criteria or filters</p>
@@ -689,7 +689,7 @@ export default function FleetPage() {
                 setSearchQuery(''); 
                 setSortBy('name');
               }}
-              className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="px-6 py-3 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -699,7 +699,7 @@ export default function FleetPage() {
         )}
       </div>
 
-      {/* Enhanced Modal */}
+      {/* Enhanced Modal with green theme */}
       <AnimatePresence>
         {selectedCar && (
           <motion.div 
@@ -767,21 +767,21 @@ export default function FleetPage() {
                     </div>
                   </motion.div>
 
-                  {/* Enhanced availability badge */}
+                  {/* Enhanced availability badge with green theme */}
                   <motion.div 
                     className="absolute bottom-4 left-4"
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
                   >
-                    <div className="flex items-center gap-2 bg-green-100/90 backdrop-blur-sm text-green-800 px-3 py-2 rounded-full shadow-lg">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="flex items-center gap-2 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 px-3 py-2 rounded-full shadow-lg">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                       <span className="text-sm font-medium">{selectedCar.availability}</span>
                     </div>
                   </motion.div>
                 </div>
                 
-                {/* Enhanced Details Section */}
+                {/* Enhanced Details Section with green theme */}
                 <div className="p-8 overflow-y-auto">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -817,7 +817,7 @@ export default function FleetPage() {
                       {selectedCar.description}
                     </motion.p>
                     
-                    {/* Enhanced Specifications Grid */}
+                    {/* Enhanced Specifications Grid with green theme */}
                     <motion.div 
                       className="grid grid-cols-2 gap-4 mb-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -832,14 +832,14 @@ export default function FleetPage() {
                       ].map((spec, index) => (
                         <motion.div 
                           key={spec.label}
-                          className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                          className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-emerald-50 transition-colors duration-300"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
                           whileHover={{ scale: 1.02 }}
                         >
                           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                            <spec.icon className="w-5 h-5 text-gray-600" />
+                            <spec.icon className="w-5 h-5 text-emerald-600" />
                           </div>
                           <div>
                             <p className="text-sm text-gray-500">{spec.label}</p>
@@ -849,7 +849,7 @@ export default function FleetPage() {
                       ))}
                     </motion.div>
                     
-                    {/* Enhanced Features */}
+                    {/* Enhanced Features with green theme */}
                     <motion.div 
                       className="mb-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -861,14 +861,14 @@ export default function FleetPage() {
                         {selectedCar.features.map((feature, index) => (
                           <motion.div 
                             key={index} 
-                            className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-300"
+                            className="flex items-center gap-2 p-2 rounded-lg hover:bg-emerald-50 transition-colors duration-300"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 1.1 + index * 0.05, duration: 0.3 }}
                             whileHover={{ scale: 1.02, x: 4 }}
                           >
-                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                              <Check className="w-3 h-3 text-green-600" />
+                            <div className="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center">
+                              <Check className="w-3 h-3 text-emerald-600" />
                             </div>
                             <span className="text-sm text-gray-700">{feature}</span>
                           </motion.div>
@@ -876,7 +876,7 @@ export default function FleetPage() {
                       </div>
                     </motion.div>
                     
-                    {/* Enhanced Pricing and Actions */}
+                    {/* Enhanced Pricing and Actions with green theme */}
                     <motion.div 
                       className="border-t border-gray-200 pt-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -898,8 +898,8 @@ export default function FleetPage() {
                           className="text-right"
                           whileHover={{ scale: 1.05 }}
                         >
-                          <div className="flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <div className="flex items-center gap-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                             {selectedCar.availability}
                           </div>
                         </motion.div>
@@ -907,7 +907,7 @@ export default function FleetPage() {
                       
                       <div className="space-y-3">
                         <motion.button 
-                          className="w-full bg-gray-900 text-white py-4 rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                          className="w-full bg-emerald-500 text-white py-4 rounded-lg font-medium hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                           whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                           initial={{ opacity: 0, y: 20 }}
@@ -917,7 +917,7 @@ export default function FleetPage() {
                           Book This Vehicle
                         </motion.button>
                         <motion.button 
-                          className="w-full border border-gray-300 text-gray-700 py-4 rounded-lg font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                          className="w-full border border-emerald-300 text-emerald-700 py-4 rounded-lg font-medium hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300"
                           whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                           initial={{ opacity: 0, y: 20 }}

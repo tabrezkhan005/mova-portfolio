@@ -807,33 +807,33 @@ export default function MovaTechHomepage() {
 
 
             {/* Ultra-Modern Journey Process Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full opacity-30">
-            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-teal-400/8 to-emerald-400/6 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-emerald-400/6 to-blue-400/4 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/4 to-purple-400/3 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-20">
+            <div className="absolute top-16 left-16 w-80 h-80 bg-gradient-to-br from-teal-400/6 to-emerald-400/4 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-16 right-16 w-72 h-72 bg-gradient-to-br from-emerald-400/4 to-blue-400/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-gradient-to-br from-blue-400/3 to-purple-400/2 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Ultra-Modern Header */}
-          <div className="text-center mb-28">
-            <div className="inline-flex items-center mb-8">
-              <div className="w-2 h-12 bg-gradient-to-b from-teal-500 via-emerald-500 to-blue-500 rounded-full mr-6 animate-pulse"></div>
-              <span className="text-gray-700 font-semibold text-base uppercase tracking-[0.2em] bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
+          <div className="text-center mb-0">
+            <div className="inline-flex items-center mb-6">
+              <div className="w-2 h-10 bg-gradient-to-b from-teal-500 via-emerald-500 to-blue-500 rounded-full mr-4 animate-pulse"></div>
+              <span className="text-gray-700 font-semibold text-sm uppercase tracking-[0.15em] bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                 How MOVA Works
               </span>
             </div>
             
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-gray-900 mb-8 leading-[0.9] tracking-tight"
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-6 leading-tight"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
               Your <span className="font-bold bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 bg-clip-text text-transparent">Premium</span> Journey
             </h2>
             
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light mb-8"
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light mb-6"
                style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
               Experience our revolutionary 5-step process designed for seamless luxury car rentals with unmatched convenience
             </p>
@@ -856,87 +856,174 @@ export default function MovaTechHomepage() {
             </div>
           </div>
 
-          {/* Revolutionary Process Flow */}
-          <div className="relative mb-28">
-            {/* Premium Timeline Container */}
-            <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] p-16 md:p-20 shadow-2xl border border-white/50 relative overflow-hidden">
+          {/* Professional Process Flow */}
+          <div className="relative mb-16" style={{ marginTop: '10px' }}>
+            {/* Modern Professional Container */}
+            <div className="bg-gradient-to-br from-white via-gray-50/50 to-slate-50/60 rounded-[2.5rem] p-4 md:p-6 pb-20 shadow-2xl border border-gray-200/60 relative overflow-hidden backdrop-blur-sm">
               
-              {/* Advanced Road Path with Animation */}
-              <div className="absolute top-1/2 left-12 right-12 h-2 transform -translate-y-1/2">
-                <div className="relative h-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-full overflow-hidden">
-                  <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-500 via-emerald-500 to-blue-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-pulse"></div>
+              {/* Refined Background Pattern */}
+              <div className="absolute inset-0 opacity-6">
+                <div className="absolute top-4 left-4 w-32 h-32 bg-gradient-to-br from-teal-400/8 to-emerald-400/6 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-4 right-4 w-40 h-40 bg-gradient-to-br from-blue-400/6 to-indigo-400/4 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-emerald-400/4 to-green-400/3 rounded-full blur-2xl"></div>
+              </div>
+              
+              {/* Professional Network Visualization */}
+              <div className="absolute inset-x-0 top-4 bottom-16 opacity-15">
+                <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
+                  {/* Main Process Flow Line */}
+                  <path d="M50 200 Q250 190 500 200 Q750 210 950 200" stroke="url(#process-gradient)" strokeWidth="8" fill="none" opacity="0.6"/>
+                  
+                  {/* Secondary Connection Lines */}
+                  <path d="M100 160 Q300 150 600 160 Q800 150 900 160" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
+                  <path d="M100 240 Q300 250 600 240 Q800 250 900 240" stroke="url(#secondary-flow)" strokeWidth="4" fill="none" strokeDasharray="20 10" opacity="0.4"/>
+                  
+                  {/* Process Nodes */}
+                  <circle cx="160" cy="200" r="6" fill="url(#node-gradient-1)" opacity="0.8"/>
+                  <circle cx="340" cy="200" r="6" fill="url(#node-gradient-2)" opacity="0.8"/>
+                  <circle cx="500" cy="200" r="6" fill="url(#node-gradient-3)" opacity="0.8"/>
+                  <circle cx="660" cy="200" r="6" fill="url(#node-gradient-4)" opacity="0.8"/>
+                  <circle cx="840" cy="200" r="6" fill="url(#node-gradient-5)" opacity="0.8"/>
+                  
+                  {/* Connection Points */}
+                  <rect x="155" y="197" width="6" height="6" fill="#10B981" opacity="0.6" rx="1"/>
+                  <rect x="335" y="197" width="6" height="6" fill="#3B82F6" opacity="0.6" rx="1"/>
+                  <rect x="495" y="197" width="6" height="6" fill="#8B5CF6" opacity="0.6" rx="1"/>
+                  <rect x="655" y="197" width="6" height="6" fill="#EF4444" opacity="0.6" rx="1"/>
+                  <rect x="835" y="197" width="6" height="6" fill="#F59E0B" opacity="0.6" rx="1"/>
+                  
+                  {/* Professional SVG Gradients */}
+                  <defs>
+                    <linearGradient id="process-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#14B8A6"/>
+                      <stop offset="25%" stopColor="#10B981"/>
+                      <stop offset="50%" stopColor="#3B82F6"/>
+                      <stop offset="75%" stopColor="#8B5CF6"/>
+                      <stop offset="100%" stopColor="#EF4444"/>
+                    </linearGradient>
+                    <linearGradient id="secondary-flow" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#9CA3AF"/>
+                      <stop offset="100%" stopColor="#D1D5DB"/>
+                    </linearGradient>
+                    <radialGradient id="node-gradient-1">
+                      <stop offset="0%" stopColor="#14B8A6"/>
+                      <stop offset="100%" stopColor="#0D9488"/>
+                    </radialGradient>
+                    <radialGradient id="node-gradient-2">
+                      <stop offset="0%" stopColor="#10B981"/>
+                      <stop offset="100%" stopColor="#059669"/>
+                    </radialGradient>
+                    <radialGradient id="node-gradient-3">
+                      <stop offset="0%" stopColor="#3B82F6"/>
+                      <stop offset="100%" stopColor="#2563EB"/>
+                    </radialGradient>
+                    <radialGradient id="node-gradient-4">
+                      <stop offset="0%" stopColor="#8B5CF6"/>
+                      <stop offset="100%" stopColor="#7C3AED"/>
+                    </radialGradient>
+                    <radialGradient id="node-gradient-5">
+                      <stop offset="0%" stopColor="#EF4444"/>
+                      <stop offset="100%" stopColor="#DC2626"/>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              
+              {/* Professional Progress Bar */}
+              <div className="absolute top-1/2 left-8 right-8 transform -translate-y-1/2">
+                <div className="relative h-8 bg-gradient-to-r from-gray-100 via-white to-gray-100 rounded-lg shadow-inner overflow-hidden border border-gray-200/50">
+                  
+                  {/* Progress Track */}
+                  <div className="absolute inset-1 bg-gradient-to-r from-gray-50 to-white rounded-md"></div>
+                  
+                  {/* Animated Progress Flow */}
+                  <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-400 via-emerald-400 via-blue-400 via-purple-400 to-red-400 transform -translate-y-1/2 rounded-full shadow-lg opacity-80">
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/30 animate-pulse"></div>
+                  </div>
+                  
+                  {/* Professional Step Indicators */}
+                  <div className="absolute top-1/2 left-[12.5%] w-2 h-2 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[30%] w-2 h-2 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[50%] w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[70%] w-2 h-2 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
+                  <div className="absolute top-1/2 left-[87.5%] w-2 h-2 bg-gradient-to-br from-red-500 to-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md border border-white"></div>
                 </div>
               </div>
               
-              {/* Enhanced Process Steps */}
-              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-10">
+              {/* Professional Process Steps */}
+              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-6 mt-12">
                 {[
                   {
-                    icon: <Car className="w-7 h-7" />,
+                    icon: <Car className="w-8 h-8" />,
                     title: "Choose Vehicle",
-                    description: "Browse our premium fleet of luxury vehicles",
+                    description: "Select from our premium fleet of luxury vehicles",
                     time: "2 min",
                     color: "teal",
                     gradient: "from-teal-500 to-emerald-500",
-                    bgGradient: "from-teal-50 to-emerald-50"
+                    bgGradient: "from-teal-50 to-emerald-50",
+                    shadowColor: "shadow-teal-500/20"
                   },
                   {
-                    icon: <MapPin className="w-7 h-7" />,
-                    title: "Select Location",
-                    description: "Pick convenient pickup and drop-off locations",
+                    icon: <MapPin className="w-8 h-8" />,
+                    title: "Select Route",
+                    description: "Choose pickup and drop-off locations",
                     time: "1 min",
                     color: "emerald",
                     gradient: "from-emerald-500 to-green-500",
-                    bgGradient: "from-emerald-50 to-green-50"
+                    bgGradient: "from-emerald-50 to-green-50",
+                    shadowColor: "shadow-emerald-500/20"
                   },
                   {
-                    icon: <Star className="w-7 h-7" />,
+                    icon: <Star className="w-8 h-8" />,
                     title: "Get Pricing",
-                    description: "Receive transparent, competitive instant quotes",
+                    description: "Transparent pricing with no hidden fees",
                     time: "30 sec",
                     color: "blue",
                     gradient: "from-blue-500 to-indigo-500",
-                    bgGradient: "from-blue-50 to-indigo-50"
+                    bgGradient: "from-blue-50 to-indigo-50",
+                    shadowColor: "shadow-blue-500/20"
                   },
                   {
-                    icon: <Shield className="w-7 h-7" />,
+                    icon: <Shield className="w-8 h-8" />,
                     title: "Verify Documents",
-                    description: "Complete secure verification process",
+                    description: "Quick and secure document verification",
                     time: "5 min",
                     color: "purple",
                     gradient: "from-purple-500 to-pink-500",
-                    bgGradient: "from-purple-50 to-pink-50"
+                    bgGradient: "from-purple-50 to-pink-50",
+                    shadowColor: "shadow-purple-500/20"
                   },
                   {
-                    icon: <CheckCircle className="w-7 h-7" />,
-                    title: "Ready to Go",
-                    description: "Receive instant confirmation and keys",
-                    time: "Done!",
+                    icon: <CheckCircle className="w-8 h-8" />,
+                    title: "Hit The Road",
+                    description: "Start your premium journey experience",
+                    time: "Ready!",
                     color: "green",
                     gradient: "from-green-500 to-teal-500",
-                    bgGradient: "from-green-50 to-teal-50"
+                    bgGradient: "from-green-50 to-teal-50",
+                    shadowColor: "shadow-green-500/20"
                   }
                 ].map((step, index) => (
-                  <div key={index} className="text-center group cursor-pointer">
-                    {/* Premium Step Circle */}
+                  <div key={index} className="text-center group cursor-pointer relative">
+                    
+                    {/* Professional Step Circle */}
                     <div className="relative mb-8 flex justify-center">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${step.bgGradient} rounded-2xl flex items-center justify-center shadow-xl border-2 border-white/50 group-hover:border-white/80 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 backdrop-blur-sm`}>
-                        <div className={`text-${step.color}-600 group-hover:text-${step.color}-700 transition-all duration-300 group-hover:scale-110`}>
+                      <div className={`w-24 h-24 bg-gradient-to-br ${step.bgGradient} rounded-[1.5rem] flex items-center justify-center shadow-xl ${step.shadowColor} border-3 border-white group-hover:border-gray-100 transition-all duration-500 group-hover:scale-110 backdrop-blur-lg relative overflow-hidden`}>
+                        
+                        {/* Subtle Professional Accent */}
+                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gray-200 via-white to-gray-200 opacity-80 rounded-t-2xl"></div>
+                        
+                        {/* Clean Background Pattern */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 group-hover:from-white/30 transition-all duration-500"></div>
+                        
+                        <div className={`text-${step.color}-600 group-hover:text-${step.color}-700 transition-all duration-300 group-hover:scale-110 relative z-10`}>
                           {step.icon}
                         </div>
                       </div>
-                      
-                      {/* Premium Step Number */}
-                      <div className={`absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br ${step.gradient} text-white rounded-xl flex items-center justify-center text-sm font-black shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                        {index + 1}
-                      </div>
-
-                      {/* Floating Animation Dots */}
-                      <div className="absolute -top-1 -left-1 w-3 h-3 bg-gradient-to-br from-white to-gray-100 rounded-full animate-bounce opacity-70" style={{ animationDelay: `${index * 0.2}s` }}></div>
                     </div>
 
-                    {/* Enhanced Content */}
+                    {/* Professional Content */}
+                    
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
                         style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                       {step.title}
@@ -947,9 +1034,9 @@ export default function MovaTechHomepage() {
                       {step.description}
                     </p>
                     
-                    <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${step.gradient} text-white rounded-full text-xs font-bold shadow-md group-hover:shadow-lg transition-all duration-300`}>
-                      <Clock className="w-3 h-3 mr-1" />
-                      {step.time}
+                    <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${step.gradient} text-white rounded-full text-xs font-semibold shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>{step.time}</span>
                     </div>
                   </div>
                 ))}
@@ -957,92 +1044,71 @@ export default function MovaTechHomepage() {
             </div>
           </div>
 
-          {/* Enhanced Visual Elements */}
-          <div className="mb-24">
-            {/* Luxury Trust Badges */}
-            <div className="flex items-center justify-center gap-16 mb-16">
-              <div className="flex items-center text-gray-600">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-gray-900">ISO Certified</div>
-                  <div className="text-xs text-gray-500">Quality Assured</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center text-gray-600">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-gray-900">Fully Insured</div>
-                  <div className="text-xs text-gray-500">Complete Protection</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center text-gray-600">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                  <Star className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-gray-900">Premium Service</div>
-                  <div className="text-xs text-gray-500">5-Star Experience</div>
-                </div>
-              </div>
-            </div>
+          <style>{`
+            @keyframes moveRight {
+              0% { left: -3rem; }
+              100% { left: calc(100% + 2rem); }
+            }
+            
+            @keyframes moveLeft {
+              0% { right: -3rem; }
+              100% { right: calc(100% + 2rem); }
+            }
+          `}</style>
 
+          {/* Enhanced Visual Elements */}
+          <div className="mb-16">
             {/* Enhanced Process Benefits */}
-            <div className="bg-gradient-to-br from-white via-gray-50/50 to-white rounded-3xl p-12 shadow-xl border border-gray-100/50 backdrop-blur-sm">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-light text-gray-900 mb-4"
+            <div className="bg-gradient-to-br from-white via-gray-50/50 to-white rounded-2xl p-8 shadow-xl border border-gray-100/50 backdrop-blur-sm">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-light text-gray-900 mb-3"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                   Why Choose Our <span className="font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Premium Process</span>?
                 </h3>
-                <p className="text-gray-600 max-w-2xl mx-auto"
+                <p className="text-gray-600 max-w-xl mx-auto text-sm"
                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                   Experience the difference of our streamlined, secure, and customer-focused approach
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
-                    <Zap className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                  <h4 className="text-lg font-bold text-gray-900 mb-2"
                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Lightning Fast
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed"
+                  <p className="text-gray-600 text-xs leading-relaxed"
                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Complete your booking in under 10 minutes with our streamlined process
                   </p>
                 </div>
 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
-                    <Shield className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-green-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                  <h4 className="text-lg font-bold text-gray-900 mb-2"
                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Ultra Secure
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed"
+                  <p className="text-gray-600 text-xs leading-relaxed"
                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Bank-level encryption and security for all your transactions
                   </p>
                 </div>
 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3"
+                  <h4 className="text-lg font-bold text-gray-900 mb-2"
                       style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Instant Confirmation
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed"
+                  <p className="text-gray-600 text-xs leading-relaxed"
                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     Get immediate booking confirmation and digital keys
                   </p>
@@ -1053,52 +1119,52 @@ export default function MovaTechHomepage() {
 
           {/* Premium Call to Action */}
           <div className="text-center">
-            <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-16 relative overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 rounded-2xl p-10 relative overflow-hidden shadow-2xl">
               {/* Enhanced Background Pattern */}
               <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-teal-500 via-emerald-500 to-blue-500 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-teal-500 via-emerald-500 to-blue-500 rounded-full blur-3xl animate-pulse"></div>
               </div>
               
               <div className="relative">
-                <h3 className="text-4xl md:text-5xl font-light text-white mb-6 leading-tight"
+                <h3 className="text-3xl md:text-4xl font-light text-white mb-4 leading-tight"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                   Ready to Start Your <span className="font-bold bg-gradient-to-r from-teal-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent">Premium Journey</span>?
                 </h3>
                 
-                <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+                <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed"
                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                   Join thousands of satisfied customers who trust MOVA for their luxury transportation needs
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="group relative overflow-hidden inline-flex items-center px-10 py-5 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-2xl font-bold text-lg hover:from-teal-400 hover:to-emerald-400 transition-all duration-300 shadow-2xl hover:shadow-teal-500/25 hover:scale-105"
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="group relative overflow-hidden inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-xl font-bold text-base hover:from-teal-400 hover:to-emerald-400 transition-all duration-300 shadow-2xl hover:shadow-teal-500/25 hover:scale-105"
                           style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                    <Car className="relative w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                    <Car className="relative w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                     <span className="relative">Start Your Journey</span>
-                    <ArrowRight className="relative w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="relative w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                   
-                  <button className="group inline-flex items-center px-10 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:border-white/40 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:scale-105"
+                  <button className="group inline-flex items-center px-8 py-4 border-2 border-white/20 text-white rounded-xl font-bold text-base hover:border-white/40 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:scale-105"
                           style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                    <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                    <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                     <span>24/7 Support</span>
                   </button>
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="flex items-center justify-center gap-12 mt-12 text-gray-400">
+                <div className="flex items-center justify-center gap-8 mt-6 text-gray-400">
                   <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-teal-400 mr-2" />
-                    <span className="text-sm font-medium">Instant Booking</span>
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-1" />
+                    <span className="text-xs font-medium">Instant Booking</span>
                   </div>
                   <div className="flex items-center">
-                    <Shield className="w-5 h-5 text-emerald-400 mr-2" />
-                    <span className="text-sm font-medium">Secure Payment</span>
+                    <Shield className="w-4 h-4 text-emerald-400 mr-1" />
+                    <span className="text-xs font-medium">Secure Payment</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="w-5 h-5 text-blue-400 mr-2" />
-                    <span className="text-sm font-medium">Premium Service</span>
+                    <Star className="w-4 h-4 text-blue-400 mr-1" />
+                    <span className="text-xs font-medium">Premium Service</span>
                   </div>
                 </div>
               </div>

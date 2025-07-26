@@ -8,33 +8,9 @@ import {
   ArrowRight, Play, Sparkles, ArrowUpRight, Disc
 } from 'lucide-react';
 import Cursor from './components/Cursor';
+import HeroSection from './components/HeroSection';
 
 export default function MovaTechHomepage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const heroRef = useRef(null);
-
-  const heroSlides = [
-    {
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
-      title: "Luxury Redefined",
-      subtitle: "Premium fleet for discerning travelers",
-      cta: "Explore Fleet"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
-      title: "Drive Excellence",
-      subtitle: "Elevate your journey with precision engineering",
-      cta: "Reserve Now"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626668893632-6f3a4466d109?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
-      title: "Executive Class",
-      subtitle: "Business travel reimagined for modern professionals",
-      cta: "View Collection"
-    }
-  ];
-
   const features = [
     {
       icon: <Shield className="w-8 h-8" />,
@@ -116,34 +92,6 @@ export default function MovaTechHomepage() {
       icon: <Star className="w-6 h-6" />,
     }
   ];
-
-  const nextSlide = () => {
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    setTimeout(() => setIsTransitioning(false), 700);
-  };
-
-  const prevSlide = () => {
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-    setTimeout(() => setIsTransitioning(false), 700);
-  };
-
-  const goToSlide = (index: number) => {
-    setIsTransitioning(true);
-    setCurrentSlide(index);
-    setTimeout(() => setIsTransitioning(false), 700);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 8000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
@@ -243,183 +191,9 @@ export default function MovaTechHomepage() {
         }
       `}</style>
 
-      {/* Hero Section with Modern Design */}
-      <section ref={heroRef} className="relative h-screen overflow-hidden bg-gray-900">
-        {/* Gradient Overlays for better text readability and visual depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10"></div>
-        
-        {/* Hero Slides */}
-        {heroSlides.map((slide, index) => (
-          <div
-            key={`slide-${index}`}
-            className={`absolute inset-0 transition-all duration-1000 ${
-              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-            }`}
-          >
-            <div
-              className="h-full w-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            ></div>
-          </div>
-        ))}
-        
-        {/* Circular Brand Element */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-emerald-500/10 rounded-full opacity-50 rotate-slow"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-emerald-500/5 rounded-full opacity-30 rotate-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }}></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-        
-        {/* Hero Content */}
-        <div className="relative z-20 h-full flex flex-col justify-center items-center text-white pt-16"> {/* Added pt-16 to compensate for header space */}
-          <div className="container mx-auto px-6 text-center">
-            {/* Branded Badge */}
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
-              <span className="text-xs uppercase tracking-widest font-medium text-emerald-100">Premium Mobility</span>
-            </div>
-            
-            {/* Main Headline - Animated */}
-            <h1 className="relative text-5xl md:text-7xl lg:text-8xl font-bold mb-6 heading-font tracking-tight text-shadow">
-              <span className="absolute -left-2 -top-2 text-stroke opacity-30 blur-sm">
-                {heroSlides[currentSlide].title}
-              </span>
-              <span className="relative">
-                {heroSlides[currentSlide].title}
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-12">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-            
-            {/* Modern Search Container */}
-            <div className="max-w-4xl mx-auto mb-12 relative">
-              <div className="flex flex-col md:flex-row p-2 rounded-2xl glassmorphism">
-                {/* Location Selector */}
-                <div className="flex-1 p-3 md:border-r border-white/10">
-                  <label className="block text-xs text-white/70 mb-2 font-medium">Pickup Location</label>
-                  <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-400 w-4 h-4" />
-                    <select className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
-                      <option>Bangalore International Airport</option>
-                      <option>Hyderabad Downtown</option>
-                      <option>Delhi Central</option>
-                      <option>Mumbai Luxury Hub</option>
-                    </select>
-                    <ChevronRight className="absolute right-3 top-1/2 transform -translate-y-1/2 rotate-90 text-white/50 w-4 h-4" />
-                  </div>
-                </div>
-                
-                {/* Date Picker */}
-                <div className="flex-1 p-3 md:border-r border-white/10">
-                  <label className="block text-xs text-white/70 mb-2 font-medium">Pickup Date</label>
-                  <div className="relative">
-                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-400 w-4 h-4" />
-                    <input 
-                      type="date" 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
-                    />
-                  </div>
-                </div>
-                
-                {/* Return Date */}
-                <div className="flex-1 p-3">
-                  <label className="block text-xs text-white/70 mb-2 font-medium">Return Date</label>
-                  <div className="relative">
-                    <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-400 w-4 h-4" />
-                    <input 
-                      type="date" 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
-                    />
-                  </div>
-                </div>
-                
-                {/* Search Button */}
-                <div className="p-3 flex items-end">
-                  <button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl px-5 py-3 font-medium transition-all duration-300 whitespace-nowrap flex items-center">
-                    Search
-                    <ArrowUpRight className="ml-2 w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              
-              {/* Microinteraction Tags */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 text-xs text-white/60">
-                <div className="flex items-center">
-                  <CheckCircle className="w-3 h-3 mr-1 text-emerald-400" />
-                  <span>Instant Confirmation</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-3 h-3 mr-1 text-emerald-400" />
-                  <span>Free Cancellation</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-3 h-3 mr-1 text-emerald-400" />
-                  <span>Best Price Guarantee</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-5 mb-12">
-              <button className="group relative overflow-hidden bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-8 py-4 font-medium transition-all duration-300 flex items-center">
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <Car className="mr-2 w-5 h-5 group-hover:animate-bounce" />
-                <span className="relative">{heroSlides[currentSlide].cta}</span>
-              </button>
-              
-              <button className="group bg-transparent hover:bg-white/10 border border-white/30 text-white rounded-full px-8 py-4 font-medium transition-all duration-300 flex items-center">
-                <Play className="mr-2 w-5 h-5" />
-                <span>Watch Video</span>
-              </button>
-            </div>
-            
-            {/* Enhanced Slide Indicators */}
-            <div className="flex justify-center items-center space-x-3">
-              {heroSlides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentSlide
-                      ? 'w-10 h-2 bg-emerald-500'
-                      : 'w-2 h-2 bg-white/30 hover:bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-          
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center scroll-indicator">
-            <span className="text-white/50 text-xs mb-2">Scroll Down</span>
-            <ChevronRight className="text-white/50 transform rotate-90 w-5 h-5" />
-          </div>
-        </div>
-        
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          disabled={isTransitioning}
-          className="absolute left-5 top-1/2 transform -translate-y-1/2 z-20 text-white w-12 h-12 rounded-full bg-black/20 backdrop-blur-md hover:bg-black/40 flex items-center justify-center transition-all duration-300 border border-white/10"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        
-        <button
-          onClick={nextSlide}
-          disabled={isTransitioning}
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 z-20 text-white w-12 h-12 rounded-full bg-black/20 backdrop-blur-md hover:bg-black/40 flex items-center justify-center transition-all duration-300 border border-white/10"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      </section>
-
+      {/* Use the imported HeroSection component */}
+      <HeroSection />
+      
       {/* Features Section with Modern Design */}
       <section className="py-32 relative overflow-hidden bg-white" id="features">
         {/* Modern Background Elements */}

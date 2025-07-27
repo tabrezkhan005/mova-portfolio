@@ -1,13 +1,9 @@
 import type { Metadata } from 'next';
 import { Radio_Canada_Big } from 'next/font/google';
 import './globals.css';
-<<<<<<< HEAD
 import Header from '@/components/Header';
-import { Footer } from '@/components/footer-section';
-=======
-import Header from './components/Header';
-import Footer from './components/Footer';
->>>>>>> 0896d7be311cf4d36e83b08c2e7723c96deaf5ec
+import Footer from '@/components/Footer';
+import AuthWrapper from '@/components/AuthWrapper';
 
 /**
  * Radio Canada Big Font Configuration
@@ -45,25 +41,23 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${radioCanadaBig.variable} antialiased min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50`}>
-        {/* Professional Glass Header Component */}
-        <Header />
+        <AuthWrapper>
+          {/* Professional Glass Header Component */}
+          <Header />
 
-        {/* Main Content Area with proper spacing for fixed header */}
-        <main>
-          {children}
-        </main>
+          {/* Main Content Area with proper spacing for fixed header */}
+          <main>
+            {children}
+          </main>
 
-<<<<<<< HEAD
-        {/* MOVA Footer Component */}
-=======
-        {/* Footer Component - Added to display on all pages */}
->>>>>>> 0896d7be311cf4d36e83b08c2e7723c96deaf5ec
-        <Footer />
+          {/* MOVA Footer Component */}
+          <Footer />
 
-        {/* Optional: Global background pattern for enhanced visual appeal */}
-        <div className="fixed inset-0 -z-10 opacity-30">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        </div>
+          {/* Optional: Global background pattern for enhanced visual appeal */}
+          <div className="fixed inset-0 -z-10 opacity-30">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          </div>
+        </AuthWrapper>
       </body>
     </html>
   );

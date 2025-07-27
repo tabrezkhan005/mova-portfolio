@@ -107,24 +107,26 @@ export default function Header() {
             {/* MOVA Logo-Inspired Login/Signup Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               {/* Login Button - Clean minimalist design matching logo */}
-              <button
+              <Link
+                href="/auth"
                 className="px-6 py-2.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600 hover:bg-gray-50/50 backdrop-blur-sm border border-transparent hover:border-emerald-400/30"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
               >
                 Login
                 {/* Subtle underline effect matching logo aesthetic */}
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
-              </button>
+              </Link>
 
               {/* Signup Button - Premium design with logo's green accent */}
-              <button
+              <Link
+                href="/auth"
                 className="px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 relative group overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40"
                 style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
               >
                 {/* Shimmer effect matching logo's modern aesthetic */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600"></div>
                 <span className="relative">Sign Up</span>
-              </button>
+              </Link>
             </div>
 
             {/* Professional Mobile Menu Button */}
@@ -190,24 +192,26 @@ export default function Header() {
                 {/* Mobile MOVA Logo-Inspired Login/Signup Buttons */}
                 <div className="flex flex-col space-y-4 pt-4 border-t border-gray-300/30">
                   {/* Mobile Login Button */}
-                  <button
+                  <Link
+                    href="/auth"
                     className="w-full px-6 py-3 rounded-xl font-medium text-base tracking-wide transition-all duration-300 relative group text-gray-800 hover:text-emerald-600 bg-white/10 hover:bg-gray-50/30 backdrop-blur-sm border border-transparent hover:border-emerald-400/30"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Login
                     <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-300 group-hover:w-1/2"></span>
-                  </button>
+                  </Link>
 
                   {/* Mobile Signup Button */}
-                  <button
+                  <Link
+                    href="/auth"
                     className="w-full px-6 py-3 rounded-xl font-semibold text-base tracking-wide transition-all duration-300 relative group overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 hover:scale-105 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-300/40"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.02em' }}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600"></div>
                     <span className="relative">Sign Up</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

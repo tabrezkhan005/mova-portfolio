@@ -1,12 +1,12 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
-import { 
-  X, Users, Fuel, Settings, Star, MapPin, Calendar, 
+import {
+  X, Users, Fuel, Settings, Star, MapPin, Calendar,
   Search, ChevronRight, ChevronDown, Check, Shield,
   Filter, ArrowRight, Car, Zap, Grid, List, Clock
 } from 'lucide-react';
 import { motion, AnimatePresence, useSpring, useMotionValue, cubicBezier } from 'framer-motion';
-import Cursor from '../components/Cursor';
+import Cursor from '../../components/Cursor';
 
 // Car interface
 interface Car {
@@ -140,13 +140,13 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 20,
     scale: 0.95
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     scale: 1,
     transition: {
@@ -154,8 +154,8 @@ const cardVariants = {
       ease: cubicBezier(0.25, 0.46, 0.45, 0.94)
     }
   },
-  exit: { 
-    opacity: 0, 
+  exit: {
+    opacity: 0,
     y: -20,
     scale: 0.95,
     transition: {
@@ -223,11 +223,11 @@ export default function FleetPage() {
   // Optimized filtering and sorting with useMemo
   const filteredAndSortedFleet = useMemo(() => {
     let filtered = fleetData
-      .filter(car => 
+      .filter(car =>
         activeCategory === 'All' || car.category === activeCategory
       )
       .filter(car =>
-        searchQuery === '' || 
+        searchQuery === '' ||
         car.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         car.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
         car.model.toLowerCase().includes(searchQuery.toLowerCase())
@@ -277,9 +277,9 @@ export default function FleetPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Add Cursor component here */}
       <Cursor color="rgba(16, 185, 129, 0.25)" enableTrail={true} />
-      
+
       {/* Professional Header with green theme - INCREASED SPACING */}
-      <motion.div 
+      <motion.div
         className="bg-white border-b border-gray-200"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -287,7 +287,7 @@ export default function FleetPage() {
       >
         {/* Increased top padding from py-16 to py-24 for more vertical space */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center"
             variants={containerVariants}
             initial="hidden"
@@ -295,28 +295,28 @@ export default function FleetPage() {
           >
             {/* Added a spacer div for additional top margin */}
             <div className="h-12"></div>
-            
+
             {/* Increased margin-bottom from mb-16 to mb-24 */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-24"
               variants={cardVariants}
             >
               <Car className="w-4 h-4 mr-2" />
               Premium Fleet Management
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
               variants={cardVariants}
             >
               Our Fleet Collection
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
               variants={cardVariants}
             >
-              Discover our comprehensive range of premium vehicles, each meticulously maintained 
+              Discover our comprehensive range of premium vehicles, each meticulously maintained
               and equipped with modern amenities for your comfort and safety.
             </motion.p>
           </motion.div>
@@ -324,7 +324,7 @@ export default function FleetPage() {
       </motion.div>
 
       {/* Enhanced Search and Filter Section */}
-      <motion.div 
+      <motion.div
         className="bg-white border-b border-gray-200"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -349,7 +349,7 @@ export default function FleetPage() {
             <div className="flex items-center gap-4">
               {/* Sort Dropdown */}
               <div className="relative">
-                <select 
+                <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                   className="appearance-none border border-gray-300 rounded-lg px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white hover:border-gray-400 transition-all duration-300"
@@ -369,8 +369,8 @@ export default function FleetPage() {
                     key={mode}
                     onClick={() => handleViewModeChange(mode as 'grid' | 'list')}
                     className={`p-2 rounded-md transition-all duration-300 ${
-                      viewMode === mode 
-                        ? 'bg-white shadow-sm text-gray-900' 
+                      viewMode === mode
+                        ? 'bg-white shadow-sm text-gray-900'
                         : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                     }`}
                     whileHover={{ scale: 1.05 }}
@@ -384,7 +384,7 @@ export default function FleetPage() {
           </div>
 
           {/* Enhanced Category Filter with green theme */}
-          <motion.div 
+          <motion.div
             className="mt-6"
             layout
           >
@@ -413,12 +413,12 @@ export default function FleetPage() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Results Header with smooth updates */}
-        <motion.div 
+        <motion.div
           className="flex justify-between items-center mb-8"
           layout
         >
           <div>
-            <motion.h2 
+            <motion.h2
               className="text-2xl font-semibold text-gray-900"
               key={filteredAndSortedFleet.length}
               initial={{ opacity: 0 }}
@@ -427,7 +427,7 @@ export default function FleetPage() {
             >
               {filteredAndSortedFleet.length} vehicles available
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-gray-600 mt-1"
               layout
             >
@@ -436,8 +436,8 @@ export default function FleetPage() {
               {sortBy !== 'name' && ` • Sorted by ${sortBy.replace('-', ' ')}`}
             </motion.p>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex items-center gap-2 text-sm text-gray-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -451,7 +451,7 @@ export default function FleetPage() {
         {/* Enhanced Loading State */}
         <AnimatePresence mode="wait">
           {isLoading && (
-            <motion.div 
+            <motion.div
               key="loading"
               className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}
               variants={containerVariants}
@@ -460,8 +460,8 @@ export default function FleetPage() {
               exit="hidden"
             >
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   className={`bg-white rounded-lg border border-gray-200 overflow-hidden ${
                     viewMode === 'grid' ? 'h-96' : 'h-32'
                   }`}
@@ -484,7 +484,7 @@ export default function FleetPage() {
         {/* Enhanced Fleet Grid/List with green theme */}
         <AnimatePresence mode="wait">
           {!isLoading && !isTransitioning && (
-            <motion.div 
+            <motion.div
               key={`${viewMode}-${activeCategory}-${searchQuery}-${sortBy}`}
               className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}
               variants={containerVariants}
@@ -500,7 +500,7 @@ export default function FleetPage() {
                   }`}
                   variants={cardVariants}
                   layout
-                  whileHover={{ 
+                  whileHover={{
                     y: -4,
                     transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
                   }}
@@ -514,12 +514,12 @@ export default function FleetPage() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                     />
-                    
+
                     {/* Enhanced overlay with gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
+
                     {/* Status Badge */}
-                    <motion.div 
+                    <motion.div
                       className="absolute top-3 right-3"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -531,7 +531,7 @@ export default function FleetPage() {
                     </motion.div>
 
                     {/* Category Badge */}
-                    <motion.div 
+                    <motion.div
                       className="absolute top-3 left-3"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -544,7 +544,7 @@ export default function FleetPage() {
 
                     {/* Premium Badge for Luxury */}
                     {car.category === 'Luxury' && (
-                      <motion.div 
+                      <motion.div
                         className="absolute bottom-3 left-3"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -558,7 +558,7 @@ export default function FleetPage() {
                     )}
 
                     {/* Hover overlay button */}
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100"
                       initial={false}
                       transition={{ duration: 0.3 }}
@@ -582,7 +582,7 @@ export default function FleetPage() {
                         </h3>
                         <p className="text-sm text-gray-600">{car.model}</p>
                       </div>
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-1"
                         whileHover={{ scale: 1.05 }}
                       >
@@ -602,7 +602,7 @@ export default function FleetPage() {
                         { icon: Fuel, label: car.fuel, key: 'fuel' },
                         { icon: Settings, label: car.transmission, key: 'transmission' }
                       ].map(({ icon: Icon, label, key }) => (
-                        <motion.div 
+                        <motion.div
                           key={key}
                           className="flex items-center gap-1 p-2 rounded-md bg-gray-50 group-hover:bg-emerald-50 transition-colors duration-300"
                           whileHover={{ scale: 1.02 }}
@@ -619,8 +619,8 @@ export default function FleetPage() {
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-1">
                         {car.features.slice(0, 3).map((feature, i) => (
-                          <motion.span 
-                            key={i} 
+                          <motion.span
+                            key={i}
                             className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded transition-colors duration-300 group-hover:bg-emerald-100 group-hover:text-emerald-700"
                             whileHover={{ scale: 1.05 }}
                           >
@@ -638,7 +638,7 @@ export default function FleetPage() {
                     {/* Enhanced Price and Actions with green theme */}
                     <div className="flex justify-between items-center">
                       <div>
-                        <motion.span 
+                        <motion.span
                           className="text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300"
                           whileHover={{ scale: 1.02 }}
                         >
@@ -658,7 +658,7 @@ export default function FleetPage() {
                         >
                           Details
                         </motion.button>
-                        <motion.button 
+                        <motion.button
                           className="px-4 py-2 text-sm font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                           whileHover={{ scale: 1.02, y: -1 }}
                           whileTap={{ scale: 0.98 }}
@@ -677,13 +677,13 @@ export default function FleetPage() {
 
         {/* Enhanced No Results with green theme */}
         {!isLoading && !isTransitioning && filteredAndSortedFleet.length === 0 && (
-          <motion.div 
+          <motion.div
             className="text-center py-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div 
+            <motion.div
               className="w-16 h-16 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-4"
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -692,10 +692,10 @@ export default function FleetPage() {
             </motion.div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">No vehicles found</h3>
             <p className="text-gray-600 mb-6">Try adjusting your search criteria or filters</p>
-            <motion.button 
-              onClick={() => { 
-                setActiveCategory('All'); 
-                setSearchQuery(''); 
+            <motion.button
+              onClick={() => {
+                setActiveCategory('All');
+                setSearchQuery('');
                 setSortBy('name');
               }}
               className="px-6 py-3 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -711,7 +711,7 @@ export default function FleetPage() {
       {/* Enhanced Modal with green theme */}
       <AnimatePresence>
         {selectedCar && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -719,7 +719,7 @@ export default function FleetPage() {
             transition={{ duration: 0.3 }}
             onClick={closeModal}
           >
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
               variants={modalVariants}
               initial="hidden"
@@ -736,7 +736,7 @@ export default function FleetPage() {
               >
                 <X className="w-5 h-5 text-gray-600" />
               </motion.button>
-              
+
               <div className="grid md:grid-cols-2 h-full">
                 {/* Enhanced Image Section */}
                 <div className="relative overflow-hidden">
@@ -748,12 +748,12 @@ export default function FleetPage() {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                   />
-                  
+
                   {/* Enhanced overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  
+
                   {/* Enhanced badges with animations */}
-                  <motion.div 
+                  <motion.div
                     className="absolute top-4 left-4"
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -763,8 +763,8 @@ export default function FleetPage() {
                       {selectedCar.category}
                     </span>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="absolute top-4 right-16"
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -777,7 +777,7 @@ export default function FleetPage() {
                   </motion.div>
 
                   {/* Enhanced availability badge with green theme */}
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-4 left-4"
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -789,7 +789,7 @@ export default function FleetPage() {
                     </div>
                   </motion.div>
                 </div>
-                
+
                 {/* Enhanced Details Section with green theme */}
                 <div className="p-8 overflow-y-auto">
                   <motion.div
@@ -799,7 +799,7 @@ export default function FleetPage() {
                   >
                     {/* Header */}
                     <div className="mb-6">
-                      <motion.h2 
+                      <motion.h2
                         className="text-3xl font-bold text-gray-900 mb-2"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -807,7 +807,7 @@ export default function FleetPage() {
                       >
                         {selectedCar.name}
                       </motion.h2>
-                      <motion.p 
+                      <motion.p
                         className="text-lg text-gray-600"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -816,8 +816,8 @@ export default function FleetPage() {
                         {selectedCar.model}
                       </motion.p>
                     </div>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-gray-600 mb-6 leading-relaxed"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -825,9 +825,9 @@ export default function FleetPage() {
                     >
                       {selectedCar.description}
                     </motion.p>
-                    
+
                     {/* Enhanced Specifications Grid with green theme */}
-                    <motion.div 
+                    <motion.div
                       className="grid grid-cols-2 gap-4 mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -839,7 +839,7 @@ export default function FleetPage() {
                         { icon: Settings, label: 'Transmission', value: selectedCar.transmission },
                         { icon: Shield, label: 'Insurance', value: 'Comprehensive' }
                       ].map((spec, index) => (
-                        <motion.div 
+                        <motion.div
                           key={spec.label}
                           className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-emerald-50 transition-colors duration-300"
                           initial={{ opacity: 0, x: -20 }}
@@ -857,9 +857,9 @@ export default function FleetPage() {
                         </motion.div>
                       ))}
                     </motion.div>
-                    
+
                     {/* Enhanced Features with green theme */}
-                    <motion.div 
+                    <motion.div
                       className="mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -868,8 +868,8 @@ export default function FleetPage() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">Features & Amenities</h3>
                       <div className="grid grid-cols-2 gap-2">
                         {selectedCar.features.map((feature, index) => (
-                          <motion.div 
-                            key={index} 
+                          <motion.div
+                            key={index}
                             className="flex items-center gap-2 p-2 rounded-lg hover:bg-emerald-50 transition-colors duration-300"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -884,9 +884,9 @@ export default function FleetPage() {
                         ))}
                       </div>
                     </motion.div>
-                    
+
                     {/* Enhanced Pricing and Actions with green theme */}
-                    <motion.div 
+                    <motion.div
                       className="border-t border-gray-200 pt-6"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -894,7 +894,7 @@ export default function FleetPage() {
                     >
                       <div className="flex justify-between items-center mb-6">
                         <div>
-                          <motion.span 
+                          <motion.span
                             className="text-3xl font-bold text-gray-900"
                             whileHover={{ scale: 1.05 }}
                           >
@@ -913,9 +913,9 @@ export default function FleetPage() {
                           </div>
                         </motion.div>
                       </div>
-                      
+
                       <div className="space-y-3">
-                        <motion.button 
+                        <motion.button
                           className="w-full bg-emerald-500 text-white py-4 rounded-lg font-medium hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                           whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
@@ -925,7 +925,7 @@ export default function FleetPage() {
                         >
                           Book This Vehicle
                         </motion.button>
-                        <motion.button 
+                        <motion.button
                           className="w-full border border-emerald-300 text-emerald-700 py-4 rounded-lg font-medium hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300"
                           whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
@@ -936,8 +936,8 @@ export default function FleetPage() {
                           Request Quote
                         </motion.button>
                       </div>
-                      
-                      <motion.p 
+
+                      <motion.p
                         className="text-sm text-gray-500 mt-4 text-center"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

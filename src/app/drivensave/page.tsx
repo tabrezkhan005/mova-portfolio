@@ -3,14 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { 
-  Tag, ChevronRight, Clock, Calendar, Car, 
+import {
+  Tag, ChevronRight, Clock, Calendar, Car,
   Shield, CreditCard, Zap, Sparkles, CheckCircle,
   ArrowRight, Gift, Percent, Users, ThumbsUp,
   BadgeDollarSign, Star, Search, FilterX, MapPin
 } from 'lucide-react';
 import Link from 'next/link';
-import Cursor from '../components/Cursor';
+import Cursor from '../../components/Cursor';
 
 /**
  * Drive & Save Page for Mova Car Rental
@@ -42,18 +42,18 @@ export default function DriveSavePage() {
   useEffect(() => {
     // Add smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
-    
+
     // Handle anchor links with smooth scroll
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as Element).closest('a[href^="#"]');
       if (!target) return;
-      
+
       e.preventDefault();
       const href = target.getAttribute('href');
       if (href) {
         const id = href.slice(1);
         const element = document.getElementById(id);
-        
+
         if (element) {
           element.scrollIntoView({
             behavior: 'smooth',
@@ -62,9 +62,9 @@ export default function DriveSavePage() {
         }
       }
     };
-    
+
     document.addEventListener('click', handleAnchorClick);
-    
+
     return () => {
       document.documentElement.style.scrollBehavior = '';
       document.removeEventListener('click', handleAnchorClick);
@@ -240,39 +240,39 @@ export default function DriveSavePage() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Add cursor component here */}
       <Cursor color="rgba(16, 185, 129, 0.25)" enableTrail={true} />
-      
+
       {/* Global styles */}
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
         }
-        
+
         @media screen and (max-width: 768px) {
           .container-fluid {
             padding-left: 1rem;
             padding-right: 1rem;
           }
         }
-        
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
           width: 8px;
           height: 8px;
         }
-        
+
         ::-webkit-scrollbar-track {
           background: #f1f1f1;
         }
-        
+
         ::-webkit-scrollbar-thumb {
           background: #10b981;
           border-radius: 4px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
           background: #0d9488;
         }
-        
+
         /* Prevent horizontal overflow */
         body {
           overflow-x: hidden;
@@ -286,16 +286,16 @@ export default function DriveSavePage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100 rounded-full opacity-30 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
         <div className="absolute top-1/3 left-1/4 w-20 h-20 border-2 border-dashed border-emerald-200 rounded-full opacity-30 animate-[spin_60s_linear_infinite]"></div>
         <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-emerald-100/50 rounded-full animate-pulse"></div>
-        
+
         <div className="container-fluid max-w-6xl mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* Badge */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 mb-6 text-sm font-medium"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -304,21 +304,21 @@ export default function DriveSavePage() {
               <Tag className="w-4 h-4 mr-2" />
               <span>Exclusive Savings</span>
             </motion.div>
-            
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
               Drive &{' '}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Save
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
               Discover exclusive deals and special offers designed to maximize your savings while experiencing premium mobility with MOVA.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
-              <motion.a 
-                href="#featured-deals" 
+              <motion.a
+                href="#featured-deals"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-medium shadow-lg shadow-emerald-200 hover:shadow-xl hover:translate-y-[-2px] transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -326,9 +326,9 @@ export default function DriveSavePage() {
                 View Current Deals
                 <ChevronRight className="w-5 h-5" />
               </motion.a>
-              
-              <motion.a 
-                href="#loyalty" 
+
+              <motion.a
+                href="#loyalty"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-gray-200 text-gray-800 hover:border-emerald-300 hover:bg-emerald-50 rounded-lg font-medium hover:shadow-md transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -336,7 +336,7 @@ export default function DriveSavePage() {
                 Loyalty Program
               </motion.a>
             </div>
-            
+
             {/* Stats */}
             <div className="mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
               <div className="text-center">
@@ -360,7 +360,7 @@ export default function DriveSavePage() {
       <section id="featured-deals" className="py-16 md:py-20 bg-white relative">
         <div className="container-fluid max-w-6xl mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +369,7 @@ export default function DriveSavePage() {
             >
               Featured <span className="text-emerald-600">Deals</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-lg text-gray-600 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -380,7 +380,7 @@ export default function DriveSavePage() {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -388,7 +388,7 @@ export default function DriveSavePage() {
             viewport={{ once: true }}
           >
             {featuredDeals.map((deal) => (
-              <motion.div 
+              <motion.div
                 key={deal.id}
                 variants={itemVariants}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-5px] group"
@@ -410,12 +410,12 @@ export default function DriveSavePage() {
                     <h3 className="text-xl font-semibold">{deal.title}</h3>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <p className="text-gray-600 mb-4">
                     {deal.description}
                   </p>
-                  
+
                   <div className="flex justify-between items-center text-sm text-gray-500 mb-6">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 mr-1" />
@@ -426,7 +426,7 @@ export default function DriveSavePage() {
                       <span>{deal.code}</span>
                     </div>
                   </div>
-                  
+
                   <button className="w-full py-3 px-4 bg-emerald-600 text-white rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-emerald-700 transition-colors">
                     <span>Book With This Deal</span>
                     <ArrowRight className="w-4 h-4" />
@@ -435,9 +435,9 @@ export default function DriveSavePage() {
               </motion.div>
             ))}
           </motion.div>
-          
+
           {/* CTA Banner */}
-          <motion.div 
+          <motion.div
             className="mt-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-6 md:p-8 text-white relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +446,7 @@ export default function DriveSavePage() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-x-1/2 translate-y-1/2"></div>
-            
+
             <div className="grid md:grid-cols-5 gap-6 items-center relative z-10">
               <div className="md:col-span-3">
                 <h3 className="text-2xl font-bold mb-2">Limited Time: 20% Off First Booking</h3>
@@ -466,9 +466,9 @@ export default function DriveSavePage() {
       <section id="loyalty" className="py-16 md:py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50 relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full opacity-30 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100 rounded-full opacity-30 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-        
+
         <div className="container-fluid max-w-6xl mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -485,11 +485,11 @@ export default function DriveSavePage() {
               <ThumbsUp className="w-4 h-4 mr-2" />
               <span>Loyalty Rewards</span>
             </motion.div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               MOVA Loyalty Program
             </h2>
-            
+
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Join our loyalty program to earn points with every rental and unlock premium benefits
             </p>
@@ -497,7 +497,7 @@ export default function DriveSavePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {loyaltyTiers.map((tier, index) => (
-              <motion.div 
+              <motion.div
                 key={tier.tier}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
@@ -513,7 +513,7 @@ export default function DriveSavePage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h4 className="font-semibold text-gray-900 mb-4">Benefits:</h4>
                   <ul className="space-y-3">
@@ -528,8 +528,8 @@ export default function DriveSavePage() {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 md:mt-16 bg-white shadow-lg rounded-xl p-6 md:p-8 relative overflow-hidden border border-emerald-100"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -606,7 +606,7 @@ export default function DriveSavePage() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="mt-10 text-center">
               <button className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow">
                 Join the Loyalty Program Today
@@ -620,7 +620,7 @@ export default function DriveSavePage() {
       {/* Special Offers Grid */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container-fluid max-w-6xl mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -637,7 +637,7 @@ export default function DriveSavePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {specialOffers.map((offer, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className={`${offer.color} rounded-xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-5px]`}
                 initial={{ opacity: 0, y: 20 }}
@@ -648,10 +648,10 @@ export default function DriveSavePage() {
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm mb-6 text-emerald-600">
                   {offer.icon}
                 </div>
-                
+
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{offer.title}</h3>
                 <p className="text-gray-600">{offer.description}</p>
-                
+
                 <div className="mt-6">
                   <a href="#" className="flex items-center text-emerald-600 font-medium text-sm hover:text-emerald-700">
                     <span>Learn more</span>
@@ -667,7 +667,7 @@ export default function DriveSavePage() {
       {/* FAQs Section */}
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="container-fluid max-w-4xl mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -684,7 +684,7 @@ export default function DriveSavePage() {
 
           <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="bg-white rounded-lg shadow-sm overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
@@ -692,17 +692,17 @@ export default function DriveSavePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <button 
+                <button
                   className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
                   onClick={() => toggleFAQ(index)}
                 >
                   <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
-                  <ChevronRight 
+                  <ChevronRight
                     className={`w-5 h-5 text-emerald-600 transform transition-transform duration-300 ${openFAQ === index ? 'rotate-90' : ''}`}
                   />
                 </button>
-                
-                <motion.div 
+
+                <motion.div
                   className="overflow-hidden"
                   initial={false}
                   animate={{ height: openFAQ === index ? 'auto' : 0 }}
@@ -721,7 +721,7 @@ export default function DriveSavePage() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container-fluid max-w-6xl mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl overflow-hidden shadow-xl relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -730,7 +730,7 @@ export default function DriveSavePage() {
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-10 rounded-full -translate-x-1/3 translate-y-1/3"></div>
-            
+
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 p-6 sm:p-8 md:p-12 items-center relative z-10">
               <div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
@@ -740,14 +740,14 @@ export default function DriveSavePage() {
                   Browse our premium vehicle selection and apply these special offers to your booking for instant savings on your next journey.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link 
-                    href="/fleet" 
+                  <Link
+                    href="/fleet"
                     className="px-6 py-3 bg-white text-emerald-600 hover:bg-emerald-50 rounded-lg font-medium hover:shadow-lg transition-all hover:translate-y-[-2px]"
                   >
                     Browse Vehicles
                   </Link>
-                  <Link 
-                    href="#featured-deals" 
+                  <Link
+                    href="#featured-deals"
                     className="px-6 py-3 bg-emerald-700 text-white hover:bg-emerald-800 rounded-lg font-medium transition-colors"
                   >
                     View All Deals
@@ -826,7 +826,7 @@ export default function DriveSavePage() {
       {/* Newsletter */}
       <section className="py-12 md:py-16 bg-emerald-50">
         <div className="container-fluid max-w-4xl mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="max-w-3xl mx-auto text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -858,4 +858,3 @@ export default function DriveSavePage() {
     </div>
   );
 }
-

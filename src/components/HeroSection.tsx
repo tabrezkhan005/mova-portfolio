@@ -3,9 +3,8 @@
 import * as React from "react"
 import { useState } from "react"
 import { format } from "date-fns"
-import Image from "next/image"
-import { 
-  CalendarIcon, Car, MapPin, Users, Settings, 
+import {
+  CalendarIcon, Car, MapPin, Users,
   ChevronRight, CheckCircle, Shield, TrendingUp, Clock
 } from "lucide-react"
 import { motion } from "framer-motion"
@@ -26,14 +25,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => {
     const baseStyles = "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-300 shadow-sm"
-    
+
     const variants = {
       default: "bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg hover:shadow-emerald-200/50",
       outline: "border border-gray-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/50 text-gray-800",
       ghost: "hover:bg-gray-100 text-gray-700 hover:text-emerald-700 shadow-none",
       secondary: "bg-gray-100 text-gray-800 hover:bg-gray-200"
     }
-    
+
     const sizes = {
       default: "h-10 px-5 py-2",
       sm: "h-9 rounded-lg px-3 text-xs",
@@ -53,9 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 // Enhanced Input Component
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, type, ...props }, ref) => {
     return (
       <input
@@ -96,9 +93,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 Select.displayName = "Select"
 
 // Enhanced Card Component
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-const Card = React.forwardRef<HTMLDivElement, CardProps>(
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
@@ -112,7 +107,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 )
 Card.displayName = "Card"
 
-const CardContent = React.forwardRef<HTMLDivElement, CardProps>(
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div ref={ref} className={cn_util("p-6", className)} {...props} />
   )
@@ -127,11 +122,11 @@ interface DatePickerProps {
   className?: string
 }
 
-const DatePicker = ({ 
-  date, 
-  onDateChange, 
+const DatePicker = ({
+  date,
+  onDateChange,
   placeholder = "Pick a date",
-  className 
+  className
 }: DatePickerProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(date)
@@ -156,7 +151,7 @@ const DatePicker = ({
         <CalendarIcon className="mr-2 h-4 w-4 text-emerald-500" />
         {selectedDate ? format(selectedDate, "PPP") : <span>{placeholder}</span>}
       </Button>
-      
+
       {isOpen && (
         <div className="absolute top-full left-0 z-50 mt-2 w-auto rounded-lg border border-gray-100 bg-white p-3 shadow-xl">
           <div className="grid grid-cols-7 gap-1">
@@ -225,20 +220,20 @@ const HeroSection = () => {
       {/* Updated typography - keeping heading font but using system fonts for body */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-        
+
         .heading-font {
           font-family: 'Playfair Display', serif;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
           font-family: 'Playfair Display', serif;
         }
-        
+
         body, p, span, div, button, input, select {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         }
       `}</style>
-      
+
       {/* Hero Section */}
       <div className="relative px-6 py-24 overflow-hidden">
         {/* Background decoration elements */}
@@ -288,7 +283,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-lg"
               >
-                Explore India's scenic beauty with our premium fleet of vehicles. 
+                Explore India&apos;s scenic beauty with our premium fleet of vehicles.
                 From city commutes to highway adventures, find your perfect companion.
               </motion.p>
 
@@ -482,7 +477,7 @@ const HeroSection = () => {
                         className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
-                      
+
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
                         <span className="text-sm font-semibold text-emerald-700">{car.price}</span>
@@ -492,7 +487,7 @@ const HeroSection = () => {
                         <span className="text-sm font-medium">Available Now</span>
                       </div>
                     </div>
-                    
+
                     <CardContent className="p-6">
                       <div className="flex justify-between items-start mb-3">
                         <div>
@@ -500,8 +495,8 @@ const HeroSection = () => {
                           <p className="text-sm text-gray-600">{car.type}</p>
                         </div>
                         <div className="flex items-center bg-emerald-50 px-2 py-1 rounded-md">
-                          <svg 
-                            className="w-4 h-4 text-yellow-400 fill-current" 
+                          <svg
+                            className="w-4 h-4 text-yellow-400 fill-current"
                             viewBox="0 0 20 20"
                           >
                             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
@@ -519,8 +514,8 @@ const HeroSection = () => {
                           </span>
                         ))}
                       </div>
-                      <Button 
-                        className="w-full mt-2 group flex items-center justify-center" 
+                      <Button
+                        className="w-full mt-2 group flex items-center justify-center"
                         variant="outline"
                       >
                         <span>View Details</span>
@@ -531,12 +526,12 @@ const HeroSection = () => {
                 </motion.div>
               ))}
             </div>
-            
+
             {/* View all vehicles button */}
             <div className="flex justify-center mt-12">
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="group"
               >
                 View All Vehicles

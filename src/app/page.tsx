@@ -8,8 +8,8 @@ import {
   ArrowRight, Play, Sparkles, ArrowUpRight, Disc, BadgePlus,
   UserPlus, HeartHandshake, Compass
 } from 'lucide-react';
-import Cursor from './components/Cursor';
-import HeroSection from './components/HeroSection';
+import Cursor from '../components/Cursor';
+import HeroSection from '../components/HeroSection';
 
 export default function MovaTechHomepage() {
   // Enhanced features with better organization and more distinctive descriptions
@@ -492,7 +492,7 @@ export default function MovaTechHomepage() {
                       <div className="h-1 w-24 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mb-6"></div>
 
                       <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                        Join thousands of satisfied customers who have transformed their travel experience with MOVA's premium service and exceptional fleet.
+                        Join thousands of satisfied customers who have transformed their travel experience with MOVA&apos;s premium service and exceptional fleet.
                       </p>
 
                       {/* Enhanced CTA Buttons */}
@@ -516,7 +516,7 @@ export default function MovaTechHomepage() {
                             <Star key={star} className="w-4 h-4 fill-current text-yellow-400" />
                           ))}
                         </div>
-                        <p className="text-gray-600 italic mb-4">"MOVA transformed our business travel experience with their exceptional service and premium fleet. A game-changer for our executive team."</p>
+                        <p className="text-gray-600 italic mb-4">&quot;MOVA transformed our business travel experience with their exceptional service and premium fleet. A game-changer for our executive team.&quot;</p>
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-300"></div>
                           <div className="ml-3">

@@ -2,16 +2,21 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
- * Professional Footer Component for Mova Car Rental Website
- * Features: Glassmorphism design, comprehensive links, social media, newsletter signup
- * Layout: Logo & description | Quick Links | Services | Contact Info | Newsletter
+ * Enhanced Premium Footer Component for Mova Car Rental
+ * Features modern design elements matching the MOVA brand identity
  */
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,195 +28,366 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* Glassmorphism Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-800/90 to-gray-700/85"></div>
-      <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-br from-emerald-900/10 via-transparent to-teal-900/10"></div>
+    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-850 to-gray-900 text-white">
+      {/* Premium Geometric Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05)_0%,transparent_50%)]"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-500"></div>
+      <div className="absolute top-1/4 right-0 w-64 h-64 rounded-full bg-emerald-500/5 blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 rounded-full bg-teal-500/5 blur-3xl"></div>
       
-      {/* Main Footer Content */}
-      <div className="relative z-10">
-        {/* Top Border with Gradient */}
-        <div className="h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="footer-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#footer-grid)" />
+        </svg>
+      </div>
+      
+      <div className="relative z-10 pt-16 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
             
             {/* Company Info Section */}
-            <div className="lg:col-span-2">
-              <div className="mb-6">
-                <Link href="/" className="flex items-center group">
-                  <Image
-                    src="/logo/mova.png"
-                    alt="Mova Car Rental Logo"
-                    width={160}
-                    height={52}
-                    className="h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-xl filter brightness-110 contrast-110 group-hover:brightness-125 group-hover:contrast-125"
-                    style={{
-                      filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))'
-                    }}
-                  />
+            <div className="lg:col-span-4">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-8"
+              >
+                <Link href="/" className="inline-block">
+                  <div className="relative group">
+                    <Image
+                      src="/logo/mova.png"
+                      alt="MOVA Car Rental"
+                      width={180}
+                      height={60}
+                      className="transition-all duration-300 group-hover:scale-105"
+                      style={{
+                        filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
+                      }}
+                    />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </Link>
-              </div>
-              <p className="text-gray-300 text-base leading-relaxed mb-6 max-w-md" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                Experience premium car rental services with Mova. We provide reliable, comfortable, and affordable vehicles for all your transportation needs.
-              </p>
+              </motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-300 mb-8 max-w-md leading-relaxed"
+              >
+                Premium mobility solutions for modern travelers. Experience exceptional service, pristine vehicles, and innovative technology with every rental.
+              </motion.p>
               
               {/* Social Media Links */}
-              <div className="flex space-x-4">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex space-x-3"
+              >
                 {[
-                  { name: 'Facebook', icon: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
-                  { name: 'Twitter', icon: 'M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z' },
-                  { name: 'Instagram', icon: 'M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM12 16.624c-2.563 0-4.637-2.074-4.637-4.637S9.437 7.35 12 7.35s4.637 2.074 4.637 4.637S14.563 16.624 12 16.624zm4.875-8.362c-.6 0-1.087-.487-1.087-1.087s.487-1.087 1.087-1.087 1.087.487 1.087 1.087-.487 1.087-1.087 1.087z' },
-                  { name: 'LinkedIn', icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' }
-                ].map((social) => (
-                  <a
+                  { name: 'Facebook', icon: 'M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z' },
+                  { name: 'Twitter', icon: 'M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' },
+                  { name: 'Instagram', icon: 'M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z' },
+                  { name: 'LinkedIn', icon: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' }
+                ].map((social, index) => (
+                  <motion.a
                     key={social.name}
                     href="#"
-                    className="group p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-emerald-400/30 hover:scale-110"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                    className="group flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-700 hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                     aria-label={social.name}
                   >
-                    <svg className="h-5 w-5 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <span className="sr-only">{social.name}</span>
+                    <svg 
+                      className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors duration-300" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24" 
+                      aria-hidden="true"
+                    >
                       <path d={social.icon} />
                     </svg>
-                  </a>
+                    <div className="absolute opacity-0 group-hover:opacity-100 inset-0 rounded-full bg-gradient-to-r from-emerald-500/20 via-transparent to-teal-500/20 blur-md transition-opacity duration-300"></div>
+                  </motion.a>
                 ))}
-              </div>
+              </motion.div>
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-semibold text-lg mb-6 relative" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+            <div className="lg:col-span-2">
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-white font-medium text-lg mb-5 relative inline-block"
+              >
                 Quick Links
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-              </h3>
-              <ul className="space-y-4">
-                {['About Us', 'Our Fleet', 'Drive & Save', 'Contact', 'Terms of Service', 'Privacy Policy'].map((link) => (
-                  <li key={link}>
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
+              </motion.h3>
+              
+              <motion.ul 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-3"
+              >
+                {['About Us', 'Our Fleet', 'Drive & Save', 'Contact', 'Terms', 'Privacy'].map((link, index) => (
+                  <motion.li 
+                    key={link}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+                  >
                     <Link
                       href={`/${link.toLowerCase().replace(/\s+/g, '').replace('&', '')}`}
-                      className="text-gray-300 hover:text-emerald-400 transition-all duration-300 relative group text-sm"
-                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
+                      className="text-gray-300 hover:text-emerald-400 transition-all duration-200 flex items-center group"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50 group-hover:bg-emerald-400 mr-2 transition-all duration-200"></span>
                       {link}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
 
             {/* Services */}
-            <div>
-              <h3 className="text-white font-semibold text-lg mb-6 relative" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+            <div className="lg:col-span-2">
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-white font-medium text-lg mb-5 relative inline-block"
+              >
                 Services
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-              </h3>
-              <ul className="space-y-4">
-                {['Daily Rentals', 'Weekly Rentals', 'Monthly Rentals', 'Airport Pickup', 'Corporate Fleet', 'Luxury Vehicles'].map((service) => (
-                  <li key={service}>
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
+              </motion.h3>
+              
+              <motion.ul 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-3"
+              >
+                {['Daily Rentals', 'Weekly Rentals', 'Monthly Rentals', 'Airport Pickup', 'Corporate Fleet', 'Luxury Vehicles'].map((service, index) => (
+                  <motion.li 
+                    key={service}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+                  >
                     <Link
                       href="#"
-                      className="text-gray-300 hover:text-emerald-400 transition-all duration-300 relative group text-sm"
-                      style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
+                      className="text-gray-300 hover:text-emerald-400 transition-all duration-200 flex items-center group"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50 group-hover:bg-emerald-400 mr-2 transition-all duration-200"></span>
                       {service}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
 
-            {/* Newsletter & Contact */}
-            <div>
-              <h3 className="text-white font-semibold text-lg mb-6 relative" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                Stay Updated
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-              </h3>
+            {/* Contact Info */}
+            <div className="lg:col-span-2">
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-white font-medium text-lg mb-5 relative inline-block"
+              >
+                Contact
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
+              </motion.h3>
               
-              {/* Newsletter Signup */}
-              <form onSubmit={handleNewsletterSubmit} className="mb-6">
-                <div className="flex flex-col space-y-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email address"
-                    className="px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent backdrop-blur-sm transition-all duration-300 text-sm"
-                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/25 text-sm relative overflow-hidden group"
-                    style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600"></div>
-                    <span className="relative">
-                      {isSubscribed ? 'Subscribed!' : 'Subscribe'}
-                    </span>
-                  </button>
-                </div>
-              </form>
-
-              {/* Contact Info */}
-              <div className="space-y-4 text-sm">
-                <div className="flex items-start space-x-3">
-                  <svg className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-4"
+              >
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex items-start"
+                >
+                  <div className="flex-shrink-0 p-1.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg mr-3">
+                    <svg className="h-4 w-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  </div>
                   <div>
-                    <p className="text-gray-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                    <p className="text-gray-300">
                       123 Rental Street<br />
                       City, State 12345
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div className="flex items-center space-x-3">
-                  <svg className="h-5 w-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <a href="tel:+1234567890" className="text-gray-300 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  className="flex items-center"
+                >
+                  <div className="flex-shrink-0 p-1.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg mr-3">
+                    <svg className="h-4 w-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                  </div>
+                  <a href="tel:+1234567890" className="text-gray-300 hover:text-emerald-400 transition-colors duration-200">
                     +1 (234) 567-8900
                   </a>
-                </div>
+                </motion.div>
                 
-                <div className="flex items-center space-x-3">
-                  <svg className="h-5 w-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <a href="mailto:info@mova.com" className="text-gray-300 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                  className="flex items-center"
+                >
+                  <div className="flex-shrink-0 p-1.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg mr-3">
+                    <svg className="h-4 w-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </div>
+                  <a href="mailto:info@mova.com" className="text-gray-300 hover:text-emerald-400 transition-colors duration-200">
                     info@mova.com
                   </a>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Newsletter & Subscribe */}
+            <div className="lg:col-span-2">
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-white font-medium text-lg mb-5 relative inline-block"
+              >
+                Newsletter
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
+              </motion.h3>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <p className="text-gray-300 mb-4">
+                  Subscribe for exclusive offers and updates
+                </p>
+                
+                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                  <div className="relative">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your email"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 pr-10"
+                      required
+                    />
+                    <AnimatePresence>
+                      {isSubscribed && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-emerald-400"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    className="w-full px-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium rounded-lg transition-all duration-300 relative overflow-hidden group"
+                  >
+                    <div className="absolute inset-0 w-full bg-[linear-gradient(110deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+                    <span className="relative">
+                      {isSubscribed ? 'Subscribed!' : 'Subscribe'}
+                    </span>
+                  </button>
+                </form>
+              </motion.div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 bg-black/20 backdrop-blur-sm">
+        {/* Bottom Bar with Dynamic Year */}
+        <div className="mt-16 border-t border-gray-800 bg-black/30 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-gray-400 text-sm text-center md:text-left" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                © 2025 Mova Car Rental. All rights reserved.
-              </p>
-              <div className="flex flex-wrap justify-center md:justify-end items-center space-x-6 text-xs">
-                <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  Terms
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center"
+              >
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mr-3 shadow-lg shadow-emerald-700/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                  </svg>
+                </div>
+                <p className="text-gray-400 text-sm">
+                  © {year} MOVA Car Rental. All rights reserved.
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs"
+              >
+                <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200">
+                  Terms of Service
                 </Link>
-                <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  Privacy
+                <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200">
+                  Privacy Policy
                 </Link>
-                <Link href="/cookies" className="text-gray-400 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
-                  Cookies
+                <Link href="/cookies" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200">
+                  Cookie Policy
                 </Link>
-                <Link href="/sitemap" className="text-gray-400 hover:text-emerald-400 transition-colors duration-300" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                <Link href="/sitemap" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200">
                   Sitemap
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

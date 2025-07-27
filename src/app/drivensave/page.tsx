@@ -238,6 +238,9 @@ export default function DriveSavePage() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* Add cursor component here */}
+      <Cursor color="rgba(16, 185, 129, 0.25)" enableTrail={true} />
+      
       {/* Global styles */}
       <style jsx global>{`
         html {

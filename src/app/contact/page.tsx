@@ -127,6 +127,13 @@ export default function ContactPage() {
     }
   ]);
 
+  // Toggle FAQ item
+  const toggleFAQ = (index: number) => {
+    const newFAQs = [...faqItems];
+    newFAQs[index].isOpen = !newFAQs[index].isOpen;
+    setFaqItems(newFAQs);
+  };
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -518,20 +525,12 @@ export default function ContactPage() {
           {/* Circular accents */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-          
-          {/* Decorative elements */}
-          <motion.div 
-            className="absolute top-1/4 left-10 w-20 h-20 border-2 border-dashed border-emerald-200 rounded-full opacity-30"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          />
-          <div className="absolute bottom-1/4 right-10 w-12 h-12 bg-emerald-100/50 rounded-full animate-pulse"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto">
             <motion.div 
-              className="text-center mb-16"
+              className="text-center mb-12"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -558,19 +557,19 @@ export default function ContactPage() {
               </motion.p>
             </motion.div>
 
-            <div className="grid md:grid-cols-5 gap-8 items-start">
+            <div className="grid md:grid-cols-5 gap-6 items-start">
               {/* Contact Form */}
               <motion.div 
-                className="md:col-span-3 glass-light rounded-2xl p-8 border border-emerald-100 shadow-lg card-border-light"
+                className="md:col-span-3 glass-light rounded-2xl p-6 border border-emerald-100 shadow-lg card-border-light"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Your Name
                       </label>
                       <div className="relative">
@@ -591,7 +590,7 @@ export default function ContactPage() {
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                         Email Address
                       </label>
                       <div className="relative">
@@ -612,9 +611,9 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                         Phone Number
                       </label>
                       <div className="relative">
@@ -634,7 +633,7 @@ export default function ContactPage() {
                     </div>
                     
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                         Subject
                       </label>
                       <div className="relative">
@@ -664,7 +663,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Your Message
                     </label>
                     <textarea
@@ -672,7 +671,7 @@ export default function ContactPage() {
                       name="message"
                       value={formValues.message}
                       onChange={handleChange}
-                      rows={6}
+                      rows={5}
                       className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors"
                       placeholder="How can we help you today?"
                       required
@@ -750,96 +749,98 @@ export default function ContactPage() {
                 </form>
               </motion.div>
 
-              {/* Quick Contact Links & Social */}
+              {/* Quick Contact Links & Social - Optimized Layout */}
               <motion.div 
-                className="md:col-span-2 space-y-8"
+                className="md:col-span-2 h-full"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                {/* Quick Contact */}
-                <div className="glass-light rounded-2xl p-8 border border-emerald-100 shadow-lg card-border-light">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Contact</h3>
-                  
-                  <div className="space-y-4">
-                    <a href="tel:+918012345678" className="flex items-center group">
-                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                        <Phone className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">Call Us</p>
-                        <p className="text-sm text-gray-600">+91 80 1234 5678</p>
-                      </div>
-                    </a>
+                <div className="h-full flex flex-col gap-4">
+                  {/* Quick Contact */}
+                  <div className="glass-light rounded-xl p-5 border border-emerald-100 shadow-lg card-border-light flex-grow">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Contact</h3>
                     
-                    <a href="mailto:contact@mova.com" className="flex items-center group">
-                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                        <Mail className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">Email Us</p>
-                        <p className="text-sm text-gray-600">contact@mova.com</p>
-                      </div>
-                    </a>
-                    
-                    <a href="https://goo.gl/maps" target="_blank" rel="noopener noreferrer" className="flex items-center group">
-                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">Visit Us</p>
-                        <p className="text-sm text-gray-600">123 Mobility Drive, Bangalore</p>
-                      </div>
-                    </a>
+                    <div className="space-y-3">
+                      <a href="tel:+918012345678" className="flex items-center group">
+                        <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-3 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                          <Phone className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Call Us</p>
+                          <p className="text-xs text-gray-600">+91 80 1234 5678</p>
+                        </div>
+                      </a>
+                      
+                      <a href="mailto:contact@mova.com" className="flex items-center group">
+                        <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-3 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                          <Mail className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Email Us</p>
+                          <p className="text-xs text-gray-600">contact@mova.com</p>
+                        </div>
+                      </a>
+                      
+                      <a href="#" className="flex items-center group">
+                        <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-3 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                          <MapPin className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Visit Us</p>
+                          <p className="text-xs text-gray-600">123 Mobility Drive, Bangalore</p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Social Media */}
-                <div className="glass-light rounded-2xl p-8 border border-emerald-100 shadow-lg card-border-light">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Follow Us</h3>
                   
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { icon: <Facebook className="w-5 h-5" />, name: "Facebook", url: "#", color: "hover:bg-blue-600" },
-                      { icon: <Twitter className="w-5 h-5" />, name: "Twitter", url: "#", color: "hover:bg-sky-500" },
-                      { icon: <Instagram className="w-5 h-5" />, name: "Instagram", url: "#", color: "hover:bg-pink-600" },
-                      { icon: <Linkedin className="w-5 h-5" />, name: "LinkedIn", url: "#", color: "hover:bg-blue-700" }
-                    ].map((social, index) => (
-                      <motion.a
-                        key={index}
-                        href={social.url}
-                        className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-emerald-200 transition-colors duration-300"
-                        whileHover={{ scale: 1.05, y: -2 }}
+                  {/* Social Media */}
+                  <div className="glass-light rounded-xl p-5 border border-emerald-100 shadow-lg card-border-light">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Follow Us</h3>
+                    
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { icon: <Facebook className="w-4 h-4" />, name: "Facebook", url: "#", color: "hover:bg-blue-600" },
+                        { icon: <Twitter className="w-4 h-4" />, name: "Twitter", url: "#", color: "hover:bg-sky-500" },
+                        { icon: <Instagram className="w-4 h-4" />, name: "Instagram", url: "#", color: "hover:bg-pink-600" },
+                        { icon: <Linkedin className="w-4 h-4" />, name: "LinkedIn", url: "#", color: "hover:bg-blue-700" }
+                      ].map((social, index) => (
+                        <motion.a
+                          key={index}
+                          href={social.url}
+                          className="flex items-center p-2 border border-gray-200 rounded-lg hover:border-emerald-200 transition-colors duration-300"
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <div className={`w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center mr-2 text-gray-600 ${social.color} hover:text-white transition-colors duration-300`}>
+                            {social.icon}
+                          </div>
+                          <span className="font-medium text-sm">{social.name}</span>
+                        </motion.a>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Book Now Shortcut */}
+                  <div className="bg-gradient-to-r from-emerald-600 to-green-700 rounded-xl p-5 text-white shadow-lg relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                    
+                    <h3 className="text-lg font-bold mb-3 relative z-10">Ready to Book?</h3>
+                    <p className="text-emerald-100 mb-4 relative z-10 text-sm">Skip the wait and reserve your premium vehicle now</p>
+                    
+                    <div className="relative z-10">
+                      <motion.a 
+                        href="/fleet" 
+                        className="flex items-center justify-center gap-2 px-4 py-2 bg-white text-emerald-700 rounded-lg font-medium hover:bg-emerald-50 transition-colors shadow-lg text-sm"
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <div className={`w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3 text-gray-600 ${social.color} hover:text-white transition-colors duration-300`}>
-                          {social.icon}
-                        </div>
-                        <span className="font-medium">{social.name}</span>
+                        <Car className="w-4 h-4" />
+                        <span>Browse Fleet</span>
+                        <ArrowRight className="w-3 h-3 ml-1" />
                       </motion.a>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Book Now Shortcut */}
-                <div className="bg-gradient-to-r from-emerald-600 to-green-700 rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                  
-                  <h3 className="text-xl font-bold mb-4 relative z-10">Ready to Book?</h3>
-                  <p className="text-emerald-100 mb-6 relative z-10">Skip the wait and reserve your premium vehicle now</p>
-                  
-                  <div className="relative z-10">
-                    <motion.a 
-                      href="/fleet" 
-                      className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-emerald-700 rounded-lg font-medium hover:bg-emerald-50 transition-colors shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Car className="w-5 h-5" />
-                      <span>Browse Fleet</span>
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </motion.a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -849,17 +850,17 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+              className="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -869,7 +870,7 @@ export default function ContactPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-gray-600 max-w-2xl mx-auto text-lg"
+              className="text-gray-600 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -879,7 +880,7 @@ export default function ContactPage() {
             </motion.p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-4">
             {faqItems.map((item, index) => (
               <motion.div 
                 key={index}
@@ -890,12 +891,8 @@ export default function ContactPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <button 
-                  className="flex justify-between items-center w-full p-6 text-left focus:outline-none"
-                  onClick={() => {
-                    const newFAQs = [...faqItems];
-                    newFAQs[index].isOpen = !newFAQs[index].isOpen;
-                    // setFaqItems(newFAQs);
-                  }}
+                  className="flex justify-between items-center w-full p-5 text-left focus:outline-none"
+                  onClick={() => toggleFAQ(index)}
                 >
                   <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
                   <ChevronRight 
@@ -912,7 +909,7 @@ export default function ContactPage() {
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="px-6 pb-6 text-gray-600">
+                  <div className="px-5 pb-5 text-gray-600">
                     {item.answer}
                   </div>
                 </motion.div>
@@ -922,99 +919,22 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-emerald-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h2 
-              className="text-3xl font-bold mb-4 text-gray-900"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              Visit Our Office
-            </motion.h2>
-            
-            <motion.p 
-              className="text-gray-600 max-w-2xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              Located in the heart of the city for your convenience
-            </motion.p>
-          </motion.div>
-
-          <motion.div 
-            className="aspect-[16/7] rounded-xl overflow-hidden shadow-xl border border-emerald-100"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* This would be your actual map embed - using a placeholder here */}
-            <div className="w-full h-full bg-gradient-to-br from-emerald-50 to-white relative">
-              <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/77.6088,12.9767,12,0/1200x600?access_token=pk.placeholder')] bg-cover bg-center opacity-90"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <motion.div 
-                  className="flex flex-col items-center"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                >
-                  <div className="w-16 h-16 rounded-full bg-emerald-500 border-4 border-white shadow-xl flex items-center justify-center text-white mb-2">
-                    <MapPin className="w-8 h-8" />
-                  </div>
-                  <div className="px-4 py-2 bg-white rounded-lg shadow-lg">
-                    <p className="font-medium">MOVA Headquarters</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="mt-8 flex justify-center">
-            <motion.a 
-              href="https://goo.gl/maps" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 rounded-full text-gray-800 font-medium hover:bg-emerald-50 hover:border-emerald-200 transition-colors shadow-sm"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <MapPin className="w-5 h-5 text-emerald-600" />
-              <span>Get Directions</span>
-            </motion.a>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.div 
-            className="bg-gradient-to-r from-emerald-600 to-green-700 rounded-2xl p-12 text-white relative overflow-hidden"
+            className="bg-gradient-to-r from-emerald-600 to-green-700 rounded-2xl p-8 text-white relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-10 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-x-1/2 translate-y-1/2"></div>
             
             <div className="relative z-10 text-center">
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-6 max-w-3xl mx-auto"
+                className="text-2xl md:text-3xl font-bold mb-4 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1024,7 +944,7 @@ export default function ContactPage() {
               </motion.h2>
               
               <motion.p 
-                className="text-emerald-100 mb-10 max-w-2xl mx-auto text-lg"
+                className="text-emerald-100 mb-6 max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1042,7 +962,7 @@ export default function ContactPage() {
               >
                 <motion.a 
                   href="/fleet" 
-                  className="px-8 py-4 bg-white text-emerald-700 hover:bg-emerald-50 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="px-6 py-3 bg-white text-emerald-700 hover:bg-emerald-50 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -1051,7 +971,7 @@ export default function ContactPage() {
                 
                 <motion.a 
                   href="#contact-form" 
-                  className="px-8 py-4 bg-transparent border border-white text-white hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+                  className="px-6 py-3 bg-transparent border border-white text-white hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >

@@ -256,332 +256,292 @@ export default function AboutPage() {
         }
       `}</style>
 
-      {/* Hero Section - Light Theme */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Light background elements with subtle patterns */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-green-50 z-0">
-          {/* Refined grid pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <svg width="100%" height="100%" className="opacity-30">
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="0.5" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-          </div>
-          
-          {/* Subtle circular elements */}
-          <motion.div 
-            className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full border border-emerald-200/50 opacity-40"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          />
-          
-          <motion.div 
-            className="absolute -bottom-60 -left-60 w-[600px] h-[600px] rounded-full border border-emerald-200/30 opacity-30"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-          />
+      {/* Hero Section - Professional Light Theme */}
+<section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  {/* Refined light background with subtle patterns */}
+  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-green-50 z-0">
+    {/* Subtle grid pattern overlay */}
+    <div className="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.2)" strokeWidth="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    
+    {/* Refined circular accents */}
+    <motion.div 
+      className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-emerald-100 opacity-20"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+    />
+    
+    <motion.div 
+      className="absolute -bottom-60 -left-60 w-[700px] h-[700px] rounded-full border border-emerald-100 opacity-20"
+      animate={{ rotate: -360 }}
+      transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+    />
 
-          {/* Light brand circular motifs */}
-          <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full bg-emerald-100/50 blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-green-100/50 blur-3xl"></div>
-          
-          {/* Subtle measurement lines */}
-          <div className="absolute top-[30%] left-0 w-full h-px bg-emerald-200/50"></div>
-          <div className="absolute top-[70%] left-0 w-full h-px bg-emerald-200/50"></div>
-          
-          <div className="absolute top-0 left-[30%] h-full w-px bg-emerald-200/50"></div>
-          <div className="absolute top-0 left-[70%] h-full w-px bg-emerald-200/50"></div>
-
-          {/* Light radial gradient */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full bg-gradient-radial from-emerald-100/20 to-transparent opacity-60"></div>
-        </div>
+    {/* Subtle gradient accents */}
+    <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full bg-emerald-100/30 blur-3xl"></div>
+    <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-green-100/30 blur-3xl"></div>
+    
+    {/* Light radial gradient */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full bg-gradient-radial from-emerald-50/40 to-transparent opacity-60"></div>
+  </div>
+  
+  <div className="container mx-auto px-6 relative z-10">
+    <motion.div 
+      className="flex flex-col md:flex-row items-center justify-between gap-12"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Left side - Refined content */}
+      <motion.div 
+        className="w-full md:w-1/2 pr-0 md:pr-12"
+        style={{ y: heroTextY }}
+      >
+        <motion.div 
+          className="mb-8 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          <div className="w-4 h-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 mr-3"></div>
+          <span className="text-gradient font-medium">Premium Mobility Solutions</span>
+        </motion.div>
         
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            className="flex flex-col md:flex-row items-center justify-between gap-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+        <motion.h1 
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-gray-900"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          Redefining <br />
+          <span className="text-gradient">Automotive</span> Experience
+        </motion.h1>
+        
+        <motion.p 
+          className="text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          MOVA combines premium vehicles with intelligent technology to deliver 
+          an unparalleled mobility experience for the modern traveler.
+        </motion.p>
+        
+        <motion.div 
+          className="flex flex-wrap gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+        >
+          <motion.a 
+            href="#fleet"
+            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-white font-medium shadow-lg shadow-emerald-500/20 relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400 }}
           >
-            {/* Left side - refined content */}
-            <motion.div 
-              className="w-full md:w-1/2 pr-0 md:pr-12"
-              style={{ y: heroTextY }}
-            >
-              <motion.div 
-                className="mb-8 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 mr-3"></div>
-                <span className="text-gradient font-medium">Premium Mobility Solutions</span>
-              </motion.div>
-              
-              <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-gray-900"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                Redefining <br />
-                <span className="text-gradient">Automotive</span> Experience
-              </motion.h1>
-              
-              <motion.p 
-                className="text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-              >
-                MOVA combines premium vehicles with intelligent technology to deliver 
-                an unparalleled mobility experience for the modern traveler.
-              </motion.p>
-              
-              <motion.div 
-                className="flex flex-wrap gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
-              >
-                <motion.a 
-                  href="#fleet"
-                  className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-white font-medium shadow-lg shadow-emerald-500/20 relative overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
-                  <Car className="w-5 h-5" />
-                  <span className="relative">Browse Our Fleet</span>
-                </motion.a>
-                
-                <motion.a 
-                  href="#journey"
-                  className="group flex items-center gap-2 px-8 py-4 glass-light border border-emerald-200 rounded-full text-gray-700 font-medium relative overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
-                  <span className="relative">Our Process</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
-              </motion.div>
+            <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
+            <Car className="w-5 h-5" />
+            <span className="relative">Browse Our Fleet</span>
+          </motion.a>
+          
+          <motion.a 
+            href="#journey"
+            className="group flex items-center gap-2 px-8 py-4 glass-light border border-emerald-200 rounded-full text-gray-700 font-medium relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
+            <span className="relative">Our Process</span>
+            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
+        </motion.div>
 
-              {/* Statistics */}
-              <motion.div 
-                className="mt-16 grid grid-cols-2 gap-8"
+        {/* Statistics */}
+        <motion.div 
+          className="mt-16 grid grid-cols-2 gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <div>
+            <div className="text-3xl font-bold mb-1 text-gradient">97%</div>
+            <div className="text-gray-500 text-sm">Customer satisfaction rate</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold mb-1 text-gradient">24/7</div>
+            <div className="text-gray-500 text-sm">Premium support service</div>
+          </div>
+        </motion.div>
+      </motion.div>
+      
+      {/* Right side - Professional abstract visualization */}
+      <motion.div 
+        className="w-full md:w-1/2 mt-16 md:mt-0"
+        style={{ y: heroImageY }}
+      >
+        <div className="relative">
+          {/* Subtle glow effect */}
+          <div className="absolute -inset-10 rounded-full bg-emerald-100/20 animate-pulse-slow blur-3xl"></div>
+          
+          {/* Professional visualization container */}
+          <div className="relative rounded-2xl overflow-hidden card-border-light">
+            <div className="aspect-[4/3] relative bg-gradient-light rounded-2xl overflow-hidden shadow-2xl">
+              {/* Professional abstract visualization */}
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
+                transition={{ delay: 0.8, duration: 1 }}
               >
-                <div>
-                  <div className="text-3xl font-bold mb-1 text-gradient">97%</div>
-                  <div className="text-gray-500 text-sm">Customer satisfaction rate</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-1 text-gradient">24/7</div>
-                  <div className="text-gray-500 text-sm">Premium support service</div>
-                </div>
-              </motion.div>
-            </motion.div>
-            
-            {/* Right side - enhanced car visualization */}
-            <motion.div 
-              className="w-full md:w-1/2 mt-16 md:mt-0"
-              style={{ y: heroImageY }}
-            >
-              <div className="relative">
-                {/* Light glow effects */}
-                <div className="absolute -inset-10 rounded-full bg-emerald-200/20 animate-pulse-slow blur-3xl"></div>
-                <motion.div 
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-emerald-300/30"
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                ></motion.div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 opacity-70"></div>
                 
-                {/* Main car visualization container */}
-                <div className="relative rounded-2xl overflow-hidden card-border-light">
-                  <div className="aspect-[4/3] relative bg-gradient-light rounded-2xl overflow-hidden">
-                    {/* Car blueprint visualization */}
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center"
-                      initial={{ scale: 0.95, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.8, duration: 1 }}
-                    >
-                      <div className="relative w-full h-full flex items-center justify-center">
-                        {/* Circular elements */}
-                        <motion.div
-                          className="absolute w-64 h-64 rounded-full border border-emerald-300/40"
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                        ></motion.div>
-                        
-                        {/* Inner circle */}
-                        <motion.div
-                          className="absolute w-48 h-48 rounded-full border border-emerald-300/50"
-                          animate={{ rotate: -360 }}
-                          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                        ></motion.div>
-
-                        {/* Car illustration with light styling */}
-                        <div className="relative w-[80%] h-[80%]">
-                          <svg 
-                            viewBox="0 0 800 500" 
-                            className="w-full h-full text-emerald-600/60"
-                            style={{ filter: "drop-shadow(0 0 10px rgba(16, 185, 129, 0.2))" }}
-                          >
-                            {/* Car silhouette */}
-                            <g>
-                              {/* Car body */}
-                              <path 
-                                d="M600,250 C670,250 720,270 720,320 C720,340 710,360 690,360 L650,360 C650,390 620,410 590,410 C560,410 530,390 530,360 L220,360 C220,390 190,410 160,410 C130,410 100,390 100,360 L80,360 C50,360 30,340 30,310 C30,270 70,250 100,250 L140,250 L180,170 C190,155 210,130 260,130 L440,130 C500,130 520,160 530,170 L570,250 L600,250 Z" 
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3"
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                              />
-
-                              {/* Windows */}
-                              <path 
-                                d="M210,170 L240,150 L450,150 L500,170" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                strokeWidth="2" 
-                              />
-                              
-                              {/* Wheels */}
-                              <circle cx="160" cy="360" r="50" fill="none" stroke="currentColor" strokeWidth="3" />
-                              <circle cx="590" cy="360" r="50" fill="none" stroke="currentColor" strokeWidth="3" />
-                              
-                              {/* Wheel details */}
-                              <circle cx="160" cy="360" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
-                              <circle cx="590" cy="360" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
-                              <circle cx="160" cy="360" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                              <circle cx="590" cy="360" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                              
-                              {/* Spokes */}
-                              {Array.from({ length: 8 }).map((_, i) => (
-                                <React.Fragment key={`spoke-1-${i}`}>
-                                  <line 
-                                    x1="160" 
-                                    y1="360" 
-                                    x2={160 + 35 * Math.cos(i * Math.PI / 4)} 
-                                    y2={360 + 35 * Math.sin(i * Math.PI / 4)} 
-                                    stroke="currentColor" 
-                                    strokeWidth="1" 
-                                  />
-                                  <line 
-                                    x1="590" 
-                                    y1="360" 
-                                    x2={590 + 35 * Math.cos(i * Math.PI / 4)} 
-                                    y2={360 + 35 * Math.sin(i * Math.PI / 4)} 
-                                    stroke="currentColor" 
-                                    strokeWidth="1" 
-                                  />
-                                </React.Fragment>
-                              ))}
-
-                              {/* Headlights */}
-                              <path d="M80,260 Q70,280 80,300" fill="none" stroke="currentColor" strokeWidth="2" />
-                              <path d="M670,260 Q680,280 670,300" fill="none" stroke="currentColor" strokeWidth="2" />
-                              
-                              {/* Additional details */}
-                              <line x1="100" y1="280" x2="650" y2="280" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" />
-                              <rect x="350" y="190" width="50" height="20" rx="5" stroke="currentColor" strokeWidth="1" fill="none" />
-                            </g>
-                            
-                            {/* MOVA brand circular element */}
-                            <circle cx="350" cy="280" r="35" stroke="currentColor" strokeWidth="2" fill="none" />
-                            <circle cx="350" cy="280" r="30" stroke="currentColor" strokeWidth="1" fill="none" />
+                {/* Abstract pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <svg width="100%" height="100%">
+                    <defs>
+                      <pattern id="diagonalPattern" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <rect width="4" height="10" fill="rgba(16, 185, 129, 0.3)" x="0" y="0"></rect>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#diagonalPattern)"></rect>
+                  </svg>
+                </div>
+                
+                {/* Professional elements */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Circular elements */}
+                  <motion.div
+                    className="absolute w-80 h-80 rounded-full border-2 border-emerald-300/20"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  ></motion.div>
+                  
+                  <motion.div
+                    className="absolute w-60 h-60 rounded-full border border-emerald-300/30"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                  ></motion.div>
+                  
+                  <motion.div
+                    className="absolute w-40 h-40 rounded-full border border-emerald-300/40"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  ></motion.div>
+                  
+                  {/* MOVA Brand Feature */}
+                  <motion.div
+                    className="relative z-10 flex flex-col items-center"
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 0.8 }}
+                  >
+                    <div className="w-32 h-32 rounded-full bg-white/80 backdrop-blur-sm shadow-xl flex items-center justify-center mb-6">
+                      <div className="w-24 h-24 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center">
+                        <div className="text-white">
+                          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 17H21V19H3V17H5M17 11V7C17 5.89543 16.1046 5 15 5H9C7.89543 5 7 5.89543 7 7V11M3 17C3 15.8954 3.89543 15 5 15H19C20.1046 15 21 15.8954 21 17M8 11H16M12 7V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
-
-                          {/* Technical measurement points */}
-                          <motion.div 
-                            className="absolute bottom-0 left-0 right-0 h-px bg-emerald-400/40"
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ delay: 1.5, duration: 1.5 }}
-                          />
-                          
-                          {/* Data points with labels */}
-                          {[
-                            { x: '75%', y: '20%', label: 'TORQUE.780' },
-                            { x: '85%', y: '40%', label: 'POWER.450' },
-                            { x: '70%', y: '60%', label: 'ECO.MODE' },
-                            { x: '80%', y: '80%', label: 'RANGE.500' }
-                          ].map((point, i) => (
-                            <motion.div
-                              key={`data-${i}`}
-                              className="absolute flex gap-2 items-center"
-                              style={{ 
-                                top: point.y, 
-                                right: '5%',
-                                opacity: 0.8,
-                              }}
-                              initial={{ x: 30, opacity: 0 }}
-                              animate={{ x: 0, opacity: 0.8 }}
-                              transition={{ delay: 1.8 + (i * 0.15), duration: 0.8 }}
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                              <div className="text-xs text-emerald-600 font-mono tracking-wider">
-                                {point.label}
-                              </div>
-                            </motion.div>
-                          ))}
-                          
-                          {/* Circular data points */}
-                          {[
-                            { x: '20%', y: '30%' },
-                            { x: '30%', y: '70%' },
-                            { x: '60%', y: '25%' }
-                          ].map((point, i) => (
-                            <motion.div
-                              key={`marker-${i}`}
-                              className="absolute"
-                              style={{ 
-                                top: point.y, 
-                                left: point.x,
-                              }}
-                              initial={{ scale: 0, opacity: 0 }}
-                              animate={{ scale: 1, opacity: 1 }}
-                              transition={{ delay: 2 + (i * 0.2), duration: 0.5 }}
-                            >
-                              <div className="relative">
-                                <div className="w-3 h-3 rounded-full bg-emerald-400/50 animate-ping absolute"></div>
-                                <div className="w-2 h-2 rounded-full bg-emerald-500 relative"></div>
-                              </div>
-                            </motion.div>
-                          ))}
-
-                          {/* MOVA logo integration */}
-                          <motion.div
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 0.3 }}
-                            transition={{ delay: 2.5, duration: 1 }}
-                          >
-                            <div className="w-24 h-24 rounded-full border-2 border-emerald-400/50 flex items-center justify-center">
-                              <Car className="w-12 h-12 text-emerald-500/70" />
-                            </div>
-                          </motion.div>
                         </div>
                       </div>
-                    </motion.div>
-                  </div>
+                    </div>
+
+                    <div className="text-center">
+                      <h3 className="text-xl font-bold text-emerald-700 mb-2">MOVA</h3>
+                      <p className="text-sm text-emerald-600 px-8 max-w-xs">Premium mobility solutions for the modern world</p>
+                    </div>
+                  </motion.div>
                 </div>
+
+                {/* Professional data visualization elements */}
+                <motion.div 
+                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.5, duration: 0.8 }}
+                >
+                  {['Performance', 'Comfort', 'Technology', 'Safety'].map((label, i) => (
+                    <div key={i} className="text-center">
+                      <div className="w-2 h-16 bg-gradient-to-t from-emerald-500 to-emerald-100 rounded-full mx-auto relative">
+                        <div 
+                          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-2 border-emerald-500 shadow-lg"
+                          style={{ bottom: `${(i+1) * 20}%` }}
+                        ></div>
+                      </div>
+                      <p className="mt-2 text-xs font-medium text-emerald-700">{label}</p>
+                    </div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* Professional data points */}
+              <div className="absolute inset-0 z-10">
+                {/* Data points with labels */}
+                {[
+                  { x: '85%', y: '20%', label: 'PREMIUM FLEET' },
+                  { x: '80%', y: '40%', label: 'ECO FRIENDLY' },
+                  { x: '75%', y: '60%', label: 'SMART TECH' },
+                  { x: '80%', y: '80%', label: 'CONCIERGE SERVICE' }
+                ].map((point, i) => (
+                  <motion.div
+                    key={`data-${i}`}
+                    className="absolute flex gap-2 items-center"
+                    style={{ 
+                      top: point.y, 
+                      right: '5%',
+                      opacity: 0.8,
+                    }}
+                    initial={{ x: 30, opacity: 0 }}
+                    animate={{ x: 0, opacity: 0.8 }}
+                    transition={{ delay: 1.8 + (i * 0.15), duration: 0.8 }}
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                    <div className="text-xs text-emerald-600 font-mono tracking-wider">
+                      {point.label}
+                    </div>
+                  </motion.div>
+                ))}
+                
+                {/* Interactive marker points */}
+                {[
+                  { x: '20%', y: '30%' },
+                  { x: '30%', y: '70%' },
+                  { x: '60%', y: '25%' }
+                ].map((point, i) => (
+                  <motion.div
+                    key={`marker-${i}`}
+                    className="absolute"
+                    style={{ 
+                      top: point.y, 
+                      left: point.x,
+                    }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 2 + (i * 0.2), duration: 0.5 }}
+                  >
+                    <div className="relative">
+                      <div className="w-3 h-3 rounded-full bg-emerald-400/50 animate-ping absolute"></div>
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 relative"></div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
-      </section>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Benefit Highlights Section */}
       <section className="py-24 relative overflow-hidden bg-white">
@@ -642,317 +602,563 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey Process Section */}
-      <section id="journey" ref={journeyRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-emerald-50 to-green-50">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-200/20 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            className="mb-20 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.div
-              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
-            >
-              <span className="text-gradient font-medium">Seamless Experience</span>
-            </motion.div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-              Your Journey With Us
-            </h2>
-            
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              From selecting your perfect vehicle to hitting the road, we've refined every 
-              step to ensure an exceptional experience.
-            </p>
-          </motion.div>
+      {/* Journey Process Section - Enhanced & Compact */}
+<section id="journey" ref={journeyRef} className="py-20 relative overflow-hidden bg-gradient-to-b from-emerald-50 to-green-50">
+  {/* Refined background elements */}
+  <div className="absolute inset-0">
+    {/* Minimal grid pattern */}
+    <div className="absolute inset-0 opacity-20">
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern id="compactGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.15)" strokeWidth="0.5" />
+            <circle cx="20" cy="20" r="0.5" fill="rgba(16, 185, 129, 0.2)" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#compactGrid)" />
+      </svg>
+    </div>
+    
+    {/* Subtle floating elements */}
+    <motion.div 
+      className="absolute top-10 left-10 w-64 h-64 bg-emerald-200/8 rounded-full blur-3xl"
+      animate={{ 
+        scale: [1, 1.1, 1],
+        rotate: [0, 90, 180]
+      }}
+      transition={{ 
+        duration: 25, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
+    />
+    <motion.div 
+      className="absolute bottom-10 right-10 w-48 h-48 bg-green-200/8 rounded-full blur-3xl"
+      animate={{ 
+        scale: [1.1, 1, 1.1],
+        rotate: [180, 90, 0]
+      }}
+      transition={{ 
+        duration: 20, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
+    />
+  </div>
+  
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Compact header section */}
+    <motion.div 
+      className="mb-16 text-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="mb-6 inline-flex items-center px-5 py-2.5 rounded-full glass-light border border-emerald-200 shadow-sm"
+        initial={{ scale: 0.95, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 200 }}
+        whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+      >
+        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2.5 animate-pulse"></div>
+        <span className="text-gradient font-semibold text-sm tracking-wide">Seamless Experience</span>
+        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2.5 animate-pulse"></div>
+      </motion.div>
+      
+      <motion.h2 
+        className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        Your Journey <span className="text-gradient">With Us</span>
+      </motion.h2>
+      
+      <motion.p 
+        className="text-gray-600 max-w-2xl mx-auto text-lg"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        Five streamlined steps to unlock premium mobility experience.
+      </motion.p>
+    </motion.div>
 
-          <div className="relative max-w-6xl mx-auto">
-            {/* Elegant connecting line */}
-            <div className="absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-emerald-300/0 via-emerald-400/60 to-emerald-300/0 transform -translate-x-1/2"></div>
-            
-            {/* Journey Steps */}
-            <div className="space-y-32 relative">
-              {journeyProcess.map((process, index) => (
-                <motion.div 
-                  key={index}
-                  className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                >
-                  <motion.div 
-                    className={`w-1/2 relative ${index % 2 === 0 ? 'text-right pr-16' : 'text-left pl-16'}`}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <motion.div 
-                      className="glass-light rounded-3xl p-8 border border-emerald-100 shadow-xl overflow-hidden relative card-border-light"
-                    >
-                      {/* Subtle animated background */}
-                      <div className="absolute inset-0 opacity-10">
-                        <svg className="w-full h-full" viewBox="0 0 200 200">
-                          <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                              <stop offset="100%" stopColor="#059669" stopOpacity="0.3" />
-                            </linearGradient>
-                          </defs>
-                          <path 
-                            fill="url(#gradient)"
-                            d={`M${40 + Math.random() * 20},${20 + Math.random() * 20} 
-                              C${60 + Math.random() * 40},${30 + Math.random() * 40} 
-                              ${100 + Math.random() * 40},${50 + Math.random() * 60} 
-                              ${140 + Math.random() * 40},${80 + Math.random() * 60} 
-                              S${180 + Math.random() * 20},${160 + Math.random() * 20} 
-                              ${120 + Math.random() * 40},${180 + Math.random() * 20} 
-                              S${40 + Math.random() * 20},${140 + Math.random() * 40} 
-                              ${40 + Math.random() * 20},${20 + Math.random() * 20}`}
-                          />
-                        </svg>
-                      </div>
-                      
-                      <h3 className="text-3xl font-bold mb-4 relative z-10 text-gray-900">
-                        <span className="text-gradient">{process.title}</span>
-                      </h3>
-                      
-                      <p className="text-gray-600 mb-8 relative z-10">
-                        {process.description}
-                      </p>
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        {process.details.map((detail, detailIndex) => (
-                          <motion.div 
-                            key={detailIndex} 
-                            className="flex items-center text-gray-500 gap-2"
-                            whileHover={{ color: "#10b981", transition: { duration: 0.2 } }}
-                          >
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                            <span>{detail}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                  
-                  {/* Center Circle */}
-                  <motion.div 
-                    className="absolute left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 300, delay: 0.3 + index * 0.1 }}
-                  >
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500/80 to-green-600/80 flex items-center justify-center text-white">
-                          {process.icon}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                  
-                  <div className="w-1/2"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+    <div className="relative max-w-5xl mx-auto">
+      {/* Compact connecting pathway */}
+      <div className="absolute left-1/2 top-12 bottom-12 transform -translate-x-1/2 z-0">
+        {/* Main connecting line */}
+        <div className="relative w-0.5 h-full">
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-300/0 via-emerald-400/50 to-emerald-300/0 rounded-full"></div>
+          
+          {/* Moving pulse */}
+          <motion.div
+            className="absolute left-1/2 w-2 h-2 bg-emerald-500 rounded-full transform -translate-x-1/2 shadow-md shadow-emerald-500/50"
+            animate={{ 
+              y: ["0%", "100%", "0%"],
+              opacity: [0, 1, 0]
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
         </div>
-      </section>
-
-      {/* Premium Fleet Section */}
-      <section id="fleet" ref={fleetRef} className="py-24 relative overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-100/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-100/20 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+      </div>
+      
+      {/* Compact Journey Steps */}
+      <div className="space-y-16 relative">
+        {journeyProcess.map((process, index) => (
           <motion.div 
-            className="mb-16 text-center"
-            initial={{ opacity: 0, y: 30 }}
+            key={index}
+            className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
           >
-            <motion.div
-              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
+            {/* Compact content card */}
+            <motion.div 
+              className={`w-1/2 relative ${index % 2 === 0 ? 'text-right pr-12' : 'text-left pl-12'}`}
+              whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
             >
-              <span className="text-gradient font-medium">Premium Fleet</span>
+              <motion.div 
+                className="glass-light rounded-2xl p-6 border border-emerald-100 shadow-lg shadow-emerald-500/5 overflow-hidden relative card-border-light group"
+                whileHover={{ 
+                  boxShadow: "0 20px 40px -12px rgba(16, 185, 129, 0.15)",
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Subtle animated background */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
+                  <motion.div
+                    className="w-full h-full bg-gradient-to-br from-emerald-500/20 via-transparent to-green-500/20"
+                    animate={{ 
+                      background: [
+                        "radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
+                        "radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.1) 0%, transparent 50%)",
+                        "radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)"
+                      ]
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </div>
+                
+                {/* Compact step indicator */}
+                <motion.div 
+                  className={`absolute ${index % 2 === 0 ? 'top-4 left-4' : 'top-4 right-4'} w-8 h-8 rounded-full bg-gradient-to-r from-emerald-500/15 to-green-600/15 flex items-center justify-center border border-emerald-300/25`}
+                  initial={{ scale: 0, rotate: -90 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.5, type: "spring", stiffness: 200 }}
+                >
+                  <span className="text-emerald-600 font-bold text-xs">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </motion.div>
+                
+                <div className="relative z-10">
+                  <motion.h3 
+                    className="text-2xl font-bold mb-3 text-gray-900"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + index * 0.05, duration: 0.5 }}
+                  >
+                    <span className="text-gradient">{process.title}</span>
+                  </motion.h3>
+                  
+                  <motion.p 
+                    className="text-gray-600 mb-4 text-sm leading-relaxed"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.25 + index * 0.05, duration: 0.5 }}
+                  >
+                    {process.description}
+                  </motion.p>
+                  
+                  {/* Compact feature list */}
+                  <motion.div 
+                    className="grid grid-cols-2 gap-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + index * 0.05, duration: 0.5 }}
+                  >
+                    {process.details.slice(0, 4).map((detail, detailIndex) => (
+                      <motion.div 
+                        key={detailIndex} 
+                        className="flex items-center text-gray-500 gap-2 text-xs group/detail"
+                        whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      >
+                        <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover/detail:shadow-sm group-hover/detail:shadow-emerald-500/50 transition-all duration-300"></div>
+                        <span className="group-hover/detail:text-emerald-600 transition-colors duration-300 font-medium">
+                          {detail}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+                
+                {/* Corner accent */}
+                <div className={`absolute ${index % 2 === 0 ? 'top-0 right-0' : 'top-0 left-0'} w-12 h-12 bg-gradient-to-${index % 2 === 0 ? 'bl' : 'br'} from-emerald-500/5 to-transparent`}></div>
+              </motion.div>
             </motion.div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-              Exceptional Vehicles
-            </h2>
-            
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              Our meticulously maintained fleet offers a diverse range of premium vehicles
-              to match your exact needs and preferences.
-            </p>
-          </motion.div>
-
-          <div className="max-w-6xl mx-auto">
-            {/* Fleet Category Tabs */}
-            <div className="flex justify-center mb-16 gap-4 flex-wrap">
-              {fleetCategories.map((category, idx) => (
-                <motion.button 
-                  key={idx}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeFeature === idx ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white' : 'glass-light text-gray-600 hover:text-gray-900 border border-emerald-100'}`}
-                  onClick={() => setActiveFeature(idx)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {category.title}
-                </motion.button>
-              ))}
-            </div>
-            
-            {/* Fleet Category Display */}
-            <div className="relative glass-light rounded-3xl overflow-hidden card-border-light min-h-[500px]">
-              {fleetCategories.map((category, idx) => (
-                <motion.div 
-                  key={idx}
-                  className={`absolute inset-0 ${idx === activeFeature ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: idx === activeFeature ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-                    {/* Left side - Vehicle showcase */}
-                    <div className="relative overflow-hidden h-[350px] lg:h-full">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-100/30 to-transparent z-10"></div>
-                      
-                      {/* Vehicle image placeholder */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-green-50">
-                        <div className="h-full w-full flex items-center justify-center">
-                          <div className="w-3/4 h-3/4 relative">
-                            <svg 
-                              viewBox="0 0 800 400" 
-                              className="w-full h-full text-emerald-500/50"
-                            >
-                              <path 
-                                d="M700,250 C700,180 650,150 580,150 L500,150 L450,100 L200,100 L150,150 L100,150 C50,150 50,200 50,250 C20,250 0,270 0,300 C0,330 20,350 50,350 L100,350 C100,380 130,400 150,400 C180,400 200,380 200,350 L550,350 C550,380 580,400 600,400 C630,400 650,380 650,350 L700,350 C730,350 750,330 750,300 C750,270 730,250 700,250 Z" 
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="5"
-                              />
-                              
-                              <circle cx="150" cy="350" r="40" fill="none" stroke="currentColor" strokeWidth="5" />
-                              <circle cx="600" cy="350" r="40" fill="none" stroke="currentColor" strokeWidth="5" />
-                              
-                              <path d="M200,150 L230,120 L420,120 L450,150 Z" fill="none" stroke="currentColor" strokeWidth="3" />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Technical overlay elements */}
-                      <div className="absolute inset-0 z-20 pointer-events-none">
-                        {/* Circular elements */}
-                        <motion.div 
-                          className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full border border-emerald-400/30"
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        />
-                        
-                        <motion.div 
-                          className="absolute bottom-1/4 right-1/4 w-32 h-32 rounded-full border border-emerald-400/40"
-                          animate={{ rotate: -360 }}
-                          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                        />
-                        
-                        {/* Specifications */}
-                        <motion.div
-                          className="absolute bottom-4 right-4 flex flex-col gap-2"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5, duration: 0.8 }}
-                        >
-                          <div className="flex items-center gap-2 text-xs text-emerald-600">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                            <span>Premium Features</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-xs text-emerald-600">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                            <span>Enhanced Safety</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-xs text-emerald-600">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                            <span>Luxury Interior</span>
-                          </div>
-                        </motion.div>
-                      </div>
-                    </div>
-                    
-                    {/* Right side - Vehicle details */}
-                    <div className="p-8 lg:p-12 flex flex-col justify-between">
-                      <div>
-                        <div className="flex items-center gap-5 mb-8">
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-emerald-100 to-green-100 flex items-center justify-center text-emerald-600 shadow-lg shadow-emerald-500/10">
-                            {category.icon}
-                          </div>
-                          <h3 className="text-3xl font-bold text-gray-900">{category.title}</h3>
-                        </div>
-                        
-                        <p className="text-gray-600 text-lg mb-10">
-                          {category.description}
-                        </p>
-                        
-                        <div className="space-y-6 mb-10">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
-                              <Users className="w-5 h-5" />
-                            </div>
-                            <span className="text-lg text-gray-700">{category.metric}</span>
-                          </div>
-                          
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
-                              <CheckCircle className="w-5 h-5" />
-                            </div>
-                            <span className="text-lg text-gray-700">{category.highlight}</span>
-                          </div>
-                          
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
-                              <CreditCard className="w-5 h-5" />
-                            </div>
-                            <span className="text-lg text-gray-700">Premium insurance included</span>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <motion.div 
-                        className="mt-8"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
+            {/* Compact Center Circle */}
+            <motion.div 
+              className="absolute left-1/2 transform -translate-x-1/2 z-20 flex items-center justify-center"
+              initial={{ scale: 0, rotate: -90 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                delay: 0.4 + index * 0.1,
+                duration: 0.6
+              }}
+            >
+              <div className="relative">
+                {/* Rotating ring */}
+                <motion.div
+                  className="absolute inset-0 w-16 h-16 rounded-full border border-emerald-300/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                />
+                
+                {/* Main circle */}
+                <div className="relative w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                  {/* Inner circle */}
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    {/* Icon */}
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-emerald-500/90 to-green-600/90 flex items-center justify-center text-white">
+                      <motion.div
+                        className="text-sm"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ duration: 0.2 }}
                       >
-                        <a 
-                          href="#" 
-                          className="group flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-white font-medium shadow-lg shadow-emerald-500/20 relative overflow-hidden"
-                        >
-                          <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
-                          <span className="relative">Browse {category.title}</span>
-                          <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        {process.icon}
                       </motion.div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  
+                  {/* Subtle pulse */}
+                  <motion.div
+                    className="absolute inset-0 rounded-full bg-emerald-400/20"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      opacity: [0.5, 0, 0.5]
+                    }}
+                    transition={{ 
+                      duration: 2.5, 
+                      repeat: Infinity, 
+                      delay: index * 0.3 
+                    }}
+                  />
+                </div>
+                
+                {/* Minimal corner elements */}
+                <div className="absolute -top-1 -left-1 w-2 h-2 border-l border-t border-emerald-400/40"></div>
+                <div className="absolute -top-1 -right-1 w-2 h-2 border-r border-t border-emerald-400/40"></div>
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 border-l border-b border-emerald-400/40"></div>
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 border-r border-b border-emerald-400/40"></div>
+              </div>
+            </motion.div>
+            
+            <div className="w-1/2"></div>
+          </motion.div>
+        ))}
+      </div>
+      
+      {/* Compact completion indicator */}
+      <motion.div
+        className="flex justify-center mt-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <div className="glass-light px-6 py-3 rounded-full border border-emerald-200 shadow-sm">
+          <div className="flex items-center gap-2 text-emerald-600">
+            <CheckCircle className="w-4 h-4" />
+            <span className="font-semibold text-sm">Complete Experience</span>
+            <motion.div
+              className="w-1.5 h-1.5 bg-emerald-500 rounded-full"
+              animate={{ scale: [1, 1.3, 1], opacity: [1, 0.5, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            />
           </div>
         </div>
-      </section>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+      {/* Premium Fleet Section - Professional Redesign */}
+<section id="fleet" ref={fleetRef} className="py-24 relative overflow-hidden bg-white">
+  <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-100/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+  <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-100/20 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
+  
+  <div className="container mx-auto px-6 relative z-10">
+    <motion.div 
+      className="mb-16 text-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 400 }}
+      >
+        <span className="text-gradient font-medium">Premium Fleet</span>
+      </motion.div>
+      
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+        Exceptional Vehicles
+      </h2>
+      
+      <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        Our meticulously maintained fleet offers a diverse range of premium vehicles
+        to match your exact needs and preferences.
+      </p>
+    </motion.div>
+
+    <div className="max-w-6xl mx-auto">
+      {/* Fleet Category Tabs */}
+      <div className="flex justify-center mb-16 gap-4 flex-wrap">
+        {fleetCategories.map((category, idx) => (
+          <motion.button 
+            key={idx}
+            className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeFeature === idx ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white' : 'glass-light text-gray-600 hover:text-gray-900 border border-emerald-100'}`}
+            onClick={() => setActiveFeature(idx)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            {category.title}
+          </motion.button>
+        ))}
+      </div>
+      
+      {/* Fleet Category Display - Professional Redesign */}
+      <div className="relative glass-light rounded-3xl overflow-hidden card-border-light min-h-[500px]">
+        {fleetCategories.map((category, idx) => (
+          <motion.div 
+            key={idx}
+            className={`absolute inset-0 ${idx === activeFeature ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: idx === activeFeature ? 1 : 0,
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+              {/* Left side - Professional visualization */}
+              <div className="relative overflow-hidden h-[350px] lg:h-full">
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-100/30 to-transparent z-10"></div>
+                
+                {/* Professional abstract visualization */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-green-50 flex items-center justify-center">
+                  <div className="relative w-full h-full p-8 flex items-center justify-center">
+                    {/* Modern abstract representation */}
+                    <div className="relative w-5/6 h-5/6">
+                      {/* Premium visualization with brand elements */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Category specific icon (enlarged) */}
+                        <div className="relative z-20">
+                          <motion.div 
+                            className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
+                          >
+                            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 flex items-center justify-center text-white">
+                              {category.icon}
+                            </div>
+                          </motion.div>
+                        </div>
+                        
+                        {/* Concentric circles */}
+                        <motion.div
+                          className="absolute w-80 h-80 rounded-full border border-emerald-300/20"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                        />
+                        <motion.div
+                          className="absolute w-64 h-64 rounded-full border border-emerald-300/30"
+                          animate={{ rotate: -360 }}
+                          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        />
+                        <motion.div
+                          className="absolute w-48 h-48 rounded-full border border-emerald-300/40"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                        />
+                      </div>
+                      
+                      {/* Vehicle class specifications */}
+                      <motion.div 
+                        className="absolute top-[5%] left-[5%] bg-white/70 backdrop-blur-sm rounded-lg p-3 shadow-md border border-emerald-100"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                            <Award className="w-3 h-3" />
+                          </div>
+                          <span className="text-xs font-medium text-gray-700">Premium Class</span>
+                        </div>
+                      </motion.div>
+                      
+                      {/* Features indicators with lines connecting to center */}
+                      {['Comfort', 'Performance', 'Technology', 'Design'].map((feature, i) => {
+                        const angle = (i * Math.PI / 2) + (Math.PI / 4);
+                        const x = Math.cos(angle) * 120;
+                        const y = Math.sin(angle) * 120;
+                        
+                        return (
+                          <motion.div
+                            key={feature}
+                            className="absolute"
+                            style={{ 
+                              left: 'calc(50% + ' + x + 'px)',
+                              top: 'calc(50% + ' + y + 'px)',
+                              transform: 'translate(-50%, -50%)'
+                            }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5 + (i * 0.1), duration: 0.5 }}
+                          >
+                            {/* Line connecting to center */}
+                            <div className="absolute top-1/2 left-1/2 w-[100px] h-[1px] bg-emerald-300/50"
+                              style={{ 
+                                transform: `rotate(${(angle + Math.PI) * (180 / Math.PI)}deg)`,
+                                transformOrigin: 'left center',
+                                width: '90px'
+                              }}
+                            />
+                            
+                            {/* Feature indicator */}
+                            <div className="bg-white rounded-lg px-3 py-1.5 shadow-sm border border-emerald-100 whitespace-nowrap">
+                              <span className="text-xs font-medium text-emerald-700">{feature}</span>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                      
+                      {/* Performance metrics visualization */}
+                      <motion.div
+                        className="absolute bottom-[10%] left-[50%] transform -translate-x-1/2 flex gap-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8, duration: 0.5 }}
+                      >
+                        {['Speed', 'Efficiency', 'Safety', 'Comfort'].map((metric, i) => (
+                          <div key={metric} className="flex flex-col items-center">
+                            <div className="w-1.5 h-16 bg-gradient-to-t from-emerald-500 to-emerald-100 rounded-full relative">
+                              <motion.div 
+                                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"
+                                initial={{ bottom: '0%' }}
+                                animate={{ bottom: `${(i+1) * 20}%` }}
+                                transition={{ delay: 1 + (i * 0.1), duration: 0.5, type: "spring" }}
+                              />
+                            </div>
+                            <span className="text-xs font-medium text-gray-600 mt-2">{metric}</span>
+                          </div>
+                        ))}
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Dynamic highlights based on category */}
+                <motion.div 
+                  className="absolute bottom-6 left-6 z-30 flex gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                >
+                  <div className="bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm text-sm font-medium text-emerald-700 flex items-center gap-2">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>24/7 Available</span>
+                  </div>
+                  
+                  <div className="bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm text-sm font-medium text-emerald-700 flex items-center gap-2">
+                    <Shield className="w-3.5 h-3.5" />
+                    <span>Fully Insured</span>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right side - Vehicle details */}
+              <div className="p-8 lg:p-12 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-5 mb-8">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-emerald-100 to-green-100 flex items-center justify-center text-emerald-600 shadow-lg shadow-emerald-500/10">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900">{category.title}</h3>
+                  </div>
+                  
+                  <p className="text-gray-600 text-lg mb-10">
+                    {category.description}
+                  </p>
+                  
+                  <div className="space-y-6 mb-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
+                        <Users className="w-5 h-5" />
+                      </div>
+                      <span className="text-lg text-gray-700">{category.metric}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
+                        <CheckCircle className="w-5 h-5" />
+                      </div>
+                      <span className="text-lg text-gray-700">{category.highlight}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
+                        <CreditCard className="w-5 h-5" />
+                      </div>
+                      <span className="text-lg text-gray-700">Premium insurance included</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <motion.div 
+                  className="mt-8"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <a 
+                    href="#" 
+                    className="group flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-white font-medium shadow-lg shadow-emerald-500/20 relative overflow-hidden"
+                  >
+                    <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
+                    <span className="relative">Browse {category.title}</span>
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Team Section */}
       <section id="team" ref={teamRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">

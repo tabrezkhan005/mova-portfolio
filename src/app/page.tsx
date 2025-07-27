@@ -84,17 +84,16 @@ export default function MovaTechHomepage() {
       {/* Custom cursor with emerald trail */}
       <Cursor color="rgba(16, 185, 129, 0.25)" enableTrail={true} />
       
-      {/* Global Styles - Unified typography and design elements */}
+      {/* Global Styles - Updated to match other pages with Space Grotesk font */}
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         
-        body {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          scroll-behavior: smooth;
+        * {
+          font-family: 'Space Grotesk', sans-serif;
         }
         
-        h1, h2, h3, h4, h5, h6, .heading-font {
-          font-family: 'Playfair Display', serif;
+        html {
+          scroll-behavior: smooth;
         }
         
         /* Enhanced scrollbar for premium feel */
@@ -183,7 +182,7 @@ export default function MovaTechHomepage() {
         }
       `}</style>
 
-      {/* Hero Section Component */}
+      {/* Hero Section Component - Will need to modify this component separately to match font */}
       <HeroSection />
       
       {/* Enhanced Features Section with more visual interest */}
@@ -207,7 +206,7 @@ export default function MovaTechHomepage() {
               <span className="w-12 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-400 ml-4"></span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-font tracking-tight text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
               Premium <span className="text-gradient">Privileges</span>
             </h2>
             
@@ -233,7 +232,7 @@ export default function MovaTechHomepage() {
                   </div>
                   
                   {/* Feature Content */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 heading-font group-hover:text-emerald-800 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-800 transition-colors duration-300">
                     {feature.title}
                   </h3>
                   
@@ -289,7 +288,7 @@ export default function MovaTechHomepage() {
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-font tracking-tight text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
               Your <span className="text-gradient">Journey</span> With Us
             </h2>
             

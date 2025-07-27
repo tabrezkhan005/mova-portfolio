@@ -275,22 +275,30 @@ export default function FleetPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Professional Header with green theme */}
+      {/* Add Cursor component here */}
+      <Cursor color="rgba(16, 185, 129, 0.25)" enableTrail={true} />
+      
+      {/* Professional Header with green theme - INCREASED SPACING */}
       <motion.div 
         className="bg-white border-b border-gray-200"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Increased top padding from py-16 to py-24 for more vertical space */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div 
             className="max-w-4xl mx-auto text-center"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
+            {/* Added a spacer div for additional top margin */}
+            <div className="h-12"></div>
+            
+            {/* Increased margin-bottom from mb-16 to mb-24 */}
             <motion.div 
-              className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-16"
+              className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-24"
               variants={cardVariants}
             >
               <Car className="w-4 h-4 mr-2" />

@@ -7,9 +7,7 @@ import {
   Route, FileText, ChevronRight, Key, Calendar, Clock,
   Gauge, Wrench, Settings, Award, CreditCard, Fuel
 } from 'lucide-react';
-import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Cursor from '../components/Cursor';
 
 export default function AboutPage() {
   const [hoveredTeamMember, setHoveredTeamMember] = useState<number | null>(null);
@@ -180,9 +178,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#001A20] text-white">
-      <Cursor />
-
+    <div className="min-h-screen overflow-x-hidden bg-gray-50 text-gray-900">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         
@@ -196,8 +192,8 @@ export default function AboutPage() {
         }
         
         @keyframes pulse {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
         }
         
         @keyframes rotate {
@@ -217,87 +213,89 @@ export default function AboutPage() {
           animation: rotate 20s linear infinite;
         }
 
-        .glass {
-          background: rgba(255, 255, 255, 0.03);
+        .glass-light {
+          background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(16, 185, 129, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .text-gradient {
-          background: linear-gradient(90deg, #2B9D6F, #4BB6D6);
+          background: linear-gradient(90deg, #059669, #10b981);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           color: transparent;
         }
         
-        .bg-gradient-automotive {
-          background: linear-gradient(135deg, #001A20, #003540);
+        .bg-gradient-light {
+          background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
         }
         
-        .card-border {
+        .card-border-light {
           position: relative;
         }
         
-        .card-border::before {
+        .card-border-light::before {
           content: "";
           position: absolute;
           inset: 0;
           border-radius: inherit;
           padding: 1px;
-          background: linear-gradient(135deg, #2B9D6F, transparent, #4BB6D6);
+          background: linear-gradient(135deg, #10b981, transparent, #059669);
           -webkit-mask: 
             linear-gradient(#fff 0 0) content-box, 
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
           pointer-events: none;
+          opacity: 0.3;
         }
       `}</style>
 
-      {/* Hero Section - Premium Automotive Design */}
+      {/* Hero Section - Light Theme */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Enhanced background elements with circular brand motif */}
-        <div className="absolute inset-0 bg-[#001A20] z-0">
-          {/* Refined blueprint grid */}
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" className="opacity-20">
+        {/* Light background elements with subtle patterns */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-green-50 z-0">
+          {/* Refined grid pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <svg width="100%" height="100%" className="opacity-30">
               <defs>
                 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="0.5" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#grid)" />
             </svg>
           </div>
           
-          {/* Brand-aligned circular elements */}
+          {/* Subtle circular elements */}
           <motion.div 
-            className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full border border-emerald-500/10 opacity-40"
+            className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full border border-emerald-200/50 opacity-40"
             animate={{ rotate: 360 }}
             transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
           />
           
           <motion.div 
-            className="absolute -bottom-60 -left-60 w-[600px] h-[600px] rounded-full border border-emerald-500/10 opacity-20"
+            className="absolute -bottom-60 -left-60 w-[600px] h-[600px] rounded-full border border-emerald-200/30 opacity-30"
             animate={{ rotate: -360 }}
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
           />
 
-          {/* MOVA brand circular motif */}
-          <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full bg-emerald-500/5 blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-emerald-500/5 blur-3xl"></div>
+          {/* Light brand circular motifs */}
+          <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full bg-emerald-100/50 blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-green-100/50 blur-3xl"></div>
           
-          {/* Technical measurement lines */}
-          <div className="absolute top-[30%] left-0 w-full h-px bg-emerald-500/10"></div>
-          <div className="absolute top-[70%] left-0 w-full h-px bg-emerald-500/10"></div>
+          {/* Subtle measurement lines */}
+          <div className="absolute top-[30%] left-0 w-full h-px bg-emerald-200/50"></div>
+          <div className="absolute top-[70%] left-0 w-full h-px bg-emerald-200/50"></div>
           
-          <div className="absolute top-0 left-[30%] h-full w-px bg-emerald-500/10"></div>
-          <div className="absolute top-0 left-[70%] h-full w-px bg-emerald-500/10"></div>
+          <div className="absolute top-0 left-[30%] h-full w-px bg-emerald-200/50"></div>
+          <div className="absolute top-0 left-[70%] h-full w-px bg-emerald-200/50"></div>
 
-          {/* Radial gradient that mimics the MOVA logo circular shape */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full radial-gradient from-emerald-500/3 to-transparent opacity-60"></div>
+          {/* Light radial gradient */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full bg-gradient-radial from-emerald-100/20 to-transparent opacity-60"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -313,7 +311,7 @@ export default function AboutPage() {
               style={{ y: heroTextY }}
             >
               <motion.div 
-                className="mb-8 inline-flex items-center px-4 py-2 rounded-full glass border border-emerald-500/30"
+                className="mb-8 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -323,7 +321,7 @@ export default function AboutPage() {
               </motion.div>
               
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -333,7 +331,7 @@ export default function AboutPage() {
               </motion.h1>
               
               <motion.p 
-                className="text-xl text-gray-300 mb-12 max-w-2xl leading-relaxed"
+                className="text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
@@ -362,18 +360,18 @@ export default function AboutPage() {
                 
                 <motion.a 
                   href="#journey"
-                  className="group flex items-center gap-2 px-8 py-4 glass border border-emerald-500/40 rounded-full text-white font-medium relative overflow-hidden"
+                  className="group flex items-center gap-2 px-8 py-4 glass-light border border-emerald-200 rounded-full text-gray-700 font-medium relative overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-emerald-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
                   <span className="relative">Our Process</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.a>
               </motion.div>
 
-              {/* Statistics - Ultra Minimal */}
+              {/* Statistics */}
               <motion.div 
                 className="mt-16 grid grid-cols-2 gap-8"
                 initial={{ opacity: 0 }}
@@ -382,11 +380,11 @@ export default function AboutPage() {
               >
                 <div>
                   <div className="text-3xl font-bold mb-1 text-gradient">97%</div>
-                  <div className="text-gray-400 text-sm">Customer satisfaction rate</div>
+                  <div className="text-gray-500 text-sm">Customer satisfaction rate</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold mb-1 text-gradient">24/7</div>
-                  <div className="text-gray-400 text-sm">Premium support service</div>
+                  <div className="text-gray-500 text-sm">Premium support service</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -397,17 +395,17 @@ export default function AboutPage() {
               style={{ y: heroImageY }}
             >
               <div className="relative">
-                {/* Enhanced glow effects */}
-                <div className="absolute -inset-10 rounded-full bg-emerald-500/5 animate-pulse-slow blur-3xl"></div>
+                {/* Light glow effects */}
+                <div className="absolute -inset-10 rounded-full bg-emerald-200/20 animate-pulse-slow blur-3xl"></div>
                 <motion.div 
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-emerald-500/10"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-emerald-300/30"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 ></motion.div>
                 
                 {/* Main car visualization container */}
-                <div className="relative rounded-2xl overflow-hidden card-border">
-                  <div className="aspect-[4/3] relative bg-gradient-automotive rounded-2xl overflow-hidden">
+                <div className="relative rounded-2xl overflow-hidden card-border-light">
+                  <div className="aspect-[4/3] relative bg-gradient-light rounded-2xl overflow-hidden">
                     {/* Car blueprint visualization */}
                     <motion.div
                       className="absolute inset-0 flex items-center justify-center"
@@ -416,28 +414,28 @@ export default function AboutPage() {
                       transition={{ delay: 0.8, duration: 1 }}
                     >
                       <div className="relative w-full h-full flex items-center justify-center">
-                        {/* Circular brand-aligned element */}
+                        {/* Circular elements */}
                         <motion.div
-                          className="absolute w-64 h-64 rounded-full border border-emerald-500/20"
+                          className="absolute w-64 h-64 rounded-full border border-emerald-300/40"
                           animate={{ rotate: 360 }}
                           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
                         ></motion.div>
                         
                         {/* Inner circle */}
                         <motion.div
-                          className="absolute w-48 h-48 rounded-full border border-emerald-500/30"
+                          className="absolute w-48 h-48 rounded-full border border-emerald-300/50"
                           animate={{ rotate: -360 }}
                           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
                         ></motion.div>
 
-                        {/* Car illustration with enhanced styling */}
+                        {/* Car illustration with light styling */}
                         <div className="relative w-[80%] h-[80%]">
                           <svg 
                             viewBox="0 0 800 500" 
-                            className="w-full h-full text-emerald-500/30"
+                            className="w-full h-full text-emerald-600/60"
                             style={{ filter: "drop-shadow(0 0 10px rgba(16, 185, 129, 0.2))" }}
                           >
-                            {/* More detailed car silhouette */}
+                            {/* Car silhouette */}
                             <g>
                               {/* Car body */}
                               <path 
@@ -498,14 +496,14 @@ export default function AboutPage() {
                               <rect x="350" y="190" width="50" height="20" rx="5" stroke="currentColor" strokeWidth="1" fill="none" />
                             </g>
                             
-                            {/* MOVA brand circular element in the center */}
+                            {/* MOVA brand circular element */}
                             <circle cx="350" cy="280" r="35" stroke="currentColor" strokeWidth="2" fill="none" />
                             <circle cx="350" cy="280" r="30" stroke="currentColor" strokeWidth="1" fill="none" />
                           </svg>
 
-                          {/* Technical measurement points and specs */}
+                          {/* Technical measurement points */}
                           <motion.div 
-                            className="absolute bottom-0 left-0 right-0 h-px bg-emerald-500/20"
+                            className="absolute bottom-0 left-0 right-0 h-px bg-emerald-400/40"
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
                             transition={{ delay: 1.5, duration: 1.5 }}
@@ -531,7 +529,7 @@ export default function AboutPage() {
                               transition={{ delay: 1.8 + (i * 0.15), duration: 0.8 }}
                             >
                               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                              <div className="text-xs text-emerald-400 font-mono tracking-wider">
+                              <div className="text-xs text-emerald-600 font-mono tracking-wider">
                                 {point.label}
                               </div>
                             </motion.div>
@@ -555,21 +553,21 @@ export default function AboutPage() {
                               transition={{ delay: 2 + (i * 0.2), duration: 0.5 }}
                             >
                               <div className="relative">
-                                <div className="w-3 h-3 rounded-full bg-emerald-500/50 animate-ping absolute"></div>
+                                <div className="w-3 h-3 rounded-full bg-emerald-400/50 animate-ping absolute"></div>
                                 <div className="w-2 h-2 rounded-full bg-emerald-500 relative"></div>
                               </div>
                             </motion.div>
                           ))}
 
-                          {/* MOVA logo subtle integration */}
+                          {/* MOVA logo integration */}
                           <motion.div
                             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                             initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 0.15 }}
+                            animate={{ scale: 1, opacity: 0.3 }}
                             transition={{ delay: 2.5, duration: 1 }}
                           >
-                            <div className="w-24 h-24 rounded-full border-2 border-emerald-500/30 flex items-center justify-center">
-                              <Car className="w-12 h-12 text-emerald-500/50" />
+                            <div className="w-24 h-24 rounded-full border-2 border-emerald-400/50 flex items-center justify-center">
+                              <Car className="w-12 h-12 text-emerald-500/70" />
                             </div>
                           </motion.div>
                         </div>
@@ -583,9 +581,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Benefit Highlights Section - Car Rental Specific */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      {/* Benefit Highlights Section */}
+      <section className="py-24 relative overflow-hidden bg-white">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -596,7 +594,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -606,11 +604,11 @@ export default function AboutPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-gray-300 max-w-2xl mx-auto text-lg"
+              className="text-gray-600 max-w-2xl mx-auto text-lg"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
             >
               Experience the difference with our premium fleet and unparalleled service guarantees.
             </motion.p>
@@ -620,20 +618,20 @@ export default function AboutPage() {
             {benefits.map((benefit, index) => (
               <motion.div 
                 key={index}
-                className="glass rounded-2xl p-8 border border-white/10 h-full card-border"
+                className="glass-light rounded-2xl p-8 border border-emerald-100 h-full card-border-light"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 * index }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-emerald-400 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center text-emerald-600 mb-6">
                   {benefit.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
                 
-                <p className="text-gray-400">
+                <p className="text-gray-600">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -642,10 +640,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey Process Section - Refined & Polished */}
-      <section id="journey" ref={journeyRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-[#001A20] to-[#00252e]">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
+      {/* Journey Process Section */}
+      <section id="journey" ref={journeyRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-emerald-50 to-green-50">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-200/20 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -656,18 +654,18 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass border border-emerald-500/20"
+              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
               <span className="text-gradient font-medium">Seamless Experience</span>
             </motion.div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
               Your Journey With Us
             </h2>
             
-            <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
               From selecting your perfect vehicle to hitting the road, we've refined every 
               step to ensure an exceptional experience.
             </p>
@@ -675,9 +673,9 @@ export default function AboutPage() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Elegant connecting line */}
-            <div className="absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-emerald-500/0 via-emerald-500/60 to-emerald-500/0 transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-emerald-300/0 via-emerald-400/60 to-emerald-300/0 transform -translate-x-1/2"></div>
             
-            {/* Journey Steps - Without Numbering */}
+            {/* Journey Steps */}
             <div className="space-y-32 relative">
               {journeyProcess.map((process, index) => (
                 <motion.div 
@@ -694,15 +692,15 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <motion.div 
-                      className="glass rounded-3xl p-8 border border-white/10 shadow-xl overflow-hidden relative card-border"
+                      className="glass-light rounded-3xl p-8 border border-emerald-100 shadow-xl overflow-hidden relative card-border-light"
                     >
                       {/* Subtle animated background */}
                       <div className="absolute inset-0 opacity-10">
                         <svg className="w-full h-full" viewBox="0 0 200 200">
                           <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#2B9D6F" stopOpacity="0.3" />
-                              <stop offset="100%" stopColor="#4BB6D6" stopOpacity="0.3" />
+                              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+                              <stop offset="100%" stopColor="#059669" stopOpacity="0.3" />
                             </linearGradient>
                           </defs>
                           <path 
@@ -719,11 +717,11 @@ export default function AboutPage() {
                         </svg>
                       </div>
                       
-                      <h3 className="text-3xl font-bold mb-4 relative z-10">
+                      <h3 className="text-3xl font-bold mb-4 relative z-10 text-gray-900">
                         <span className="text-gradient">{process.title}</span>
                       </h3>
                       
-                      <p className="text-gray-300 mb-8 relative z-10">
+                      <p className="text-gray-600 mb-8 relative z-10">
                         {process.description}
                       </p>
                       
@@ -731,8 +729,8 @@ export default function AboutPage() {
                         {process.details.map((detail, detailIndex) => (
                           <motion.div 
                             key={detailIndex} 
-                            className="flex items-center text-gray-400 gap-2"
-                            whileHover={{ color: "#2B9D6F", transition: { duration: 0.2 } }}
+                            className="flex items-center text-gray-500 gap-2"
+                            whileHover={{ color: "#10b981", transition: { duration: 0.2 } }}
                           >
                             <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                             <span>{detail}</span>
@@ -751,7 +749,7 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 300, delay: 0.3 + index * 0.1 }}
                   >
                     <div className="w-16 h-16 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                      <div className="w-14 h-14 rounded-full bg-[#001A20] flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500/80 to-green-600/80 flex items-center justify-center text-white">
                           {process.icon}
                         </div>
@@ -767,10 +765,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Premium Fleet Section - Instead of Technology */}
-      <section id="fleet" ref={fleetRef} className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
+      {/* Premium Fleet Section */}
+      <section id="fleet" ref={fleetRef} className="py-24 relative overflow-hidden bg-white">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-100/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-100/20 rounded-full blur-3xl translate-y-1/3 translate-x-1/3"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -781,18 +779,18 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass border border-emerald-500/20"
+              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
               <span className="text-gradient font-medium">Premium Fleet</span>
             </motion.div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
               Exceptional Vehicles
             </h2>
             
-            <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
               Our meticulously maintained fleet offers a diverse range of premium vehicles
               to match your exact needs and preferences.
             </p>
@@ -804,7 +802,7 @@ export default function AboutPage() {
               {fleetCategories.map((category, idx) => (
                 <motion.button 
                   key={idx}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeFeature === idx ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white' : 'glass text-gray-300 hover:text-white border border-white/10'}`}
+                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeFeature === idx ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white' : 'glass-light text-gray-600 hover:text-gray-900 border border-emerald-100'}`}
                   onClick={() => setActiveFeature(idx)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
@@ -815,7 +813,7 @@ export default function AboutPage() {
             </div>
             
             {/* Fleet Category Display */}
-            <div className="relative glass rounded-3xl overflow-hidden card-border min-h-[500px]">
+            <div className="relative glass-light rounded-3xl overflow-hidden card-border-light min-h-[500px]">
               {fleetCategories.map((category, idx) => (
                 <motion.div 
                   key={idx}
@@ -829,16 +827,15 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
                     {/* Left side - Vehicle showcase */}
                     <div className="relative overflow-hidden h-[350px] lg:h-full">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent z-10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-100/30 to-transparent z-10"></div>
                       
-                      {/* Placeholder for actual vehicle image */}
-                      <div className="absolute inset-0 bg-gradient-automotive">
+                      {/* Vehicle image placeholder */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-green-50">
                         <div className="h-full w-full flex items-center justify-center">
-                          {/* Replace with actual car image */}
                           <div className="w-3/4 h-3/4 relative">
                             <svg 
                               viewBox="0 0 800 400" 
-                              className="w-full h-full text-emerald-500/30"
+                              className="w-full h-full text-emerald-500/50"
                             >
                               <path 
                                 d="M700,250 C700,180 650,150 580,150 L500,150 L450,100 L200,100 L150,150 L100,150 C50,150 50,200 50,250 C20,250 0,270 0,300 C0,330 20,350 50,350 L100,350 C100,380 130,400 150,400 C180,400 200,380 200,350 L550,350 C550,380 580,400 600,400 C630,400 650,380 650,350 L700,350 C730,350 750,330 750,300 C750,270 730,250 700,250 Z" 
@@ -860,13 +857,13 @@ export default function AboutPage() {
                       <div className="absolute inset-0 z-20 pointer-events-none">
                         {/* Circular elements */}
                         <motion.div 
-                          className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full border border-emerald-500/20"
+                          className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full border border-emerald-400/30"
                           animate={{ rotate: 360 }}
                           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                         />
                         
                         <motion.div 
-                          className="absolute bottom-1/4 right-1/4 w-32 h-32 rounded-full border border-emerald-500/30"
+                          className="absolute bottom-1/4 right-1/4 w-32 h-32 rounded-full border border-emerald-400/40"
                           animate={{ rotate: -360 }}
                           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                         />
@@ -878,15 +875,15 @@ export default function AboutPage() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.5, duration: 0.8 }}
                         >
-                          <div className="flex items-center gap-2 text-xs text-emerald-400">
+                          <div className="flex items-center gap-2 text-xs text-emerald-600">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
                             <span>Premium Features</span>
                           </div>
-                          <div className="flex items-center gap-2 text-xs text-emerald-400">
+                          <div className="flex items-center gap-2 text-xs text-emerald-600">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
                             <span>Enhanced Safety</span>
                           </div>
-                          <div className="flex items-center gap-2 text-xs text-emerald-400">
+                          <div className="flex items-center gap-2 text-xs text-emerald-600">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
                             <span>Luxury Interior</span>
                           </div>
@@ -898,36 +895,36 @@ export default function AboutPage() {
                     <div className="p-8 lg:p-12 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center gap-5 mb-8">
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-emerald-500/20 to-green-600/20 flex items-center justify-center text-emerald-400 shadow-lg shadow-emerald-500/10">
+                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-emerald-100 to-green-100 flex items-center justify-center text-emerald-600 shadow-lg shadow-emerald-500/10">
                             {category.icon}
                           </div>
-                          <h3 className="text-3xl font-bold">{category.title}</h3>
+                          <h3 className="text-3xl font-bold text-gray-900">{category.title}</h3>
                         </div>
                         
-                        <p className="text-gray-300 text-lg mb-10">
+                        <p className="text-gray-600 text-lg mb-10">
                           {category.description}
                         </p>
                         
                         <div className="space-y-6 mb-10">
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
                               <Users className="w-5 h-5" />
                             </div>
-                            <span className="text-lg">{category.metric}</span>
+                            <span className="text-lg text-gray-700">{category.metric}</span>
                           </div>
                           
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
                               <CheckCircle className="w-5 h-5" />
                             </div>
-                            <span className="text-lg">{category.highlight}</span>
+                            <span className="text-lg text-gray-700">{category.highlight}</span>
                           </div>
                           
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center text-emerald-600">
                               <CreditCard className="w-5 h-5" />
                             </div>
-                            <span className="text-lg">Premium insurance included</span>
+                            <span className="text-lg text-gray-700">Premium insurance included</span>
                           </div>
                         </div>
                       </div>
@@ -955,9 +952,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section - Simplified with Profile Focus */}
-      <section id="team" ref={teamRef} className="py-24 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl"></div>
+      {/* Team Section */}
+      <section id="team" ref={teamRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-100/20 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -968,18 +965,18 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass border border-emerald-500/20"
+              className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
               <span className="text-gradient font-medium">Leadership</span>
             </motion.div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
               Our Team
             </h2>
             
-            <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
               Meet the visionaries behind MOVA who are redefining the mobility experience.
             </p>
           </motion.div>
@@ -995,21 +992,20 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
               >
-                {/* Simplified profile design with hover effect */}
-                <div className="relative aspect-square rounded-2xl overflow-hidden card-border">
+                {/* Profile design with hover effect */}
+                <div className="relative aspect-square rounded-2xl overflow-hidden card-border-light">
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 flex flex-col justify-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 flex flex-col justify-end p-6">
                     <h4 className="text-xl font-bold text-white">{member.name}</h4>
                     <p className="text-white/90">{member.position}</p>
                   </div>
                   
-                  {/* Profile image with color tint on hover */}
+                  {/* Profile image */}
                   <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
-                    <Image
+                    <img
                       src={member.image}
                       alt={member.name}
-                      fill
-                      className="object-cover object-center filter group-hover:brightness-90"
+                      className="w-full h-full object-cover object-center filter group-hover:brightness-90"
                     />
                   </div>
                   
@@ -1037,17 +1033,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section - Refined & Polished */}
-      <section id="cta" ref={ctaRef} className="py-24 relative overflow-hidden">
+      {/* CTA Section */}
+      <section id="cta" ref={ctaRef} className="py-24 relative overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-[#001A20] to-teal-500/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/30 via-white to-green-100/30"></div>
           
           {/* Technical grid overlay */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-10">
             <svg width="100%" height="100%" className="opacity-50">
               <defs>
                 <pattern id="ctaGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="0.5" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#ctaGrid)" />
@@ -1058,7 +1054,7 @@ export default function AboutPage() {
           {Array.from({ length: 3 }).map((_, i) => (
             <motion.div
               key={`cta-circle-${i}`}
-              className="absolute rounded-full border border-emerald-500/10"
+              className="absolute rounded-full border border-emerald-300/20"
               style={{ 
                 top: `${30 + (i * 20)}%`, 
                 left: `${20 + (i * 20)}%`,
@@ -1080,32 +1076,32 @@ export default function AboutPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
-            className="max-w-5xl mx-auto glass rounded-3xl p-12 border border-white/10 overflow-hidden relative card-border"
+            className="max-w-5xl mx-auto glass-light rounded-3xl p-12 border border-emerald-100 overflow-hidden relative card-border-light"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
             {/* Technical design elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
-            <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-transparent via-emerald-500/30 to-transparent"></div>
-            <div className="absolute top-0 right-0 h-full w-px bg-gradient-to-b from-transparent via-emerald-500/30 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
+            <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent"></div>
+            <div className="absolute top-0 right-0 h-full w-px bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent"></div>
             
             <div className="text-center relative z-10">
               <motion.div
-                className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass border border-emerald-500/20"
+                className="mb-6 inline-flex items-center px-4 py-2 rounded-full glass-light border border-emerald-200"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <span className="text-gradient font-medium">Ready to Drive?</span>
               </motion.div>
               
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Experience <span className="text-gradient">Premium Mobility</span>
               </h2>
               
-              <p className="text-gray-300 max-w-3xl mx-auto mb-10 text-lg">
+              <p className="text-gray-600 max-w-3xl mx-auto mb-10 text-lg">
                 Join thousands of satisfied customers who have transformed their transportation
                 experience with MOVA's premium vehicle rental service.
               </p>
@@ -1125,39 +1121,39 @@ export default function AboutPage() {
                 
                 <motion.a 
                   href="#fleet"
-                  className="group flex items-center gap-2 px-8 py-4 glass border border-emerald-500/30 rounded-full text-white font-medium relative overflow-hidden"
+                  className="group flex items-center gap-2 px-8 py-4 glass-light border border-emerald-200 rounded-full text-gray-700 font-medium relative overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-emerald-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
                   <span className="relative">Explore Vehicles</span>
                 </motion.a>
               </div>
               
               <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="flex items-center justify-center">
-                  <div className="flex items-center text-gray-300 gap-3">
-                    <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center text-gray-600 gap-3">
+                    <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-emerald-600" />
                     </div>
                     <span>+91 98765 43210</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-center">
-                  <div className="flex items-center text-gray-300 gap-3">
-                    <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center text-gray-600 gap-3">
+                    <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-emerald-600" />
                     </div>
                     <span>contact@mova.io</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-center">
-                  <div className="flex items-center text-gray-300 gap-3">
-                    <div className="w-10 h-10 rounded-full glass border border-emerald-500/20 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center text-gray-600 gap-3">
+                    <div className="w-10 h-10 rounded-full glass-light border border-emerald-200 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-emerald-600" />
                     </div>
                     <span>Bangalore, India</span>
                   </div>

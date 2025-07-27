@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
 import { Radio_Canada_Big } from 'next/font/google';
 import './globals.css';
+<<<<<<< HEAD
 import Header from '@/components/Header';
 import { Footer } from '@/components/footer-section';
+=======
+import Header from './components/Header';
+import Footer from './components/Footer';
+>>>>>>> 0896d7be311cf4d36e83b08c2e7723c96deaf5ec
 
 /**
  * Radio Canada Big Font Configuration
@@ -48,7 +53,11 @@ export default function RootLayout({
           {children}
         </main>
 
+<<<<<<< HEAD
         {/* MOVA Footer Component */}
+=======
+        {/* Footer Component - Added to display on all pages */}
+>>>>>>> 0896d7be311cf4d36e83b08c2e7723c96deaf5ec
         <Footer />
 
         {/* Optional: Global background pattern for enhanced visual appeal */}

@@ -290,7 +290,7 @@ export default function FleetPage() {
             animate="visible"
           >
             <motion.div 
-              className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-10"
+              className="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full text-sm font-medium text-emerald-700 mb-16"
               variants={cardVariants}
             >
               <Car className="w-4 h-4 mr-2" />

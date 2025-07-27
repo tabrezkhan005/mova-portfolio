@@ -8,6 +8,7 @@ import {
   Gauge, Wrench, Settings, Award, CreditCard, Fuel
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Cursor from '../components/Cursor';
 
 export default function AboutPage() {
   const [hoveredTeamMember, setHoveredTeamMember] = useState<number | null>(null);
@@ -179,6 +180,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-gray-50 text-gray-900">
+      <Cursor/>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         

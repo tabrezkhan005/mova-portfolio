@@ -146,10 +146,10 @@ const AuthSystem = () => {
 
       {/* Floating particles effect */}
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-40 right-32 w-1 h-1 bg-emerald-300 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-20 right-20 w-1 h-1 bg-emerald-400 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-20 left-20 w-2 h-2 bg-[#00a8cc] rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-40 right-32 w-1 h-1 bg-[#00a8cc]/70 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-[#00a8cc] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-20 right-20 w-1 h-1 bg-[#00a8cc]/70 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
       </div>
 
       {/* Back to Home Button */}
@@ -171,11 +171,11 @@ const AuthSystem = () => {
           className="w-full max-w-md relative"
         >
           {/* Glass morphism container */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl shadow-emerald-500/20 p-8 relative overflow-hidden">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl shadow-[#00a8cc]/20 p-8 relative overflow-hidden">
             {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500" />
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-400/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00a8cc] via-[#00a8cc]/70 to-[#00a8cc]" />
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#00a8cc]/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#00a8cc]/20 rounded-full blur-3xl" />
 
             {/* Header with MOVA Logo */}
             <motion.div
@@ -191,10 +191,10 @@ const AuthSystem = () => {
                    className="h-10 w-10"
                  />
                </div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-300 to-emerald-100 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-[#00a8cc] to-white bg-clip-text text-transparent">
                 MOVA
               </h1>
-              <p className="text-emerald-100/80 mt-2">
+              <p className="text-gray-300 mt-2">
                 {currentView === "login" && "Welcome back to premium car rentals"}
                 {currentView === "signup" && "Join the premium car rental experience"}
                 {currentView === "otp" && "Verify your phone number"}
@@ -218,7 +218,7 @@ const AuthSystem = () => {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-emerald-100 font-medium flex items-center gap-2">
+                            <FormLabel className="text-gray-200 font-medium flex items-center gap-2">
                               <Phone className="h-4 w-4" />
                               Phone Number
                             </FormLabel>
@@ -226,7 +226,7 @@ const AuthSystem = () => {
                               <Input
                                 {...field}
                                 placeholder="+1 (555) 123-4567"
-                                className="bg-white/10 border-emerald-300/50 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-white placeholder:text-emerald-200/60 backdrop-blur-sm"
+                                className="bg-white/10 border-[#00a8cc]/50 focus:border-[#00a8cc] focus:ring-[#00a8cc]/20 rounded-xl h-12 text-white placeholder:text-gray-400 backdrop-blur-sm"
                               />
                             </FormControl>
                             <FormMessage className="text-red-300" />
@@ -237,7 +237,7 @@ const AuthSystem = () => {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-emerald-400/30"
+                        className="w-full h-12 bg-[#00a8cc] hover:bg-[#00a8cc]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-[#00a8cc]/30"
                       >
                         {isLoading ? (
                           <div className="flex items-center gap-2">
@@ -253,7 +253,7 @@ const AuthSystem = () => {
                         <button
                           type="button"
                           onClick={() => setCurrentView("signup")}
-                          className="text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
+                          className="text-[#00a8cc] hover:text-[#00a8cc]/80 font-medium transition-colors"
                         >
                           Don&apos;t have an account? Sign up
                         </button>
@@ -279,7 +279,7 @@ const AuthSystem = () => {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-emerald-100 font-medium flex items-center gap-2">
+                            <FormLabel className="text-gray-200 font-medium flex items-center gap-2">
                               <User className="h-4 w-4" />
                               Full Name
                             </FormLabel>
@@ -287,7 +287,7 @@ const AuthSystem = () => {
                               <Input
                                 {...field}
                                 placeholder="John Doe"
-                                className="bg-white/10 border-emerald-300/50 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-white placeholder:text-emerald-200/60 backdrop-blur-sm"
+                                className="bg-white/10 border-[#00a8cc]/50 focus:border-[#00a8cc] focus:ring-[#00a8cc]/20 rounded-xl h-12 text-white placeholder:text-gray-400 backdrop-blur-sm"
                               />
                             </FormControl>
                             <FormMessage className="text-red-300" />
@@ -300,7 +300,7 @@ const AuthSystem = () => {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-emerald-100 font-medium flex items-center gap-2">
+                            <FormLabel className="text-gray-200 font-medium flex items-center gap-2">
                               <Mail className="h-4 w-4" />
                               Email Address
                             </FormLabel>
@@ -309,7 +309,7 @@ const AuthSystem = () => {
                                 {...field}
                                 type="email"
                                 placeholder="john@example.com"
-                                className="bg-white/10 border-emerald-300/50 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-white placeholder:text-emerald-200/60 backdrop-blur-sm"
+                                className="bg-white/10 border-[#00a8cc]/50 focus:border-[#00a8cc] focus:ring-[#00a8cc]/20 rounded-xl h-12 text-white placeholder:text-gray-400 backdrop-blur-sm"
                               />
                             </FormControl>
                             <FormMessage className="text-red-300" />
@@ -322,7 +322,7 @@ const AuthSystem = () => {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-emerald-100 font-medium flex items-center gap-2">
+                            <FormLabel className="text-gray-200 font-medium flex items-center gap-2">
                               <Phone className="h-4 w-4" />
                               Phone Number
                             </FormLabel>
@@ -330,7 +330,7 @@ const AuthSystem = () => {
                               <Input
                                 {...field}
                                 placeholder="+1 (555) 123-4567"
-                                className="bg-white/10 border-emerald-300/50 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-white placeholder:text-emerald-200/60 backdrop-blur-sm"
+                                className="bg-white/10 border-[#00a8cc]/50 focus:border-[#00a8cc] focus:ring-[#00a8cc]/20 rounded-xl h-12 text-white placeholder:text-gray-400 backdrop-blur-sm"
                               />
                             </FormControl>
                             <FormMessage className="text-red-300" />
@@ -341,7 +341,7 @@ const AuthSystem = () => {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-emerald-400/30"
+                        className="w-full h-12 bg-[#00a8cc] hover:bg-[#00a8cc]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-[#00a8cc]/30"
                       >
                         {isLoading ? (
                           <div className="flex items-center gap-2">
@@ -357,7 +357,7 @@ const AuthSystem = () => {
                         <button
                           type="button"
                           onClick={() => setCurrentView("login")}
-                          className="text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
+                          className="text-[#00a8cc] hover:text-[#00a8cc]/80 font-medium transition-colors"
                         >
                           Already have an account? Sign in
                         </button>
@@ -379,15 +379,15 @@ const AuthSystem = () => {
                   <div className="text-center mb-6">
                     <button
                       onClick={() => setCurrentView("signup")}
-                      className="flex items-center gap-2 text-emerald-300 hover:text-emerald-200 mb-4 transition-colors"
+                      className="flex items-center gap-2 text-[#00a8cc] hover:text-[#00a8cc]/80 mb-4 transition-colors"
                     >
                       <ArrowLeft className="h-4 w-4" />
                       Back
                     </button>
-                    <p className="text-emerald-100/80">
+                    <p className="text-gray-300">
                       We&apos;ve sent a verification code to
                     </p>
-                    <p className="font-semibold text-emerald-200">{userPhone}</p>
+                    <p className="font-semibold text-[#00a8cc]">{userPhone}</p>
                   </div>
 
                   <Form {...otpForm}>
@@ -397,7 +397,7 @@ const AuthSystem = () => {
                         name="otp"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-emerald-100 font-medium text-center block">
+                            <FormLabel className="text-gray-200 font-medium text-center block">
                               Enter Verification Code
                             </FormLabel>
                             <FormControl>
@@ -408,12 +408,12 @@ const AuthSystem = () => {
                                   onChange={field.onChange}
                                 >
                                   <InputOTPGroup>
-                                    <InputOTPSlot index={0} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
-                                    <InputOTPSlot index={1} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
-                                    <InputOTPSlot index={2} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
-                                    <InputOTPSlot index={3} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
-                                    <InputOTPSlot index={4} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
-                                    <InputOTPSlot index={5} className="w-12 h-12 text-lg border-emerald-300/50 focus:border-emerald-400 bg-white/10 text-white" />
+                                    <InputOTPSlot index={0} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
+                                    <InputOTPSlot index={1} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
+                                    <InputOTPSlot index={2} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
+                                    <InputOTPSlot index={3} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
+                                    <InputOTPSlot index={4} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
+                                    <InputOTPSlot index={5} className="w-12 h-12 text-lg border-[#00a8cc]/50 focus:border-[#00a8cc] bg-white/10 text-white" />
                                   </InputOTPGroup>
                                 </InputOTP>
                               </div>
@@ -426,7 +426,7 @@ const AuthSystem = () => {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-emerald-400/30"
+                        className="w-full h-12 bg-[#00a8cc] hover:bg-[#00a8cc]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-[#00a8cc]/30"
                       >
                         {isLoading ? (
                           <div className="flex items-center gap-2">
@@ -444,7 +444,7 @@ const AuthSystem = () => {
                       <div className="text-center">
                         <button
                           type="button"
-                          className="text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
+                          className="text-[#00a8cc] hover:text-[#00a8cc]/80 font-medium transition-colors"
                         >
                           Resend Code
                         </button>

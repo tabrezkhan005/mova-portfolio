@@ -116,7 +116,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[100vh] overflow-hidden">
         {/* Animated Background */}
@@ -149,12 +149,12 @@ export default function HomePage() {
           <motion.div
             animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#00a8cc]/10 rounded-full blur-3xl"
+            className="absolute top-1/4 right-[10%] w-32 sm:w-64 h-32 sm:h-64 bg-[#00a8cc]/10 rounded-full blur-3xl"
           />
           <motion.div
             animate={{ y: [0, 20, 0], opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-[#d4a853]/10 rounded-full blur-3xl"
+            className="absolute bottom-1/4 left-[10%] w-48 sm:w-96 h-48 sm:h-96 bg-[#d4a853]/10 rounded-full blur-3xl"
           />
         </div>
 
@@ -534,7 +534,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative overflow-hidden"
             >
               <div className="relative h-[500px] rounded-2xl overflow-hidden">
                 <Image
@@ -545,14 +545,14 @@ export default function HomePage() {
                 />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-[#00252e] rounded-full flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-white" />
+              <div className="absolute -bottom-6 right-0 sm:-right-6 bg-white rounded-xl shadow-xl p-4 sm:p-6 max-w-[200px] sm:max-w-xs">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-[#00252e] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Need Help?</p>
-                    <p className="font-bold text-[#00252e]">+91 90000-12345</p>
+                    <p className="text-xs sm:text-sm text-gray-500">Need Help?</p>
+                    <p className="font-bold text-[#00252e] text-sm sm:text-base">+91 90000-12345</p>
                   </div>
                 </div>
               </div>
@@ -610,9 +610,9 @@ export default function HomePage() {
       {/* Your Journey With Us - Timeline Section */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00a8cc]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d4a853]/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-[10%] w-48 sm:w-96 h-48 sm:h-96 bg-[#00a8cc]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-[10%] w-48 sm:w-96 h-48 sm:h-96 bg-[#d4a853]/10 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

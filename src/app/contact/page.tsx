@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import {
   Phone, Mail, MapPin, Clock, Send, CheckCircle,
   MessageSquare, Linkedin, Twitter, Facebook, Instagram,
-  ArrowRight, Headphones, Building, Globe
+  ArrowRight, Headphones, Building
 } from 'lucide-react';
 
 export default function ContactPage() {
@@ -95,7 +95,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative py-24 bg-[#00252e] overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-pattern" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -118,7 +118,7 @@ export default function ContactPage() {
               variants={fadeInUp}
               className="text-xl text-gray-300 max-w-2xl mx-auto"
             >
-              Have questions or need assistance? Our team is here to help you 
+              Have questions or need assistance? Our team is here to help you
               with all your car rental needs.
             </motion.p>
           </motion.div>

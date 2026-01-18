@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Car, Users, Fuel, Settings, Star, Search, Filter,
-  Grid, List, X, MapPin, Calendar, ChevronDown,
+  Grid, List, X, MapPin,
   Shield, Clock, CheckCircle, Heart, ArrowRight
 } from 'lucide-react';
 
@@ -250,7 +250,7 @@ export default function FleetPage() {
 
   // Toggle favorite
   const toggleFavorite = (carId: number) => {
-    setFavorites(prev => 
+    setFavorites(prev =>
       prev.includes(carId) ? prev.filter(id => id !== carId) : [...prev, carId]
     );
   };
@@ -283,7 +283,7 @@ export default function FleetPage() {
       {/* Hero Section */}
       <section className="relative py-24 bg-[#00252e] overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-pattern" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -306,7 +306,7 @@ export default function FleetPage() {
               variants={fadeInUp}
               className="text-xl text-gray-300 max-w-2xl mx-auto"
             >
-              Choose from our extensive collection of well-maintained vehicles 
+              Choose from our extensive collection of well-maintained vehicles
               for every occasion and budget.
             </motion.p>
           </motion.div>
@@ -487,7 +487,7 @@ export default function FleetPage() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className={viewMode === 'grid' 
+            className={viewMode === 'grid'
               ? 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
               : 'space-y-4'
             }

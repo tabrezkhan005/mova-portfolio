@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Car, Shield, Users, Star, MapPin, Calendar, Clock,
-  CheckCircle, Award, Zap, Phone, ArrowRight, Sparkles,
-  ChevronRight, Play, Heart, Fuel, Settings
+  CheckCircle, Award, Zap, Phone, ArrowRight,
+  ChevronRight, Heart, Fuel, Settings
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -161,7 +161,7 @@ export default function HomePage() {
         {/* Main Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 min-h-[100vh] flex items-center">
           <div className="grid lg:grid-cols-5 gap-12 items-center w-full">
-            
+
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -203,7 +203,7 @@ export default function HomePage() {
                 transition={{ delay: 0.4 }}
                 className="text-lg text-gray-300 mb-8 max-w-lg"
               >
-                Experience the freedom of the open road with our premium fleet. 
+                Experience the freedom of the open road with our premium fleet.
                 From luxury sedans to rugged SUVs, find your perfect ride.
               </motion.p>
 
@@ -764,7 +764,7 @@ export default function HomePage() {
                   Ready to Start Your Journey?
                 </h2>
                 <p className="text-gray-300 max-w-xl">
-                  Book your premium car rental today and experience the MOVA difference. 
+                  Book your premium car rental today and experience the MOVA difference.
                   Quality vehicles, exceptional service, unbeatable prices.
                 </p>
               </div>

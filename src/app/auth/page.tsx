@@ -85,7 +85,8 @@ const AuthSystem = () => {
     setIsLoading(false);
   };
 
-  const handleOTPVerification = async (data: OTPFormData) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleOTPVerification = async (_data: OTPFormData) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -93,7 +94,8 @@ const AuthSystem = () => {
     onAuthSuccess();
   };
 
-  const handleLogin = async (data: LoginFormData) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleLogin = async (_data: LoginFormData) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));

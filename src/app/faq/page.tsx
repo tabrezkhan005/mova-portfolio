@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronDown, Search, Car, CreditCard, Shield,
-  Clock, MapPin, FileText, Phone, ArrowRight,
+  MapPin, FileText, Phone,
   HelpCircle, MessageSquare
 } from 'lucide-react';
 
@@ -126,7 +126,7 @@ export default function FAQPage() {
       {/* Hero Section */}
       <section className="relative py-24 bg-[#00252e] overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-pattern" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -331,7 +331,7 @@ export default function FAQPage() {
                   Still Have Questions?
                 </h2>
                 <p className="text-gray-300 mb-6">
-                  Can&apos;t find the answer you&apos;re looking for? Our friendly support 
+                  Can&apos;t find the answer you&apos;re looking for? Our friendly support
                   team is here to help you 24/7.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">

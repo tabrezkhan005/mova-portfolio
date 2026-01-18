@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { debounce } from 'lodash';
 
@@ -32,20 +32,20 @@ export default function Cursor({
   // Motion values for smoother animation
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
-  
+
   // Spring physics configuration for smooth movement
-  const springConfig = { 
-    damping: 28, 
-    stiffness: 600, 
-    mass: 0.5 
+  const springConfig = {
+    damping: 28,
+    stiffness: 600,
+    mass: 0.5
   };
-  
+
   // Apply spring physics to the cursor
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
   const cursorDotX = useSpring(mouseX, { ...springConfig, stiffness: 800 });
   const cursorDotY = useSpring(mouseY, { ...springConfig, stiffness: 800 });
-  
+
   // State management
   const [visible, setVisible] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -55,13 +55,14 @@ export default function Cursor({
   // Trail effect
   const [trailElements, setTrailElements] = useState<Array<{ id: number, x: number, y: number }>>([]);
   const trailLength = 5;
-  
+
   // Update cursor position with performance optimizations
-  const updateCursorPosition = useCallback(
-    debounce((point: { x: number, y: number }) => {
+  // Memoize the debounced function to avoid recreating it on every render
+  const updateCursorPosition = useMemo(
+    () => debounce((point: { x: number, y: number }) => {
       mouseX.set(point.x);
       mouseY.set(point.y);
-      
+
       if (enableTrail) {
         setTrailElements(prev => {
           const newTrail = [...prev, { id: Date.now(), x: point.x, y: point.y }];
@@ -69,7 +70,7 @@ export default function Cursor({
         });
       }
     }, 5), // Very small debounce for smooth movement while reducing calls
-    [mouseX, mouseY, enableTrail]
+    [mouseX, mouseY, enableTrail, trailLength]
   );
 
   // Detect interactive elements
@@ -78,7 +79,7 @@ export default function Cursor({
       el.addEventListener('mouseenter', () => setLinkHovered(true));
       el.addEventListener('mouseleave', () => setLinkHovered(false));
     });
-    
+
     return () => {
       document.querySelectorAll('a, button, [role="button"], [type="button"], input[type="submit"]').forEach(el => {
         el.removeEventListener('mouseenter', () => setLinkHovered(true));
@@ -98,9 +99,9 @@ export default function Cursor({
     const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     ) || window.innerWidth <= 768;
-    
+
     setIsMobile(isMobileDevice);
-    
+
     if (!isMobileDevice) {
       document.documentElement.style.cursor = 'none';
     } else {
@@ -122,10 +123,10 @@ export default function Cursor({
       document.addEventListener('mouseup', () => setClicked(false));
       document.addEventListener('mouseleave', () => setVisible(false));
       document.addEventListener('mouseenter', () => setVisible(true));
-      
+
       // Handle link hover events
       const cleanupLinkEvents = handleLinkHoverEvents();
-      
+
       // Handle resize events for mobile detection
       window.addEventListener('resize', detectMobile);
 
@@ -138,10 +139,10 @@ export default function Cursor({
         document.removeEventListener('mouseup', () => setClicked(false));
         document.removeEventListener('mouseleave', () => setVisible(false));
         document.removeEventListener('mouseenter', () => setVisible(true));
-        
+
         cleanupLinkEvents();
         window.removeEventListener('resize', detectMobile);
-        
+
         document.documentElement.style.cursor = 'auto';
       };
     }
@@ -182,13 +183,13 @@ export default function Cursor({
           transition: 'opacity 0.15s, transform 0.1s',
         }}
       />
-      
+
       {/* Trail effect */}
       {enableTrail && visible && trailElements.map((elem, index) => {
         // Calculate opacity and size based on position in trail
         const opacityFactor = (index + 1) / trailLength;
         const sizeFactor = 0.6 + (0.4 * (index / trailLength));
-        
+
         return (
           <motion.div
             key={elem.id}

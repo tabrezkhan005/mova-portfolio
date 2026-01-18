@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Tag, Clock, Calendar, Car, Shield, Zap, Sparkles,
-  CheckCircle, ArrowRight, Gift, Percent, Users,
+  Clock, Calendar, Car, Shield, Zap, Sparkles,
+  ArrowRight, Gift, Percent, Users,
   Star, Copy, Check, Timer
 } from 'lucide-react';
 
@@ -151,11 +151,11 @@ export default function DriveSavePage() {
       {/* Hero Section */}
       <section className="relative py-24 bg-[#00252e] overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-pattern" />
-        
+
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-[#00a8cc]/20 rounded-full blur-xl animate-pulse" />
         <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#d4a853]/20 rounded-full blur-xl animate-pulse delay-500" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -179,7 +179,7 @@ export default function DriveSavePage() {
               variants={fadeInUp}
               className="text-xl text-gray-300 max-w-2xl mx-auto mb-8"
             >
-              Discover exclusive deals and discounts on your favorite vehicles. 
+              Discover exclusive deals and discounts on your favorite vehicles.
               Use our promo codes and enjoy premium rentals at unbeatable prices.
             </motion.p>
             <motion.div variants={fadeInUp}>
@@ -246,14 +246,14 @@ export default function DriveSavePage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${deal.color} opacity-60`} />
-                  
+
                   {/* Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-white text-[#00252e] text-xs font-bold rounded-full">
                       {deal.badge}
                     </span>
                   </div>
-                  
+
                   {/* Discount Badge */}
                   <div className="absolute top-4 right-4">
                     <span className="px-4 py-2 bg-[#d4a853] text-[#00252e] text-lg font-bold rounded-xl">
@@ -266,7 +266,7 @@ export default function DriveSavePage() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-[#00252e] mb-2">{deal.title}</h3>
                   <p className="text-gray-600 mb-4">{deal.description}</p>
-                  
+
                   {/* Validity */}
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                     <Timer className="w-4 h-4" />
@@ -341,7 +341,7 @@ export default function DriveSavePage() {
                 {index < howItWorks.length - 1 && (
                   <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-0.5 bg-white/20" />
                 )}
-                
+
                 <div className="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center relative">
                   <span className="text-3xl font-bold text-[#00a8cc]">{item.step}</span>
                 </div>
@@ -396,7 +396,7 @@ export default function DriveSavePage() {
                 <div className="text-2xl font-bold text-[#00a8cc] mb-2">{offer.discount}</div>
                 <h3 className="font-bold text-[#00252e] mb-2">{offer.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
-                
+
                 {/* Code Copy */}
                 <div className="flex items-center gap-2">
                   <code className="flex-1 px-3 py-2 bg-white rounded-lg text-sm font-mono font-bold text-[#00252e] border border-gray-200">
@@ -480,7 +480,7 @@ export default function DriveSavePage() {
                 variants={fadeInUp}
                 className="text-gray-600 mb-8"
               >
-                Our offers don&apos;t compromise on quality. Enjoy the same premium 
+                Our offers don&apos;t compromise on quality. Enjoy the same premium
                 service and vehicle standards at discounted rates.
               </motion.p>
 
@@ -519,14 +519,14 @@ export default function DriveSavePage() {
             {/* Decorative */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#00a8cc]/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#d4a853]/10 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10">
               <Gift className="w-16 h-16 text-[#d4a853] mx-auto mb-6" />
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Ready to Save on Your Next Rental?
               </h2>
               <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-                Don&apos;t miss out on these amazing deals. Book now and experience 
+                Don&apos;t miss out on these amazing deals. Book now and experience
                 premium car rental at unbeatable prices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

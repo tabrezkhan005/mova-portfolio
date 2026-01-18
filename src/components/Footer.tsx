@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import {
   Mail, Phone, MapPin, ArrowRight, Send, CheckCircle,
   Facebook, Twitter, Instagram, Linkedin, Youtube
@@ -71,10 +70,10 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Premium mobility solutions for modern travelers. Experience exceptional 
+              Premium mobility solutions for modern travelers. Experience exceptional
               service and pristine vehicles with every rental.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <a href="tel:+919000012345" className="flex items-center gap-3 text-gray-400 hover:text-[#00a8cc] transition-colors">
@@ -134,7 +133,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter for exclusive deals and updates.
             </p>
-            
+
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <div className="relative">
                 <input

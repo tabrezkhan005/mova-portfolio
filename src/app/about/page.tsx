@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Car, Shield, Users, Star, MapPin, Clock,
+  Shield, Star,
   CheckCircle, Award, Target, Heart, ArrowRight,
-  Phone, Mail, Linkedin, Twitter, Instagram
+  Linkedin, Twitter
 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -94,7 +94,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-pattern" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -119,7 +119,7 @@ export default function AboutPage() {
               variants={fadeInUp}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              We&apos;re on a mission to make premium car rental accessible, 
+              We&apos;re on a mission to make premium car rental accessible,
               convenient, and enjoyable for everyone across India.
             </motion.p>
           </motion.div>
@@ -184,16 +184,16 @@ export default function AboutPage() {
                 variants={fadeInUp}
                 className="text-gray-600 mb-6 leading-relaxed"
               >
-                MOVA was born from a simple idea: car rental should be easy, affordable, 
-                and premium for everyone. What started as a small fleet of 10 cars in 
+                MOVA was born from a simple idea: car rental should be easy, affordable,
+                and premium for everyone. What started as a small fleet of 10 cars in
                 Bangalore has grown into a nationwide service trusted by thousands.
               </motion.p>
               <motion.p
                 variants={fadeInUp}
                 className="text-gray-600 mb-8 leading-relaxed"
               >
-                Our commitment to quality, transparency, and customer satisfaction has 
-                made us one of the fastest-growing car rental services in India. We 
+                Our commitment to quality, transparency, and customer satisfaction has
+                made us one of the fastest-growing car rental services in India. We
                 believe that every journey deserves a great vehicle and exceptional service.
               </motion.p>
 
@@ -238,9 +238,9 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#00252e] mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To provide accessible, reliable, and premium car rental services that 
-                empower people to travel with freedom and confidence. We aim to make 
-                every journey memorable through exceptional vehicles and unparalleled 
+                To provide accessible, reliable, and premium car rental services that
+                empower people to travel with freedom and confidence. We aim to make
+                every journey memorable through exceptional vehicles and unparalleled
                 customer service.
               </p>
             </motion.div>
@@ -258,9 +258,9 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
               <p className="text-gray-300 leading-relaxed">
-                To become India&apos;s most trusted and innovative car rental platform, 
-                setting new standards for quality, convenience, and sustainability in 
-                the mobility industry. We envision a future where premium travel is 
+                To become India&apos;s most trusted and innovative car rental platform,
+                setting new standards for quality, convenience, and sustainability in
+                the mobility industry. We envision a future where premium travel is
                 accessible to all.
               </p>
             </motion.div>
@@ -294,7 +294,7 @@ export default function AboutPage() {
               variants={fadeInUp}
               className="text-gray-600 max-w-2xl mx-auto"
             >
-              Our core values shape everything we do, from how we maintain our 
+              Our core values shape everything we do, from how we maintain our
               vehicles to how we serve our customers.
             </motion.p>
           </motion.div>
@@ -408,7 +408,7 @@ export default function AboutPage() {
               variants={fadeInUp}
               className="text-gray-600 max-w-2xl mx-auto"
             >
-              Our dedicated team works tirelessly to ensure you have the best 
+              Our dedicated team works tirelessly to ensure you have the best
               car rental experience possible.
             </motion.p>
           </motion.div>
@@ -467,7 +467,7 @@ export default function AboutPage() {
               Ready to Experience MOVA?
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-              Join thousands of satisfied customers who trust MOVA for their 
+              Join thousands of satisfied customers who trust MOVA for their
               car rental needs. Book your first ride today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -78,15 +78,15 @@ export default function Footer() {
             <div className="space-y-3">
               <a href="tel:+919000012345" className="flex items-center gap-3 text-gray-400 hover:text-[#00a8cc] transition-colors">
                 <Phone className="w-5 h-5" />
-                <span>+91 90000-12345</span>
+                <span>+91 93909 83993</span>
               </a>
               <a href="mailto:contact@mova.com" className="flex items-center gap-3 text-gray-400 hover:text-[#00a8cc] transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>contact@mova.com</span>
+                <span>movatechnicalsolutions@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>123 Mobility Drive, Tech Park, Bangalore 560001</span>
+                <span>Vinjanampadu, Vatticherukuru Mandal, Guntur District, Andhra Pradesh, India</span>
               </div>
             </div>
           </div>

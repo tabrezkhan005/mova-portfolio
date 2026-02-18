@@ -113,7 +113,7 @@ export default function AboutPage() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
               Driving Excellence
-              <span className="block text-[#00a8cc]">Since 2018</span>
+              <span className="block text-[#00a8cc]">Since 2026</span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}

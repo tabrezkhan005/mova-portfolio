@@ -552,7 +552,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="text-xs sm:text-sm text-gray-500">Need Help?</p>
-                    <p className="font-bold text-[#00252e] text-sm sm:text-base">+91 90000-12345</p>
+                    <p className="font-bold text-[#00252e] text-sm sm:text-base">+91 93909 83993</p>
                   </div>
                 </div>
               </div>

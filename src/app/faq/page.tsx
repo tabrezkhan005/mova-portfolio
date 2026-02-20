@@ -23,81 +23,8 @@ export default function FAQPage() {
     { id: 'policies', name: 'Policies', icon: <FileText className="w-5 h-5" /> }
   ];
 
-  // FAQ Data
-  const faqData = [
-    {
-      id: 1,
-      category: 'booking',
-      question: "How do I book a vehicle with MOVA?",
-      answer: "Booking with MOVA is simple! You can book through our website, mobile app, or by calling our 24/7 customer service. Just select your preferred vehicle, dates, and location, and we'll handle the rest. The entire process takes less than 5 minutes."
-    },
-    {
-      id: 2,
-      category: 'booking',
-      question: "What documents do I need to rent a vehicle?",
-      answer: "You'll need a valid driver's license (at least 1 year old), proof of identity (Aadhar card or passport), and a valid credit/debit card for payment. International travelers need to present an international driving permit along with their original license."
-    },
-    {
-      id: 3,
-      category: 'payment',
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards (Visa, MasterCard, American Express), debit cards, UPI payments, net banking, and digital wallets like Paytm and Google Pay. Cash payments are also accepted at select locations."
-    },
-    {
-      id: 4,
-      category: 'payment',
-      question: "Is a security deposit required?",
-      answer: "Yes, a refundable security deposit is required at the time of pickup. The amount varies based on the vehicle category - typically ₹5,000 for hatchbacks, ₹10,000 for sedans/SUVs, and ₹20,000 for luxury vehicles. The deposit is fully refunded upon return of the vehicle in good condition."
-    },
-    {
-      id: 5,
-      category: 'insurance',
-      question: "What is included in the rental price?",
-      answer: "Our rental prices include comprehensive insurance, 24/7 roadside assistance, unlimited mileage, and basic maintenance. Additional services like GPS navigation, child seats, and additional drivers can be added for a small fee."
-    },
-    {
-      id: 6,
-      category: 'insurance',
-      question: "What type of insurance coverage is provided?",
-      answer: "All our rentals include basic collision damage waiver (CDW) and theft protection. You can upgrade to our premium protection plan which covers tire damage, windshield damage, and personal accident coverage for a nominal daily fee."
-    },
-    {
-      id: 7,
-      category: 'policies',
-      question: "Can I cancel or modify my booking?",
-      answer: "Yes! You can modify or cancel your booking up to 24 hours before your scheduled pickup time without any cancellation fees. Cancellations made within 24 hours may incur a fee of up to 25% of the booking value."
-    },
-    {
-      id: 8,
-      category: 'policies',
-      question: "What happens if the vehicle breaks down?",
-      answer: "All our vehicles are regularly maintained and come with 24/7 roadside assistance. If you experience any issues, simply call our emergency hotline. We'll arrange immediate assistance or provide a replacement vehicle at no extra cost."
-    },
-    {
-      id: 9,
-      category: 'booking',
-      question: "Do you offer long-term rentals?",
-      answer: "Yes! We offer flexible long-term rental options for businesses and individuals. Monthly rentals come with significant discounts (up to 30% off daily rates) and include free maintenance. Contact our sales team for customized packages."
-    },
-    {
-      id: 10,
-      category: 'policies',
-      question: "What is your fuel policy?",
-      answer: "We follow a 'same-to-same' fuel policy. You receive the vehicle with a full tank and are expected to return it with a full tank. If returned with less fuel, a refueling charge plus service fee will apply."
-    },
-    {
-      id: 11,
-      category: 'booking',
-      question: "Can I pick up from one location and drop at another?",
-      answer: "Yes, we offer one-way rentals between most major cities. One-way fees apply and vary based on the pickup and drop-off locations. You can check the exact fee during the booking process."
-    },
-    {
-      id: 12,
-      category: 'policies',
-      question: "What is the minimum age requirement?",
-      answer: "The minimum age to rent a vehicle is 21 years. Drivers under 25 may be subject to a young driver surcharge. For luxury vehicles, the minimum age is 25 years with at least 3 years of driving experience."
-    }
-  ];
+  // FAQ Data - populate with real data when available
+  const faqData: { id: number; category: string; question: string; answer: string }[] = [];
 
   // Filter FAQs
   const filteredFAQs = faqData.filter(faq => {
@@ -194,73 +121,89 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {filteredFAQs.length === 0 ? (
+      {faqData.length > 0 ? (
+        <section className="py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {filteredFAQs.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-16"
+              >
+                <HelpCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">No results found</h3>
+                <p className="text-gray-500 mb-4">Try a different search term or category</p>
+                <button
+                  onClick={() => { setSearchQuery(''); setActiveCategory('all'); }}
+                  className="px-6 py-2 bg-[#00252e] text-white rounded-lg hover:bg-[#003847] transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+                className="space-y-4"
+              >
+                {filteredFAQs.map((faq, index) => (
+                  <motion.div
+                    key={faq.id}
+                    variants={fadeInUp}
+                    className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+                  >
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    >
+                      <span className="font-semibold text-[#00252e] pr-4">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-[#00a8cc] flex-shrink-0 transition-transform duration-300 ${
+                          openIndex === index ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {openIndex === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-5">
+                            <div className="pt-2 border-t border-gray-100">
+                              <p className="text-gray-600 leading-relaxed pt-4">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </div>
+        </section>
+      ) : (
+        <section className="py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center py-16"
             >
               <HelpCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">No results found</h3>
-              <p className="text-gray-500 mb-4">Try a different search term or category</p>
-              <button
-                onClick={() => { setSearchQuery(''); setActiveCategory('all'); }}
-                className="px-6 py-2 bg-[#00252e] text-white rounded-lg hover:bg-[#003847] transition-colors"
-              >
-                Clear Filters
-              </button>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">No FAQs available yet</h3>
+              <p className="text-gray-500">Check back soon for answers to common questions</p>
             </motion.div>
-          ) : (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="space-y-4"
-            >
-              {filteredFAQs.map((faq, index) => (
-                <motion.div
-                  key={faq.id}
-                  variants={fadeInUp}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="font-semibold text-[#00252e] pr-4">{faq.question}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-[#00a8cc] flex-shrink-0 transition-transform duration-300 ${
-                        openIndex === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {openIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 pb-5">
-                          <div className="pt-2 border-t border-gray-100">
-                            <p className="text-gray-600 leading-relaxed pt-4">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Quick Links */}
       <section className="py-16 bg-gray-50">

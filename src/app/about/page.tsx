@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Shield, Star,
-  CheckCircle, Award, Target, Heart, ArrowRight,
+  Award, Target, Heart, ArrowRight,
   Linkedin, Twitter
 } from 'lucide-react';
 
@@ -49,42 +49,11 @@ export default function AboutPage() {
     }
   ];
 
-  // Team members
-  const team = [
-    {
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Priya Sharma",
-      role: "Operations Director",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Amit Singh",
-      role: "Fleet Manager",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Neha Patel",
-      role: "Customer Success Lead",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-      social: { linkedin: "#", twitter: "#" }
-    }
-  ];
+  // Team members - populate with real data when available
+  const team: { name: string; role: string; image: string; social: { linkedin: string; twitter: string } }[] = [];
 
-  // Milestones
-  const milestones = [
-    { year: "2018", title: "Company Founded", description: "Started with a vision to revolutionize car rentals in India" },
-    { year: "2019", title: "100 Vehicles", description: "Expanded our fleet to serve more customers across major cities" },
-    { year: "2021", title: "10,000 Customers", description: "Reached our first major milestone in customer satisfaction" },
-    { year: "2023", title: "Pan-India Presence", description: "Extended services to 50+ locations across India" },
-    { year: "2024", title: "Digital Innovation", description: "Launched our mobile app for seamless booking experience" }
-  ];
+  // Milestones - populate with real data when available
+  const milestones: { year: string; title: string; description: string }[] = [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -146,19 +115,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              {/* Stats Card */}
-              <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl p-6">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#00252e]">6+</div>
-                    <div className="text-sm text-gray-500">Years Experience</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#00a8cc]">200+</div>
-                    <div className="text-sm text-gray-500">Fleet Size</div>
-                  </div>
-                </div>
-              </div>
+
             </motion.div>
 
             {/* Content */}
@@ -197,25 +154,7 @@ export default function AboutPage() {
                 believe that every journey deserves a great vehicle and exceptional service.
               </motion.p>
 
-              {/* Quick Facts */}
-              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00a8cc]" />
-                  <span className="text-gray-700">50+ Locations</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00a8cc]" />
-                  <span className="text-gray-700">10K+ Customers</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00a8cc]" />
-                  <span className="text-gray-700">24/7 Support</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00a8cc]" />
-                  <span className="text-gray-700">4.9 Rating</span>
-                </div>
-              </motion.div>
+
             </motion.div>
           </div>
         </div>
@@ -324,134 +263,138 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-[#00252e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-16"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block px-4 py-2 bg-white/10 rounded-full text-[#00a8cc] text-sm font-medium mb-4"
+      {milestones.length > 0 && (
+        <section className="py-20 bg-[#00252e]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-16"
             >
-              Our Journey
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            >
-              Milestones We&apos;re Proud Of
-            </motion.h2>
-          </motion.div>
+              <motion.span
+                variants={fadeInUp}
+                className="inline-block px-4 py-2 bg-white/10 rounded-full text-[#00a8cc] text-sm font-medium mb-4"
+              >
+                Our Journey
+              </motion.span>
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              >
+                Milestones We&apos;re Proud Of
+              </motion.h2>
+            </motion.div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-white/20 hidden md:block" />
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-white/20 hidden md:block" />
+
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="space-y-12"
+              >
+                {milestones.map((milestone, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    className={`flex flex-col md:flex-row items-center gap-8 ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl inline-block">
+                        <div className="text-[#00a8cc] font-bold text-lg mb-2">{milestone.year}</div>
+                        <h3 className="text-xl font-bold text-white mb-2">{milestone.title}</h3>
+                        <p className="text-gray-400">{milestone.description}</p>
+                      </div>
+                    </div>
+                    <div className="w-4 h-4 bg-[#00a8cc] rounded-full relative z-10 ring-4 ring-[#00252e]" />
+                    <div className="flex-1 hidden md:block" />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Team Section */}
+      {team.length > 0 && (
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-16"
+            >
+              <motion.span
+                variants={fadeInUp}
+                className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
+              >
+                Our Team
+              </motion.span>
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
+              >
+                Meet the People Behind MOVA
+              </motion.h2>
+              <motion.p
+                variants={fadeInUp}
+                className="text-gray-600 max-w-2xl mx-auto"
+              >
+                Our dedicated team works tirelessly to ensure you have the best
+                car rental experience possible.
+              </motion.p>
+            </motion.div>
 
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="space-y-12"
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
             >
-              {milestones.map((milestone, index) => (
+              {team.map((member, index) => (
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className={`flex flex-col md:flex-row items-center gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className="group"
                 >
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl inline-block">
-                      <div className="text-[#00a8cc] font-bold text-lg mb-2">{milestone.year}</div>
-                      <h3 className="text-xl font-bold text-white mb-2">{milestone.title}</h3>
-                      <p className="text-gray-400">{milestone.description}</p>
+                  <div className="relative overflow-hidden rounded-2xl mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={400}
+                      height={400}
+                      className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#00252e]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                      <div className="flex gap-3">
+                        <a href={member.social.linkedin} className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors">
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                        <a href={member.social.twitter} className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors">
+                          <Twitter className="w-5 h-5" />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <div className="w-4 h-4 bg-[#00a8cc] rounded-full relative z-10 ring-4 ring-[#00252e]" />
-                  <div className="flex-1 hidden md:block" />
+                  <h3 className="text-lg font-bold text-[#00252e]">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-16"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
-            >
-              Our Team
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
-            >
-              Meet the People Behind MOVA
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-gray-600 max-w-2xl mx-auto"
-            >
-              Our dedicated team works tirelessly to ensure you have the best
-              car rental experience possible.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="group"
-              >
-                <div className="relative overflow-hidden rounded-2xl mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#00252e]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                    <div className="flex gap-3">
-                      <a href={member.social.linkedin} className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                      <a href={member.social.twitter} className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors">
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-[#00252e]">{member.name}</h3>
-                <p className="text-gray-500">{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Phone, Mail, MapPin, Clock, Send, CheckCircle,
+  Phone, Send, CheckCircle,
   MessageSquare, Linkedin, Twitter, Facebook, Instagram,
   ArrowRight, Headphones, Building
 } from 'lucide-react';
@@ -54,41 +54,11 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Contact info
-  const contactInfo = [
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Visit Us",
-      details: ["123 Mobility Drive, Tech Park", "Bangalore 560001, India"],
-      color: "bg-blue-50"
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Call Us",
-      details: ["+91 (080) 1234-5678", "+91 90000-12345"],
-      color: "bg-green-50"
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: "Email Us",
-      details: ["contact@mova.com", "support@mova.com"],
-      color: "bg-purple-50"
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Working Hours",
-      details: ["Mon - Fri: 9:00 AM - 8:00 PM", "Sat: 10:00 AM - 6:00 PM"],
-      color: "bg-orange-50"
-    }
-  ];
+  // Contact info - populate with real data when available
+  const contactInfo: { icon: React.ReactNode; title: string; details: string[]; color: string }[] = [];
 
-  // Office locations
-  const offices = [
-    { city: "Bangalore", address: "Tech Park, Electronic City" },
-    { city: "Mumbai", address: "BKC, Bandra East" },
-    { city: "Delhi", address: "Connaught Place" },
-    { city: "Chennai", address: "Anna Salai, T. Nagar" }
-  ];
+  // Office locations - populate with real data when available
+  const offices: { city: string; address: string }[] = [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -126,33 +96,35 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 -mt-12 relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className={`w-14 h-14 ${info.color} rounded-xl flex items-center justify-center text-[#00252e] mb-4`}>
-                  {info.icon}
-                </div>
-                <h3 className="font-bold text-[#00252e] mb-2">{info.title}</h3>
-                {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-600 text-sm">{detail}</p>
-                ))}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {contactInfo.length > 0 && (
+        <section className="py-16 -mt-12 relative z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className={`w-14 h-14 ${info.color} rounded-xl flex items-center justify-center text-[#00252e] mb-4`}>
+                    {info.icon}
+                  </div>
+                  <h3 className="font-bold text-[#00252e] mb-2">{info.title}</h3>
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-600 text-sm">{detail}</p>
+                  ))}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Main Contact Section */}
       <section className="py-20">
@@ -326,20 +298,22 @@ export default function ContactPage() {
               </div>
 
               {/* Office Locations */}
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-[#00252e] mb-6 flex items-center gap-2">
-                  <Building className="w-5 h-5 text-[#00a8cc]" />
-                  Our Offices
-                </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {offices.map((office, index) => (
-                    <div key={index} className="bg-white p-4 rounded-xl">
-                      <h4 className="font-semibold text-[#00252e] mb-1">{office.city}</h4>
-                      <p className="text-sm text-gray-600">{office.address}</p>
-                    </div>
-                  ))}
+              {offices.length > 0 && (
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-[#00252e] mb-6 flex items-center gap-2">
+                    <Building className="w-5 h-5 text-[#00a8cc]" />
+                    Our Offices
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {offices.map((office, index) => (
+                      <div key={index} className="bg-white p-4 rounded-xl">
+                        <h4 className="font-semibold text-[#00252e] mb-1">{office.city}</h4>
+                        <p className="text-sm text-gray-600">{office.address}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Social Links */}
               <div>

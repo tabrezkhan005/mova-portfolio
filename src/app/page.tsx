@@ -29,53 +29,8 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [bannerImages.length]);
 
-  // Featured cars data
-  const featuredCars = [
-    {
-      id: 1,
-      name: "Hyundai Creta",
-      category: "SUV",
-      price: "₹3,500",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&h=400&fit=crop",
-      seats: 5,
-      fuel: "Petrol",
-      transmission: "Automatic",
-      rating: 4.8
-    },
-    {
-      id: 2,
-      name: "Honda City",
-      category: "Sedan",
-      price: "₹2,800",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
-      seats: 5,
-      fuel: "Petrol",
-      transmission: "CVT",
-      rating: 4.7
-    },
-    {
-      id: 3,
-      name: "Mahindra Thar",
-      category: "SUV",
-      price: "₹4,500",
-      image: "https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=600&h=400&fit=crop",
-      seats: 4,
-      fuel: "Diesel",
-      transmission: "Manual",
-      rating: 4.9
-    },
-    {
-      id: 4,
-      name: "Maruti Swift",
-      category: "Hatchback",
-      price: "₹1,800",
-      image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&h=400&fit=crop",
-      seats: 5,
-      fuel: "Petrol",
-      transmission: "Manual",
-      rating: 4.5
-    }
-  ];
+  // Featured cars data - populate with real data when available
+  const featuredCars: { id: number; name: string; category: string; price: string; image: string; seats: number; fuel: string; transmission: string; rating: number }[] = [];
 
   // Why choose us features
   const features = [
@@ -207,41 +162,7 @@ export default function HomePage() {
                 From luxury sedans to rugged SUVs, find your perfect ride.
               </motion.p>
 
-              {/* Trust Indicators */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-wrap gap-6 mb-8"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                    <Car className="w-6 h-6 text-[#00a8cc]" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">50+</div>
-                    <div className="text-sm text-gray-400">Vehicles</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                    <Users className="w-6 h-6 text-[#d4a853]" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">5K+</div>
-                    <div className="text-sm text-gray-400">Happy Customers</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                    <Star className="w-6 h-6 text-[#00a8cc]" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">4.9</div>
-                    <div className="text-sm text-gray-400">Rating</div>
-                  </div>
-                </div>
-              </motion.div>
+
 
               {/* Carousel Indicators */}
               <motion.div
@@ -402,127 +323,129 @@ export default function HomePage() {
       </section>
 
       {/* Featured Cars Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-12"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
+      {featuredCars.length > 0 && (
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-12"
             >
-              Our Fleet
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
-            >
-              Featured Vehicles
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-gray-600 max-w-2xl mx-auto"
-            >
-              Choose from our selection of premium vehicles, each maintained to the highest standards for your comfort and safety.
-            </motion.p>
-          </motion.div>
-
-          {/* Cars Grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {featuredCars.map((car) => (
-              <motion.div
-                key={car.id}
+              <motion.span
                 variants={fadeInUp}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
               >
-                {/* Car Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={car.image}
-                    alt={car.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-[#00252e] text-white text-xs font-medium rounded-full">
-                      {car.category}
-                    </span>
-                  </div>
-                  <button className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                    <Heart className="w-4 h-4 text-gray-600 hover:text-red-500" />
-                  </button>
-                </div>
+                Our Fleet
+              </motion.span>
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
+              >
+                Featured Vehicles
+              </motion.h2>
+              <motion.p
+                variants={fadeInUp}
+                className="text-gray-600 max-w-2xl mx-auto"
+              >
+                Choose from our selection of premium vehicles, each maintained to the highest standards for your comfort and safety.
+              </motion.p>
+            </motion.div>
 
-                {/* Car Details */}
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-bold text-[#00252e] text-lg">{car.name}</h3>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-[#d4a853] fill-current" />
-                      <span className="text-sm font-medium">{car.rating}</span>
+            {/* Cars Grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {featuredCars.map((car) => (
+                <motion.div
+                  key={car.id}
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  {/* Car Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={car.image}
+                      alt={car.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-[#00252e] text-white text-xs font-medium rounded-full">
+                        {car.category}
+                      </span>
                     </div>
+                    <button className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                      <Heart className="w-4 h-4 text-gray-600 hover:text-red-500" />
+                    </button>
                   </div>
 
-                  {/* Features */}
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      {car.seats}
+                  {/* Car Details */}
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-bold text-[#00252e] text-lg">{car.name}</h3>
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-[#d4a853] fill-current" />
+                        <span className="text-sm font-medium">{car.rating}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="w-4 h-4" />
-                      {car.fuel}
+
+                    {/* Features */}
+                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                      <div className="flex items-center gap-1">
+                        <Users className="w-4 h-4" />
+                        {car.seats}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Fuel className="w-4 h-4" />
+                        {car.fuel}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Settings className="w-4 h-4" />
+                        {car.transmission}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Settings className="w-4 h-4" />
-                      {car.transmission}
+
+                    {/* Price & CTA */}
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div>
+                        <span className="text-2xl font-bold text-[#00252e]">{car.price}</span>
+                        <span className="text-gray-500 text-sm">/day</span>
+                      </div>
+                      <Link href={`/fleet?car=${car.id}`}>
+                        <button className="px-4 py-2 bg-[#00a8cc] hover:bg-[#00a8cc]/90 text-white text-sm font-medium rounded-lg transition-colors">
+                          Book Now
+                        </button>
+                      </Link>
                     </div>
                   </div>
+                </motion.div>
+              ))}
+            </motion.div>
 
-                  {/* Price & CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div>
-                      <span className="text-2xl font-bold text-[#00252e]">{car.price}</span>
-                      <span className="text-gray-500 text-sm">/day</span>
-                    </div>
-                    <Link href={`/fleet?car=${car.id}`}>
-                      <button className="px-4 py-2 bg-[#00a8cc] hover:bg-[#00a8cc]/90 text-white text-sm font-medium rounded-lg transition-colors">
-                        Book Now
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* View All Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
-            <Link href="/fleet">
-              <button className="px-8 py-3 border-2 border-[#00252e] text-[#00252e] hover:bg-[#00252e] hover:text-white font-semibold rounded-lg transition-all duration-300 inline-flex items-center gap-2">
-                View All Vehicles
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+            {/* View All Button */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center mt-10"
+            >
+              <Link href="/fleet">
+                <button className="px-8 py-3 border-2 border-[#00252e] text-[#00252e] hover:bg-[#00252e] hover:text-white font-semibold rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                  View All Vehicles
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white">

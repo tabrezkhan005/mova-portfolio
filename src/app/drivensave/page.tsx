@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Clock, Calendar, Car, Shield, Zap, Sparkles,
-  ArrowRight, Gift, Percent, Users,
-  Star, Copy, Check, Timer
+  Clock, Car, Shield, Sparkles,
+  ArrowRight, Gift, Percent,
+  Copy, Check, Timer
 } from 'lucide-react';
 
 export default function DriveSavePage() {
@@ -34,74 +34,11 @@ export default function DriveSavePage() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  // Featured deals
-  const featuredDeals = [
-    {
-      id: 1,
-      title: "Weekend Getaway",
-      discount: "25% OFF",
-      description: "Perfect for short trips and city exploration",
-      validUntil: "Mar 31, 2026",
-      code: "WEEKEND25",
-      image: "https://images.unsplash.com/photo-1449965408869-ebd3fee49c77?w=600&h=400&fit=crop",
-      badge: "Popular",
-      color: "from-[#00a8cc] to-[#00252e]"
-    },
-    {
-      id: 2,
-      title: "Weekly Business",
-      discount: "30% OFF",
-      description: "Ideal for business trips and extended stays",
-      validUntil: "Jun 30, 2026",
-      code: "BIZWEEK30",
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&h=400&fit=crop",
-      badge: "Best Value",
-      color: "from-[#d4a853] to-[#00252e]"
-    },
-    {
-      id: 3,
-      title: "SUV Special",
-      discount: "20% OFF",
-      description: "Adventure awaits with our premium SUVs",
-      validUntil: "Apr 30, 2026",
-      code: "SUV20OFF",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=400&fit=crop",
-      badge: "Adventure",
-      color: "from-green-500 to-[#00252e]"
-    }
-  ];
+  // Featured deals - populate with real data when available
+  const featuredDeals: { id: number; title: string; discount: string; description: string; validUntil: string; code: string; image: string; badge: string; color: string }[] = [];
 
-  // Additional offers
-  const additionalOffers = [
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "First-Time User",
-      discount: "15% OFF",
-      description: "New to MOVA? Get 15% off your first rental",
-      code: "NEWUSER15"
-    },
-    {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Monthly Rental",
-      discount: "35% OFF",
-      description: "Save big on long-term rentals (30+ days)",
-      code: "MONTHLY35"
-    },
-    {
-      icon: <Star className="w-6 h-6" />,
-      title: "Loyalty Reward",
-      discount: "10% OFF",
-      description: "Exclusive discount for returning customers",
-      code: "LOYAL10"
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Electric Vehicle",
-      discount: "25% OFF",
-      description: "Go green with our EV fleet at special rates",
-      code: "GOGREEN25"
-    }
-  ];
+  // Additional offers - populate with real data when available
+  const additionalOffers: { icon: React.ReactNode; title: string; discount: string; description: string; code: string }[] = [];
 
   // How it works
   const howItWorks = [
@@ -195,110 +132,112 @@ export default function DriveSavePage() {
       </section>
 
       {/* Featured Deals */}
-      <section id="deals" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-16"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
+      {featuredDeals.length > 0 && (
+        <section id="deals" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-16"
             >
-              Featured Deals
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
-            >
-              Top Offers This Month
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-gray-600 max-w-2xl mx-auto"
-            >
-              Limited-time offers on our most popular vehicles and rental packages
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            {featuredDeals.map((deal) => (
-              <motion.div
-                key={deal.id}
+              <motion.span
                 variants={fadeInUp}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
               >
-                {/* Image */}
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={deal.image}
-                    alt={deal.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${deal.color} opacity-60`} />
+                Featured Deals
+              </motion.span>
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
+              >
+                Top Offers This Month
+              </motion.h2>
+              <motion.p
+                variants={fadeInUp}
+                className="text-gray-600 max-w-2xl mx-auto"
+              >
+                Limited-time offers on our most popular vehicles and rental packages
+              </motion.p>
+            </motion.div>
 
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white text-[#00252e] text-xs font-bold rounded-full">
-                      {deal.badge}
-                    </span>
-                  </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-3 gap-8"
+            >
+              {featuredDeals.map((deal) => (
+                <motion.div
+                  key={deal.id}
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  {/* Image */}
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={deal.image}
+                      alt={deal.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${deal.color} opacity-60`} />
 
-                  {/* Discount Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="px-4 py-2 bg-[#d4a853] text-[#00252e] text-lg font-bold rounded-xl">
-                      {deal.discount}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#00252e] mb-2">{deal.title}</h3>
-                  <p className="text-gray-600 mb-4">{deal.description}</p>
-
-                  {/* Validity */}
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                    <Timer className="w-4 h-4" />
-                    Valid until {deal.validUntil}
-                  </div>
-
-                  {/* Promo Code */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 px-4 py-3 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
-                      <code className="font-mono font-bold text-[#00252e]">{deal.code}</code>
+                    {/* Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white text-[#00252e] text-xs font-bold rounded-full">
+                        {deal.badge}
+                      </span>
                     </div>
-                    <button
-                      onClick={() => copyCode(deal.code)}
-                      className={`px-4 py-3 rounded-lg transition-all duration-300 ${
-                        copiedCode === deal.code
-                          ? 'bg-green-500 text-white'
-                          : 'bg-[#00252e] hover:bg-[#003847] text-white'
-                      }`}
-                    >
-                      {copiedCode === deal.code ? (
-                        <Check className="w-5 h-5" />
-                      ) : (
-                        <Copy className="w-5 h-5" />
-                      )}
-                    </button>
+
+                    {/* Discount Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="px-4 py-2 bg-[#d4a853] text-[#00252e] text-lg font-bold rounded-xl">
+                        {deal.discount}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-[#00252e] mb-2">{deal.title}</h3>
+                    <p className="text-gray-600 mb-4">{deal.description}</p>
+
+                    {/* Validity */}
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                      <Timer className="w-4 h-4" />
+                      Valid until {deal.validUntil}
+                    </div>
+
+                    {/* Promo Code */}
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 px-4 py-3 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                        <code className="font-mono font-bold text-[#00252e]">{deal.code}</code>
+                      </div>
+                      <button
+                        onClick={() => copyCode(deal.code)}
+                        className={`px-4 py-3 rounded-lg transition-all duration-300 ${
+                          copiedCode === deal.code
+                            ? 'bg-green-500 text-white'
+                            : 'bg-[#00252e] hover:bg-[#003847] text-white'
+                        }`}
+                      >
+                        {copiedCode === deal.code ? (
+                          <Check className="w-5 h-5" />
+                        ) : (
+                          <Copy className="w-5 h-5" />
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* How It Works */}
       <section className="py-20 bg-[#00252e]">
@@ -354,74 +293,76 @@ export default function DriveSavePage() {
       </section>
 
       {/* Additional Offers */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-16"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
+      {additionalOffers.length > 0 && (
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-16"
             >
-              More Savings
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
-            >
-              Additional Offers
-            </motion.h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {additionalOffers.map((offer, index) => (
-              <motion.div
-                key={index}
+              <motion.span
                 variants={fadeInUp}
-                className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group"
+                className="inline-block px-4 py-2 bg-[#00252e]/10 rounded-full text-[#00252e] text-sm font-medium mb-4"
               >
-                <div className="w-14 h-14 bg-[#00252e] rounded-xl flex items-center justify-center text-white mb-4 group-hover:bg-[#00a8cc] transition-colors">
-                  {offer.icon}
-                </div>
-                <div className="text-2xl font-bold text-[#00a8cc] mb-2">{offer.discount}</div>
-                <h3 className="font-bold text-[#00252e] mb-2">{offer.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
+                More Savings
+              </motion.span>
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl font-bold text-[#00252e] mb-4"
+              >
+                Additional Offers
+              </motion.h2>
+            </motion.div>
 
-                {/* Code Copy */}
-                <div className="flex items-center gap-2">
-                  <code className="flex-1 px-3 py-2 bg-white rounded-lg text-sm font-mono font-bold text-[#00252e] border border-gray-200">
-                    {offer.code}
-                  </code>
-                  <button
-                    onClick={() => copyCode(offer.code)}
-                    className={`p-2 rounded-lg transition-all ${
-                      copiedCode === offer.code
-                        ? 'bg-green-500 text-white'
-                        : 'bg-[#00252e] hover:bg-[#003847] text-white'
-                    }`}
-                  >
-                    {copiedCode === offer.code ? (
-                      <Check className="w-4 h-4" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {additionalOffers.map((offer, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="w-14 h-14 bg-[#00252e] rounded-xl flex items-center justify-center text-white mb-4 group-hover:bg-[#00a8cc] transition-colors">
+                    {offer.icon}
+                  </div>
+                  <div className="text-2xl font-bold text-[#00a8cc] mb-2">{offer.discount}</div>
+                  <h3 className="font-bold text-[#00252e] mb-2">{offer.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
+
+                  {/* Code Copy */}
+                  <div className="flex items-center gap-2">
+                    <code className="flex-1 px-3 py-2 bg-white rounded-lg text-sm font-mono font-bold text-[#00252e] border border-gray-200">
+                      {offer.code}
+                    </code>
+                    <button
+                      onClick={() => copyCode(offer.code)}
+                      className={`p-2 rounded-lg transition-all ${
+                        copiedCode === offer.code
+                          ? 'bg-green-500 text-white'
+                          : 'bg-[#00252e] hover:bg-[#003847] text-white'
+                      }`}
+                    >
+                      {copiedCode === offer.code ? (
+                        <Check className="w-4 h-4" />
+                      ) : (
+                        <Copy className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Benefits */}
       <section className="py-20 bg-gray-50">

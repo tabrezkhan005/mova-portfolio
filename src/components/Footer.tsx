@@ -196,14 +196,14 @@ export default function Footer() {
               © {currentYear} MOVA Car Rental. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <Link href="/terms" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
+              <Link href="/terms-and-conditions" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/privacy" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
+              <Link href="/terms-and-conditions#privacy-policy" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/cookies" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
-                Cookie Policy
+              <Link href="/terms-and-conditions#guest-fee-policy" className="text-gray-500 hover:text-[#00a8cc] transition-colors">
+                Fee Policy
               </Link>
             </div>
           </div>
